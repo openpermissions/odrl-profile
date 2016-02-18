@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns1="http://www.w3.org/2002/07/owl#"
+   xmlns:ns2="http://digicat.io/ns/monk/0.3/"
+   xmlns:ns3="http://purl.org/dc/elements/1.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+  <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+    <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+    <ns2:visibility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public</ns2:visibility>
+    <rdfs:range rdf:nodeID="t42"/>
+    <ns2:jsonPreferredName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">long</ns2:jsonPreferredName>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://digicat.io/ns/monk/0.3/exportedObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://digicat.io/ns/monk/0.3/publicProperty"/>
+    <ns2:expressedInUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DD/Degree</ns2:expressedInUnit>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+    <rdfs:subPropertyOf rdf:resource="http://digicat.io/ns/monk/0.3/exportedObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://digicat.io/ns/monk/0.3/publicProperty"/>
+    <rdfs:range rdf:nodeID="t37"/>
+    <ns2:expressedInUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DD/Degree</ns2:expressedInUnit>
+    <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+    <ns2:visibility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public</ns2:visibility>
+    <ns2:jsonPreferredName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lat</ns2:jsonPreferredName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <ns2:jsonPreferredName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alt</ns2:jsonPreferredName>
+    <ns2:visibility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public</ns2:visibility>
+    <ns2:expressedInUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MR/Metre</ns2:expressedInUnit>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:subPropertyOf rdf:resource="http://digicat.io/ns/monk/0.3/publicProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://digicat.io/ns/monk/0.3/exportedObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">
+    <ns2:jsonPreferredName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">@type</ns2:jsonPreferredName>
+    <ns2:multiple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns2:multiple>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t38">
+    <rdf:first rdf:nodeID="t43"/>
+    <rdf:rest rdf:nodeID="t41"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#/geo/">
+    <ns1:versionIRI rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+    <ns2:CompiledAt rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-12-22T12:04:00+00:00</ns2:CompiledAt>
+    <ns3:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+       Implementation of GEO language as defined by the namespace
+    </ns3:description>
+    <ns1:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0-0-0-git-ca82c7cf6ba463e6aa7471a4fc513eab096c6cad</ns1:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ns.void/xnode/xnmd5-a794c4fc7f5a0ccfa443d420903a60d6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <ns1:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns1:cardinality>
+    <ns1:onProperty rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#alt"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t40">
+    <rdf:first rdf:nodeID="t36"/>
+    <rdf:rest rdf:nodeID="t45"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#Point">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="https://ns.void/xnode/xnmd5-1af642edaddff42031e5a3915a7445e0"/>
+    <rdf:type rdf:resource="https://ns.void/xnode/xnmd5-a794c4fc7f5a0ccfa443d420903a60d6"/>
+    <ns2:jsonPreferredName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Point</ns2:jsonPreferredName>
+    <rdf:type rdf:resource="https://ns.void/xnode/xnmd5-bc4846539d8156ced06f12393c7da97e"/>
+    <ns2:definedAtDebug rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/bn/ontology/RDIPY/chubeel/odrl/geo.py:7</ns2:definedAtDebug>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Point</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Implementation of GeoPoints </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ns.void/xnode/xnmd5-1af642edaddff42031e5a3915a7445e0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <ns1:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns1:cardinality>
+    <ns1:onProperty rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t42">
+    <ns1:withRestrictions rdf:nodeID="t38"/>
+    <ns1:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t44">
+    <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</xsd:maxInclusive>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ns.void/xnode/xnmd5-bc4846539d8156ced06f12393c7da97e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <ns1:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns1:cardinality>
+    <ns1:onProperty rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t41">
+    <rdf:first rdf:nodeID="t44"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t45">
+    <rdf:first rdf:nodeID="t39"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t36">
+    <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-180</xsd:minInclusive>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t37">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <ns1:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <ns1:withRestrictions rdf:nodeID="t40"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t39">
+    <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</xsd:maxInclusive>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="t43">
+    <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-180</xsd:minInclusive>
+  </rdf:Description>
+</rdf:RDF>
