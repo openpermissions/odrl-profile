@@ -8,7 +8,6 @@ Todo:
 * review how we version the ontology
 * describe in this document the versioning naming convention
 * remove ns1:
-* Replace blank nodes/weird ids
 * Remove Countries from this ontology, select a suitable external ontology that specialises in this
 * Monk ontology dependency, is this required?
 * Language notation on descriptive strings
