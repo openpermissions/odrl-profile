@@ -1,0 +1,115 @@
+
+ol:Flicker_ID a ol:IdType,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "Flicker_ID"^^xsd:string ;
+    dc:description "Id who has the form of a iRI"@en,
+        "a flicker id"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:PhotographicId ;
+    skos:inScheme ol:idtypes ;
+    skos:name "Flicker_ID"@en ;
+    skos:narrowerThan ol:PhotographicId .
+
+ol:Foobar_ID a ol:IdType,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "Foobar_ID"^^xsd:string ;
+    dc:description "Id who has the form of a URI"@en,
+        "a foo bar id"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:PhotographicId ;
+    skos:inScheme ol:idtypes ;
+    skos:name "Foobar_ID"@en ;
+    skos:narrowerThan ol:PhotographicId .
+
+ol:Hubkey a ol:IdType,
+        skos:Concept ;
+    dc:description "Id who has the form of a Hubkey"@en ;
+    skos:inScheme ol:idtypes ;
+    skos:name "Hubkey"@en ;
+    skos:narrowerThan ol:top_id_type .
+
+ol:Hubkey_ID a owl:Class ;
+    rdfs:label "Hubkey_ID"^^xsd:string ;
+    dc:description "Id who has the form of a URI"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Id .
+
+ol:IRI a ol:IdType,
+        skos:Concept ;
+    dc:description "Id who has the form of an IRI"@en ;
+    skos:inScheme ol:idtypes ;
+    skos:name "IRI"@en ;
+    skos:narrowerThan ol:top_id_type .
+
+ol:IRI_ID a owl:Class ;
+    rdfs:label "IRI_ID"^^xsd:string ;
+    dc:description "Id who has the form of a iRI"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Id .
+
+ol:IdAlt a owl:Class,
+        <https://ns.void/xnode/cardinality-openlicensing-idtype-0> ;
+    rdfs:label "IdAlt"^^xsd:string ;
+    dc:description """
+    Identifier for an asset.
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
+
+ol:IdAlt_idtype a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional false ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:IdAlt ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:IdType .
+
+ol:idtype a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Id ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string .
+
+<https://ns.void/xnode/cardinality-openlicensing-idtype-0> a owl:Restriction ;
+    owl:allValuesFrom ol:IdType ;
+    owl:cardinality 1 ;
+    owl:onProperty ol:IdAlt_idtype,
+        ol:idtype .
+
+ol:Id a owl:Class,
+        <https://ns.void/xnode/cardinality-openlicensing-idtype-0> ;
+    rdfs:label "Id"^^xsd:string ;
+    dc:description """
+    Identifier for an asset.
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
+
+ol:PhotographicId a ol:IdType,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "PhotographicId"^^xsd:string ;
+    dc:description "Id of a photo"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Id ;
+    skos:inScheme ol:idtypes ;
+    skos:name "PhotographicId"@en ;
+    skos:narrowerThan ol:top_id_type .
+
+ol:top_id_type a ol:IdType,
+        skos:Concept ;
+    skos:inScheme ol:idtypes ;
+    skos:name "top_id_type"@en .
+
+ol:idtypes a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:top_id_type .
+
+ol:IdType a owl:Class ;
+    rdfs:label "IdType"^^xsd:string ;
+    dc:description """
+    Represents a class of identifiers
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
+

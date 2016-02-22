@@ -1,0 +1,222 @@
+
+ol:created a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dct:created .
+
+ol:defaultAssignee a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Party .
+
+ol:defaultAssigner a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Party .
+
+ol:defaultTarget a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Asset .
+
+ol:digitalPolicyAuthor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    dc:description """
+                                 A field to allow the author of the digital policy - if available this person may be
+                                 eventually be contacted to obtain infomation about the license.
+                                 """@en ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string .
+
+ol:expires a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    dc:description """
+         Optional expiry date of the policy.
+         The policy is not considered valid after this date.
+         """@en ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:dateTime .
+
+ol:modified a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dct:modified .
+
+ol:permission a owl:ObjectProperty ;
+    monk:embedded true ;
+    monk:multiple true ;
+    monk:optional false ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Permission ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:permission .
+
+ol:policyDescription a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:description .
+
+ol:policyHTML a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string .
+
+ol:policyName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:name .
+
+ol:policyText a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string .
+
+ol:preferredPolicyIdentifier a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string .
+
+ol:prohibition a owl:ObjectProperty ;
+    monk:embedded true ;
+    monk:multiple true ;
+    monk:optional false ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Prohibition ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:prohibition .
+
+ol:sharedDuty a owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:multiple true ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range odrl:Duty .
+
+<https://ns.void/xnode/cardinality-ol-created-0> a owl:Restriction ;
+    owl:cardinality 1 ;
+    owl:onProperty ol:created .
+
+<https://ns.void/xnode/cardinality-ol-modified-0> a owl:Restriction ;
+    owl:cardinality 1 ;
+    owl:onProperty ol:modified .
+
+<https://ns.void/xnode/cardinality-openlicensing-defaultAssignee-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Party ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:defaultAssignee .
+
+<https://ns.void/xnode/cardinality-openlicensing-defaultAssigner-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Party ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:defaultAssigner .
+
+<https://ns.void/xnode/cardinality-openlicensing-defaultTarget-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Asset ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:defaultTarget .
+
+<https://ns.void/xnode/cardinality-openlicensing-digitalPolicyAuthor-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:digitalPolicyAuthor .
+
+<https://ns.void/xnode/cardinality-openlicensing-expires-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:expires .
+
+<https://ns.void/xnode/cardinality-openlicensing-permission-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Permission ;
+    owl:onProperty ol:permission .
+
+<https://ns.void/xnode/cardinality-openlicensing-policyDescription-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:policyDescription .
+
+<https://ns.void/xnode/cardinality-openlicensing-policyHTML-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:policyHTML .
+
+<https://ns.void/xnode/cardinality-openlicensing-policyName-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:policyName .
+
+<https://ns.void/xnode/cardinality-openlicensing-policyText-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:policyText .
+
+<https://ns.void/xnode/cardinality-openlicensing-preferredPolicyIdentifier-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:preferredPolicyIdentifier .
+
+<https://ns.void/xnode/cardinality-openlicensing-prohibition-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Prohibition ;
+    owl:onProperty ol:prohibition .
+
+<https://ns.void/xnode/cardinality-openlicensing-sharedDuty-0> a owl:Restriction ;
+    owl:allValuesFrom odrl:Duty ;
+    owl:onProperty ol:sharedDuty .
+
+ol:Policy a owl:Class,
+        <https://ns.void/xnode/cardinality-ol-created-0>,
+        <https://ns.void/xnode/cardinality-ol-modified-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-defaultAssignee-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-defaultAssigner-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-defaultTarget-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-digitalPolicyAuthor-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-expires-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-permission-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-policyDescription-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-policyHTML-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-policyName-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-policyText-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-preferredPolicyIdentifier-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-prohibition-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-sharedDuty-0> ;
+    rdfs:label "Policy"^^xsd:string ;
+    dc:description """
+    An ODRL policy representing an agreement or a potential agreement.
+
+    Policy is the central entity that holds an ODRL policy together. In its encoded form, e.g. in an XML document, it makes the policy addressable from the outside word via its uid attribute. Policy can refer to Permissions and Prohibitions.
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf odrl:Policy .
+

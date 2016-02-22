@@ -1,0 +1,48 @@
+
+ol:name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:default "anonymous"^^xsd:string ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Party ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:name .
+
+ol:rightAgentFor a owl:ObjectProperty ;
+    rdfs:domain ol:Party ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Party ;
+    owl:inverseOf ol:Party_rightAgent .
+
+<https://ns.void/xnode/cardinality-openlicensing-name-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:name .
+
+<https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Party ;
+    owl:onProperty ol:Party_rightAgent .
+
+ol:Party_rightAgent a owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:multiple true ;
+    monk:optional false ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Party ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Party ;
+    owl:inverseOf ol:rightAgentFor .
+
+ol:Party a owl:Class,
+        <https://ns.void/xnode/cardinality-openlicensing-name-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> ;
+    rdfs:label "Party"^^xsd:string ;
+    dc:description """
+    A party represent:
+      1. a legal person having duties and rights as part of agreements.
+      2. a person known by an organisation (not necessarily providing its real name)
+
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Asset,
+        odrl:Party .
+

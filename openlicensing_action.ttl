@@ -1,0 +1,320 @@
+
+ol:acceptTracking a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "acceptTracking"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:aggregate a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "aggregate"@en ;
+    skos:narrowerThan ol:use .
+
+ol:annotate a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "annotate"@en ;
+    skos:narrowerThan ol:use .
+
+ol:anonymize a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "anonymize"@en ;
+    skos:narrowerThan ol:use .
+
+ol:archive a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "archive"@en ;
+    skos:narrowerThan ol:use .
+
+ol:attribute a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "attribute"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:compensate a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "compensate"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:concurrentUse a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "concurrentUse"@en ;
+    skos:narrowerThan ol:use .
+
+ol:delete a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "delete"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:derive a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "derive"@en ;
+    skos:narrowerThan ol:use .
+
+ol:digitize a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "digitize"@en ;
+    skos:narrowerThan ol:use .
+
+ol:display a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "display"@en ;
+    skos:narrowerThan ol:present .
+
+ol:distribute a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "distribute"@en ;
+    skos:narrowerThan ol:use .
+
+ol:ensureExclusivity a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "ensureExclusivity"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:extract a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "extract"@en ;
+    skos:narrowerThan ol:reproduce .
+
+ol:give a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:name "give"@en ;
+    skos:narrowerThan <http://openlicensing.io/ns/ol/1.0/3rdparty_transfer> .
+
+ol:grantUse a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:name "grantUse"@en ;
+    skos:narrowerThan <http://openlicensing.io/ns/ol/1.0/3rdparty_use> .
+
+ol:include a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "include"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:index a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "index"@en ;
+    skos:narrowerThan ol:use .
+
+ol:inform a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "inform"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:install a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "install"@en ;
+    skos:narrowerThan ol:use .
+
+ol:modify a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "modify"@en ;
+    skos:narrowerThan ol:use .
+
+ol:move a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "move"@en ;
+    skos:narrowerThan ol:use .
+
+ol:nextPolicy a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "nextPolicy"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:obtainConsent a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "obtainConsent"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:play a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "play"@en ;
+    skos:narrowerThan ol:present .
+
+ol:print_ a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "print_"@en ;
+    skos:narrowerThan ol:present .
+
+ol:read a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "read"@en ;
+    skos:narrowerThan ol:use .
+
+ol:reviewPolicy a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "reviewPolicy"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:sell a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:name "sell"@en ;
+    skos:narrowerThan <http://openlicensing.io/ns/ol/1.0/3rdparty_transfer> .
+
+ol:textToSpeech a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "textToSpeech"@en ;
+    skos:narrowerThan ol:use .
+
+ol:transfer a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "transfer"@en ;
+    skos:narrowerThan ol:top_action .
+
+ol:transform a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "transform"@en ;
+    skos:narrowerThan ol:use .
+
+ol:translate a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "translate"@en ;
+    skos:narrowerThan ol:use .
+
+ol:uninstall a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "uninstall"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+ol:watermark a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "watermark"@en ;
+    skos:narrowerThan ol:top_dutyAction .
+
+<http://openlicensing.io/ns/ol/1.0/3rdparty_use> a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:name "_3rdparty_use"@en ;
+    skos:narrowerThan ol:top_3rdpartyAction .
+
+ol:reproduce a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "reproduce"@en ;
+    skos:narrowerThan ol:use .
+
+<http://openlicensing.io/ns/ol/1.0/3rdparty_transfer> a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:name "_3rdparty_transfer"@en ;
+    skos:narrowerThan ol:top_3rdpartyAction .
+
+ol:present a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "present"@en ;
+    skos:narrowerThan ol:use .
+
+ol:top_3rdpartyAction a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:name "top_3rdpartyAction"@en .
+
+ol:top_action a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "top_action"@en .
+
+<http://openlicensing.io/ns/ol/1.0/3rdparyActions> a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:top_3rdpartyAction .
+
+ol:dutyActions a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:top_dutyAction .
+
+ol:top_dutyAction a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "top_dutyAction"@en .
+
+ol:use a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "use"@en ;
+    skos:narrowerThan ol:top_action .
+
+ol:actions a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:top_action .
+
+ol:Action a owl:Class ;
+    rdfs:label "Action"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf odrl:Action .
+

@@ -1,226 +1,398 @@
-@prefix allchubeel: <http://digicat.io/ns2/allchubeel/2016/2/0-0-0-git-d43191a7d36c1e8f869925365f524eb9585f5204/#> .
-@prefix chubeel: <https://www.copyrighthub.org/s0/chub1/entity/chub/uuid/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix geonames: <http://www.geonames.org/ontology#> .
-@prefix gn: <http://www.geonames.org/ontology#> .
-@prefix hk: <https://www.copyrighthub.org/s0/hub1/entity/chub/uuid/> .
-@prefix hub1: <https://www.copyrighthub.org/s0/hub1/> .
-@prefix iso4217a: <http://cvx.iptc.org/iso4217a/> .
-@prefix monk: <http://digicat.io/ns/monk/0.3/> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
-@prefix ol: <http://openlicensing.io/ns/ol/1.0/> .
-@prefix olex: <http://digicat.io/ns/olex/0.1/> .
-@prefix openlicensing: <http://openlicensing.io/ns/ol/1.0/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg: <http://schema.org/> .
-@prefix skos: <http://www.w3c.org/2008/skos/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xs: <http://www.w3.org/2001/XMLSchema> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3c.org/2008/skos/> .
 
-ol:CoPublisherSISBN13 a ol:IdType,
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+@prefix monk: <http://digicat.io/ns/monk/0.3/> .
+
+
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+
+@prefix iso4217a: <http://cvx.iptc.org/iso4217a/> .
+@prefix ol: <http://openlicensing.io/ns/ol/1.0/> .
+
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
+
+<http://openlicensing.io/ns/ol/1.0/> a owl:Ontology ;
+    monk:CompiledAt "2016-02-22T16:45:10Z"^^xsd:dateTime ;
+    ol:hubkey <https://www.copyrighthub.org/s0/hub1/creation/chub/ontologyid/ol-1-0-0> ;
+    dc:creator "Bertrand Nouvel"^^xsd:string,
+        "James Birmingham"^^xsd:string ;
+    dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
+    dct:rights "(C) Digital Catapult Limited 2016"^^xsd:string ;
+    dct:rightsHolder <https://www.copyrighthub.org/s0/hub1/party/chub/pid/digitalcatapult/> ;
+    owl:versionIRI <http://openlicensing.io/ns/ol/1.0/> ;
+    owl:versionInfo "1.0.0"^^xsd:string .
+
+
+# -----------------------------------------------------------------------
+# Ids
+# -----------------------------------------------------------------------
+
+
+ol:Flicker_ID a ol:IdType,
+        owl:Class,
         skos:Concept ;
-    dc:description """
-            An ISBN-13 assigned by a co-publisher. The ‘main’ ISBN sent with ID type code 03 and/or 15 should always be the ISBN that is used for ordering from the supplier identified in Supply Detail. However, ISBN rules allow a co-published title to carry more than one ISBN. The co-publisher should be identified in an instance of the &lt;Publisher&gt; composite, with the applicable &lt;PublishingRole&gt; code
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "CoPublisherSISBN13"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "24"^^xsd:string .
-
-ol:DOI a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            Digital Object Identifier (variable length and character set)
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "DOI"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "06"^^xsd:string .
-
-ol:Duty a owl:Class ;
-    rdfs:label "Duty"^^xsd:string ;
-    dc:description """
-        Similar to Permissions, a Duty states that a certain Action MAY be executed by the Party with the Role assignee
-         for the Permission to be valid, e.g. “Alice must pay 5 EUR in order to get the Permission to play abc.mp3″.
-    """@en ;
+    rdfs:label "Flicker_ID"^^xsd:string ;
+    dc:description "Id who has the form of a iRI"@en,
+        "a flicker id"@en ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Rule,
-        odrl:Duty .
-
-ol:GTIN13 a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            GS1 Global Trade Item Number, formerly known as EAN article number (13 digits)
-            """@en ;
+    rdfs:subClassOf ol:PhotographicId ;
     skos:inScheme ol:idtypes ;
-    skos:name "GTIN13"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "03"^^xsd:string .
+    skos:name "Flicker_ID"@en ;
+    skos:narrowerThan ol:PhotographicId .
 
-ol:GTIN14 a ol:IdType,
+ol:Foobar_ID a ol:IdType,
+        owl:Class,
         skos:Concept ;
-    dc:description """
-            GS1 Global Trade Item Number (14 digits)
-            """@en ;
+    rdfs:label "Foobar_ID"^^xsd:string ;
+    dc:description "Id who has the form of a URI"@en,
+        "a foo bar id"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:PhotographicId ;
     skos:inScheme ol:idtypes ;
-    skos:name "GTIN14"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "14"^^xsd:string .
+    skos:name "Foobar_ID"@en ;
+    skos:narrowerThan ol:PhotographicId .
 
-ol:ISBN10 a ol:IdType,
+ol:Hubkey a ol:IdType,
         skos:Concept ;
-    dc:description """
-            International Standard Book Number, pre-2007, unhyphenated (10 characters) – now DEPRECATED in ONIX for Books, except where providing historical information for compatibility with legacy systems. It should only be used in relation to products published before 2007 – when ISBN-13 superseded it – and should never be used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 / ISBN-13)
-            """@en ;
-    owl:deprecated true ;
+    dc:description "Id who has the form of a Hubkey"@en ;
     skos:inScheme ol:idtypes ;
-    skos:name "ISBN10"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "02"^^xsd:string .
-
-ol:ISBN13 a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            International Standard Book Number, from 2007, unhyphenated (13 digits starting 978 or 9791–9799)
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "ISBN13"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "15"^^xsd:string .
-
-ol:ISBNA a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            Actionable ISBN, in fact a special DOI incorporating the ISBN-13 within the DOI syntax. Begins ‘10.978.’ or ‘10.979.’ and includes a / character between the registrant element (publisher prefix) and publication element of the ISBN, eg 10.978.000/1234567. Note the ISBN-A should always be accompanied by the ISBN itself, using codes 03 and/or 15
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "ISBNA"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "26"^^xsd:string .
-
-ol:ISMN10 a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            International Standard Music Number (M plus nine digits). Pre-2008 – now DEPRECATED in ONIX for Books, except where providing historical information for compatibility with legacy systems. It should only be used in relation to products published before 2008 – when ISMN-13 superseded it – and should never be used as the ONLY identifier (it should always be accompanied by the correct ISMN-13)
-            """@en ;
-    owl:deprecated true ;
-    skos:inScheme ol:idtypes ;
-    skos:name "ISMN10"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "05"^^xsd:string .
-
-ol:ISMN13 a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            International Standard Music Number, from 2008 (13-digit number starting 9790)
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "ISMN13"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "25"^^xsd:string .
-
-ol:JPECode a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            E-publication identifier controlled by JPOIID’s Committee for Research and Management of Electronic Publishing Codes
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "JPECode"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "27"^^xsd:string .
-
-ol:JPMagazineID a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            Japanese magazine identifier, similar in scope to ISSN but identifying a specific issue of a serial publication. Five digits to identify the periodical, plus a hyphen and two digits to identify the issue
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "JPMagazineID"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "29"^^xsd:string .
-
-ol:LCCN a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            Library of Congress Control Number (12 characters, alphanumeric)
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "LCCN"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "13"^^xsd:string .
-
-ol:LegalDepositNumber a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            The number assigned to a publication as part of a national legal deposit process
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "LegalDepositNumber"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "17"^^xsd:string .
-
-ol:OCLCNumber a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            A unique number assigned to a bibliographic item by OCLC
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "OCLCNumber"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "23"^^xsd:string .
-
-ol:OLCCNumber a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            Unique number assigned by the Chinese Online Library Cataloging Center (see http://olcc.nlc.gov.cn)
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "OLCCNumber"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "28"^^xsd:string .
-
-ol:UPC a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            UPC product number (12 digits)
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "UPC"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "04"^^xsd:string .
-
-ol:UPC125 a ol:IdType,
-        skos:Concept ;
-    dc:description """
-            Used only with comic books and other products which use the UPC extension to identify individual issues or products. Do not use where the UPC12 itself identifies the specific product, irrespective of any 5-digit extension – use code 04 instead
-            """@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "UPC125"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "30"^^xsd:string .
-
-ol:URI a ol:IdType,
-        skos:Concept ;
-    dc:description "Id who has the form of a URI"@en ;
-    skos:inScheme ol:idtypes ;
-    skos:name "URI"@en ;
+    skos:name "Hubkey"@en ;
     skos:narrowerThan ol:top_id_type .
 
-ol:URN a ol:IdType,
+ol:Hubkey_ID a owl:Class ;
+    rdfs:label "Hubkey_ID"^^xsd:string ;
+    dc:description "Id who has the form of a URI"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Id .
+
+ol:IRI a ol:IdType,
         skos:Concept ;
-    dc:description """
-            Uniform Resource Name: note that in trade applications an ISBN must be sent as a GTIN-13 and, where required, as an ISBN-13 – it should not be sent as a URN
-            """@en ;
+    dc:description "Id who has the form of an IRI"@en ;
     skos:inScheme ol:idtypes ;
-    skos:name "URN"@en ;
-    skos:narrowerThan ol:top_id_type ;
-    chubeel:OnixNumericCode "22"^^xsd:string .
+    skos:name "IRI"@en ;
+    skos:narrowerThan ol:top_id_type .
+
+ol:IRI_ID a owl:Class ;
+    rdfs:label "IRI_ID"^^xsd:string ;
+    dc:description "Id who has the form of a iRI"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Id .
+
+ol:IdAlt a owl:Class,
+        <https://ns.void/xnode/cardinality-openlicensing-idtype-0> ;
+    rdfs:label "IdAlt"^^xsd:string ;
+    dc:description """
+    Identifier for an asset.
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
+
+ol:IdAlt_idtype a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional false ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:IdAlt ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:IdType .
+
+ol:idtype a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Id ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string .
+
+<https://ns.void/xnode/cardinality-openlicensing-idtype-0> a owl:Restriction ;
+    owl:allValuesFrom ol:IdType ;
+    owl:cardinality 1 ;
+    owl:onProperty ol:IdAlt_idtype,
+        ol:idtype .
+
+ol:Id a owl:Class,
+        <https://ns.void/xnode/cardinality-openlicensing-idtype-0> ;
+    rdfs:label "Id"^^xsd:string ;
+    dc:description """
+    Identifier for an asset.
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
+
+ol:PhotographicId a ol:IdType,
+        owl:Class,
+        skos:Concept ;
+    rdfs:label "PhotographicId"^^xsd:string ;
+    dc:description "Id of a photo"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Id ;
+    skos:inScheme ol:idtypes ;
+    skos:name "PhotographicId"@en ;
+    skos:narrowerThan ol:top_id_type .
+
+ol:top_id_type a ol:IdType,
+        skos:Concept ;
+    skos:inScheme ol:idtypes ;
+    skos:name "top_id_type"@en .
+
+ol:idtypes a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:top_id_type .
+
+ol:IdType a owl:Class ;
+    rdfs:label "IdType"^^xsd:string ;
+    dc:description """
+    Represents a class of identifiers
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
+
+
+# -----------------------------------------------------------------------
+# Assets
+# -----------------------------------------------------------------------
+
+
+dc:modified a owl:DatatypeProperty ;
+    monk:multiple true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+    rdfs:range xsd:dateTime .
+
+ol:alsoIdentifiedBy a owl:ObjectProperty ;
+    monk:embedded true ;
+    monk:multiple true ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    dc:description """
+         alsoIdentifiedBy is used to refer to code that are used to identify the asset 
+         in different context. As codes, and identifiers are given to object in different
+         context, it is not considered that there is a semantic equality between the different
+         identifiers used to refer to an asset, however it is assumed that :
+           1. Knowing the type of an asset and its identifier shall be completely unambiguous.
+           2. Except for algorithmic ideas used for content retrieval,  
+               that identifier necessarily refer to the whole asset and not to parts of the asset, that may
+              have their own identifiers, but that cannot be associated with it.
+              (I.e. in general the asset is fully included in the "alsoIdentifiedBy" asset,
+                    and we cannot use and "alsoIdentifiedBy" for something that is actually
+                    only included in the asset)
+              
+          For instance, it is ok to use
+            - the ISBN of book to refer to a text that is the main content of the book
+              although the book it self may actually contain more creative works: typography, illustrations,...
+              The book is semantically slightlt larger than the text it self but can be assumed connected with the 
+              the text.
+            
+          Oppositely it is not ok to use :
+            - the name of a Poem to refer to an entire book, as the poem may later be included in other books.
+            - it is not ok to use the id of a song to refer to CD - even if distributor current has exclusivity.
+            - it is not ok to use ISBN of a book to refer to a text if the book contain only a part a portion of the text. 
+            
+          However, it is currently accepted that a visual feature/hash used for content retrieval can be used to designate
+             a whole although this hash is only based on a part of a creation.
+             
+             FIXME: alternative define FullyIncludedInIdentifiers, FullyIncludeIdentifier, and defines alsoIdentifiedBy as the intersection ?
+         """@en ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Id ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty .
+
+ol:extraRightsAPI a owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:multiple true ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    dc:description """
+                                 A field to allow to know which server to contact to get more rights.
+                                 """@en ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range monk:API .
+
+ol:hasContributedTo a owl:ObjectProperty ;
+    rdfs:domain odrl:Party ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Asset ;
+    owl:inverseOf ol:contributor .
+
+ol:isTheAuthorOf a owl:ObjectProperty ;
+    rdfs:domain odrl:Party ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Asset ;
+    owl:inverseOf ol:author .
+
+ol:rightManager a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    dc:description """
+                                 A field to allow to know who to contact to get more rights.
+                                 """@en ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Party ;
+    rdfs:subPropertyOf dct:rightsHolder .
+
+ol:title a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:title .
+
+dc:created a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+    rdfs:range xsd:dateTime .
+
+<https://ns.void/xnode/cardinality-dc-created-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty dc:created .
+
+<https://ns.void/xnode/cardinality-openlicensing-alsoIdentifiedBy-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Id ;
+    owl:onProperty ol:alsoIdentifiedBy .
+
+<https://ns.void/xnode/cardinality-openlicensing-author-0> a owl:Restriction ;
+    owl:allValuesFrom odrl:Party ;
+    owl:onProperty ol:author .
+
+<https://ns.void/xnode/cardinality-openlicensing-contributor-0> a owl:Restriction ;
+    owl:allValuesFrom odrl:Party ;
+    owl:onProperty ol:contributor .
+
+<https://ns.void/xnode/cardinality-openlicensing-extraRightsAPI-0> a owl:Restriction ;
+    owl:allValuesFrom monk:API ;
+    owl:onProperty ol:extraRightsAPI .
+
+<https://ns.void/xnode/cardinality-openlicensing-rightManager-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Party ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:rightManager .
+
+<https://ns.void/xnode/cardinality-openlicensing-title-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:title .
+
+ol:author a owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:multiple true ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    dc:description """
+        Authors are distinguished of contributors.
+        """@en ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range odrl:Party ;
+    rdfs:subPropertyOf ol:contributor ;
+    owl:inverseOf ol:isTheAuthorOf .
+
+ol:contributor a owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:multiple true ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    dc:description """
+        They are assumed necessarily as odrl_Party as they have 
+        normally to give their rights at some point if they are contributors.
+        """@en ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range odrl:Party ;
+    rdfs:subPropertyOf dc:creator ;
+    owl:inverseOf ol:hasContributedTo .
+
+ol:Asset a owl:Class,
+        <https://ns.void/xnode/cardinality-dc-created-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-alsoIdentifiedBy-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-author-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-contributor-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-extraRightsAPI-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-rightManager-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-title-0> ;
+    rdfs:label "Asset"^^xsd:string ;
+    dc:description """
+    An asset in ODRL is any object referred by a policy.
+
+    In the copyrighthub these asset generally represent the intellectual work and
+    metadata associated to particular instances of the work should not be included 
+    as metadata of the asset unless they are considered to be characteristic of the 
+    asset.
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf odrl:Asset .
+
+
+# -----------------------------------------------------------------------
+# Parties
+# -----------------------------------------------------------------------
+
+
+ol:name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:default "anonymous"^^xsd:string ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Party ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:name .
+
+ol:rightAgentFor a owl:ObjectProperty ;
+    rdfs:domain ol:Party ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Party ;
+    owl:inverseOf ol:Party_rightAgent .
+
+<https://ns.void/xnode/cardinality-openlicensing-name-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:name .
+
+<https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Party ;
+    owl:onProperty ol:Party_rightAgent .
+
+ol:Party_rightAgent a owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:multiple true ;
+    monk:optional false ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Party ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Party ;
+    owl:inverseOf ol:rightAgentFor .
+
+ol:Party a owl:Class,
+        <https://ns.void/xnode/cardinality-openlicensing-name-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> ;
+    rdfs:label "Party"^^xsd:string ;
+    dc:description """
+    A party represent:
+      1. a legal person having duties and rights as part of agreements.
+      2. a person known by an organisation (not necessarily providing its real name)
+
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Asset,
+        odrl:Party .
+
+
+# -----------------------------------------------------------------------
+# Actions
+# -----------------------------------------------------------------------
+
 
 ol:acceptTracking a ol:Action,
         odrl:Action,
@@ -228,9 +400,6 @@ ol:acceptTracking a ol:Action,
     skos:inScheme ol:dutyActions ;
     skos:name "acceptTracking"@en ;
     skos:narrowerThan ol:top_dutyAction .
-
-ol:actionSemantic a owl:AnnotationProperty ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
 
 ol:aggregate a ol:Action,
         odrl:Action,
@@ -477,22 +646,565 @@ ol:watermark a ol:Action,
     skos:name "watermark"@en ;
     skos:narrowerThan ol:top_dutyAction .
 
-dc:modified a owl:DatatypeProperty ;
-    monk:multiple true ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
-    rdfs:range xsd:dateTime .
-
-rdf:type monk:jsonPreferredName "@type"^^xsd:string ;
-    monk:multiple true .
-
 <http://openlicensing.io/ns/ol/1.0/3rdparty_use> a ol:Action,
         odrl:Action,
         skos:Concept ;
     skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
     skos:name "_3rdparty_use"@en ;
     skos:narrowerThan ol:top_3rdpartyAction .
+
+ol:reproduce a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "reproduce"@en ;
+    skos:narrowerThan ol:use .
+
+<http://openlicensing.io/ns/ol/1.0/3rdparty_transfer> a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:name "_3rdparty_transfer"@en ;
+    skos:narrowerThan ol:top_3rdpartyAction .
+
+ol:present a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "present"@en ;
+    skos:narrowerThan ol:use .
+
+ol:top_3rdpartyAction a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:name "top_3rdpartyAction"@en .
+
+ol:top_action a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "top_action"@en .
+
+<http://openlicensing.io/ns/ol/1.0/3rdparyActions> a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:top_3rdpartyAction .
+
+ol:dutyActions a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:top_dutyAction .
+
+ol:top_dutyAction a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:dutyActions ;
+    skos:name "top_dutyAction"@en .
+
+ol:use a ol:Action,
+        odrl:Action,
+        skos:Concept ;
+    skos:inScheme ol:actions ;
+    skos:name "use"@en ;
+    skos:narrowerThan ol:top_action .
+
+ol:actions a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:top_action .
+
+ol:Action a owl:Class ;
+    rdfs:label "Action"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf odrl:Action .
+
+
+# -----------------------------------------------------------------------
+# Constraints
+# -----------------------------------------------------------------------
+
+
+ol:academic_purpose a ol:Purpose,
+        skos:Concept ;
+    skos:inScheme ol:Purposes ;
+    skos:name "academic_purpose"@en ;
+    skos:narrowerThan ol:all_purpose .
+
+ol:advertising_purpose a ol:Purpose,
+        skos:Concept ;
+    skos:inScheme ol:Purposes ;
+    skos:name "advertising_purpose"@en ;
+    skos:narrowerThan ol:all_purpose .
+
+ol:commercial_purpose a ol:Purpose,
+        skos:Concept ;
+    skos:inScheme ol:Purposes ;
+    skos:name "commercial_purpose"@en ;
+    skos:narrowerThan ol:all_purpose .
+
+ol:deliveryChannel a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:device a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:elapsedTime a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:event a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:fileFormat a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:humanitarian_purpose a ol:Purpose,
+        skos:Concept ;
+    skos:inScheme ol:Purposes ;
+    skos:name "humanitarian_purpose"@en ;
+    skos:narrowerThan ol:all_purpose .
+
+ol:indexing_purpose a ol:Purpose,
+        skos:Concept ;
+    skos:inScheme ol:Purposes ;
+    skos:name "indexing_purpose"@en ;
+    skos:narrowerThan ol:all_purpose .
+
+ol:industry a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:language a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:media a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:medical_purpose a ol:Purpose,
+        skos:Concept ;
+    skos:inScheme ol:Purposes ;
+    skos:name "medical_purpose"@en ;
+    skos:narrowerThan ol:all_purpose .
+
+ol:meteredTime a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:non_commercial_purpose a ol:Purpose,
+        skos:Concept ;
+    skos:inScheme ol:Purposes ;
+    skos:name "non_commercial_purpose"@en ;
+    skos:narrowerThan ol:all_purpose .
+
+ol:pixel a ol:Unit,
+        skos:Concept ;
+    skos:inScheme ol:Units ;
+    skos:name "pixel"@en ;
+    skos:narrowerThan ol:all_units .
+
+ol:proximity a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:purpose a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:recipient a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:relativePosition a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:relativeSize a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:research_purpose a ol:Purpose,
+        skos:Concept ;
+    skos:inScheme ol:Purposes ;
+    skos:name "research_purpose"@en ;
+    skos:narrowerThan ol:all_purpose .
+
+ol:resolution a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:system a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:systemDevice a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:timedCount a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:timedInterval a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:version a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:virtualLocation a owl:FunctionalProperty,
+        owl:Property ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:visitorsPerMonth a ol:Unit,
+        skos:Concept ;
+    skos:inScheme ol:Units ;
+    skos:name "visitorsPerMonth"@en ;
+    skos:narrowerThan ol:all_units .
+
+ol:absolutePosition a owl:FunctionalProperty,
+        owl:Property ;
+    ol:linkedWithScenarioProperty ol:absolutePosition ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:payAmount a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+ol:percentage a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+ol:post a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    ol:linkedWithScenarioProperty ol:doPostAction ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+ol:product a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+ol:spatial a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Region ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+ol:unit a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Unit ;
+    rdfs:subPropertyOf odrl:unit .
+
+ol:views a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-a4fcfdff1bf44903bbbe8d0c767d7c3e> ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+<https://ns.void/xnode/cardinality-openlicensing-absoluteSize-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:absoluteSize .
+
+<https://ns.void/xnode/cardinality-openlicensing-count-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:count .
+
+<https://ns.void/xnode/cardinality-openlicensing-dateTime-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:dateTime .
+
+<https://ns.void/xnode/cardinality-openlicensing-height-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:height .
+
+<https://ns.void/xnode/cardinality-openlicensing-host-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Asset ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:host .
+
+<https://ns.void/xnode/cardinality-openlicensing-payAmount-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:payAmount .
+
+<https://ns.void/xnode/cardinality-openlicensing-percentage-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:percentage .
+
+<https://ns.void/xnode/cardinality-openlicensing-post-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:post .
+
+<https://ns.void/xnode/cardinality-openlicensing-product-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:product .
+
+<https://ns.void/xnode/cardinality-openlicensing-spatial-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Region ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:spatial .
+
+<https://ns.void/xnode/cardinality-openlicensing-unit-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Unit ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:unit .
+
+<https://ns.void/xnode/cardinality-openlicensing-views-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:views .
+
+<https://ns.void/xnode/cardinality-openlicensing-width-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:width .
+
+ol:Region a owl:Class ;
+    rdfs:label "Region"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf <http://www.geonames.org/ontology#gn/2016/2/0-0-0-git-37615467d4a4b24f90159de71088ff93ac94219e/#Feature> .
+
+ol:absoluteSize a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    ol:linkedWithScenarioProperty ol:absoluteSize ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf odrl:rightOperand ;
+    owl:deprecated true .
+
+ol:count a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    ol:linkedWithScenarioProperty ol:count ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+ol:dateTime a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    ol:linkedWithScenarioProperty ol:dateTime ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+ol:height a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    ol:linkedWithAssetProperty ol:height ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+ol:host a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded true ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    ol:linkedWithScenarioProperty ol:host ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Asset ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty .
+
+ol:width a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    ol:linkedWithAssetProperty ol:width ;
+    rdfs:domain ol:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+ol:Units a skos:ConceptScheme ;
+    owl:deprecated true ;
+    skos:ConceptScheme_hasTopConcept ol:all_units .
+
+ol:all_units a ol:Unit,
+        skos:Concept ;
+    skos:inScheme ol:Units ;
+    skos:name "all_units"@en .
+
+ol:Unit a owl:Class ;
+    rdfs:label "Unit"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    owl:deprecated true .
+
+ol:Purpose a owl:Class ;
+    rdfs:label "Purpose"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    owl:deprecated true .
+
+ol:Purposes a skos:ConceptScheme ;
+    owl:deprecated true ;
+    skos:ConceptScheme_hasTopConcept ol:all_purpose .
+
+ol:all_purpose a ol:Purpose,
+        skos:Concept ;
+    skos:inScheme ol:Purposes ;
+    skos:name "all_purpose"@en .
+
+ol:Constraint a owl:Class,
+        <https://ns.void/xnode/cardinality-openlicensing-absoluteSize-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-count-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-dateTime-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-height-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-host-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-payAmount-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-percentage-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-post-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-product-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-spatial-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-unit-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-views-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-width-0> ;
+    rdfs:label "Constraint"^^xsd:string ;
+    dc:description """
+    Changes
+    - added leftOperandProperty to give formal semantic linking original usecase / asset with the property checked
+    - added leftOperandPropertyPath instead of a leftOperantProperty a properyt path may be used for instance
+       "owner/position/country"
+    - unit usage is discouraged as they should be specified by left operand property
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf odrl:Constraint .
+
+
+# -----------------------------------------------------------------------
+# Rules
+# -----------------------------------------------------------------------
+
+
+ol:Duty a owl:Class ;
+    rdfs:label "Duty"^^xsd:string ;
+    dc:description """
+        Similar to Permissions, a Duty states that a certain Action MAY be executed by the Party with the Role assignee
+         for the Permission to be valid, e.g. “Alice must pay 5 EUR in order to get the Permission to play abc.mp3″.
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Rule,
+        odrl:Duty .
+
+ol:Prohibition a owl:Class ;
+    rdfs:label "Prohibition"^^xsd:string ;
+    dc:description """
+        The Prohibition entity is used in the same way as Permission, with the two differences that it does not refer
+        to Duties and (obviously) that it forbids the Action, e.g. “Alice is forbidden to use abc.mp3 commercially”.
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Rule,
+        odrl:Prohibition .
+
+ol:Permission a owl:Class,
+        <https://ns.void/xnode/cardinality-openlicensing-duty-0> ;
+    rdfs:label "Permission"^^xsd:string ;
+    dc:description """
+        A Permission allows a particular Action to be executed on a related Asset, e.g. “play the audio file abc.mp3”.
+        A Constraint like “at most 10 times” might be added to specify the Permission more precisely.
+        The Party that grants this Permission is linked to it with the Role assigner, the Party that is granted the
+         Permission is linked to it with the Role assignee, e.g. “assigner VirtualMusicShop grants the Permission to
+          assignee Alice”. Additionally, a Permission MAY be linked to Duty entities.
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Rule,
+        odrl:Permission .
 
 ol:Rule_relation a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -512,43 +1224,6 @@ ol:action a owl:FunctionalProperty,
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
     rdfs:range ol:Action ;
     rdfs:subPropertyOf odrl:action .
-
-ol:alsoIdentifiedBy a owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:multiple true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    dc:description """alsoIdentifiedBy is used to refer to code that are used to identify the asset 
-         in different context. As codes, and identifiers are given to object in different
-         context, it is not considered that there is a semantic equality between the different
-         identifiers used to refer to an asset, however it is assumed that :
-           1. Knowing the type of an asset and its identifier shall be completely unambiguous.
-           2. Except for algorithmic ideas used for content retrieval,  
-               that identifier necessarily refer to the whole asset and not to parts of the asset, that may
-              have their own identifiers, but that cannot be associated with it.
-              (I.e. in general the asset is fully included in the "alsoIdentifiedBy" asset,
-                    and we cannot use and "alsoIdentifiedBy" for something that is actually
-                    only included in the asset)
-              
-          For instance, it is ok to use
-            - the ISBN of book to refer to a text that is the main content of the book
-              although the book it self may actually contain more creative works: typography, illustrations,...
-              The book is semantically slightlt larger than the text it self but can be assumed connected with the 
-              the text.
-            
-          Oppositely it is not ok to use :
-            - the name of a Poem to refer to an entire book, as the poem may later be included in other books.
-            - it is not ok to use the id of a song to refer to CD - even if distributor current has exclusivity.
-            - it is not ok to use ISBN of a book to refer to a text if the book contain only a part a portion of the text. 
-            
-          However, it is currently accepted that a visual feature/hash used for content retrieval can be used to designate
-             a whole although this hash is only based on a part of a creation.
-             
-             FIXME: alternative define FullyIncludedInIdentifiers, FullyIncludeIdentifier, and defines alsoIdentifiedBy as the intersection ?"""^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Id ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty .
 
 ol:assigneeOfRule a owl:InverseFunctionalProperty,
         owl:ObjectProperty ;
@@ -574,6 +1249,146 @@ ol:constraint a owl:ObjectProperty ;
     rdfs:range ol:Constraint ;
     rdfs:subPropertyOf monk:embeddedObjectProperty,
         odrl:action .
+
+ol:duty a owl:ObjectProperty ;
+    monk:embedded true ;
+    monk:multiple true ;
+    monk:optional false ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Permission ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Rule ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty .
+
+ol:targetOfRule a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Rule ;
+    owl:inverseOf ol:target .
+
+odrl:outputOfRule a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range ol:Rule ;
+    owl:inverseOf odrl:output .
+
+<https://ns.void/xnode/cardinality-odrl-output-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Asset ;
+    owl:maxCardinality 1 ;
+    owl:onProperty odrl:output .
+
+<https://ns.void/xnode/cardinality-ol-target-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Asset ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:target .
+
+<https://ns.void/xnode/cardinality-openlicensing-action-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Action ;
+    owl:cardinality 1 ;
+    owl:onProperty ol:action .
+
+<https://ns.void/xnode/cardinality-openlicensing-assignee-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Party ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:assignee .
+
+<https://ns.void/xnode/cardinality-openlicensing-assigner-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Party ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:assigner .
+
+<https://ns.void/xnode/cardinality-openlicensing-constraint-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Constraint ;
+    owl:onProperty ol:constraint .
+
+<https://ns.void/xnode/cardinality-openlicensing-duty-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Rule ;
+    owl:onProperty ol:duty .
+
+<https://ns.void/xnode/cardinality-openlicensing-relation-0> a owl:Restriction ;
+    owl:allValuesFrom ol:Asset ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:Rule_relation .
+
+ol:assignee a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Rule ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Party ;
+    rdfs:subPropertyOf odrl:assignee ;
+    owl:inverseOf ol:assigneeOfRule .
+
+ol:assigner a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Rule ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Party ;
+    rdfs:subPropertyOf odrl:assigner ;
+    owl:inverseOf ol:assignerOfRule .
+
+ol:target a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded true ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Rule ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range ol:Asset ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        ol:relation,
+        odrl:target ;
+    owl:inverseOf ol:targetOfRule .
+
+odrl:output a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded true ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Rule ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range ol:Asset ;
+    rdfs:subPropertyOf monk:embeddedObjectProperty,
+        ol:relation ;
+    owl:inverseOf odrl:outputOfRule .
+
+ol:Rule a owl:Class,
+        <https://ns.void/xnode/cardinality-odrl-output-0>,
+        <https://ns.void/xnode/cardinality-ol-target-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-action-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-assignee-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-assigner-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-constraint-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-relation-0> ;
+    rdfs:label "Rule"^^xsd:string ;
+    dc:description """
+    Permission, Prohibition and Duty are Rules.
+
+    In order for "function" to complete "action" and to obtain "relation", function must satisfay constaint  ?
+    """@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf odrl:Rule .
+
+
+# -----------------------------------------------------------------------
+# Policies
+# -----------------------------------------------------------------------
+
+
+ol:created a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:Policy ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dct:created .
 
 ol:defaultAssignee a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -605,70 +1420,32 @@ ol:defaultTarget a owl:FunctionalProperty,
 ol:digitalPolicyAuthor a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     monk:visibility "public"^^xsd:string ;
-    dc:description """A field to allow the author of the digital policy - if available this person may be
-                                 eventually be contacted to obtain infomation about the license."""^^xsd:string ;
+    dc:description """
+                                 A field to allow the author of the digital policy - if available this person may be
+                                 eventually be contacted to obtain infomation about the license.
+                                 """@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
-ol:duty a owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:multiple true ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Permission ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Rule ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty .
-
 ol:expires a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     monk:visibility "public"^^xsd:string ;
-    dc:description """Optional expiry date of the policy.
-         The policy is not considered valid after this date."""^^xsd:string ;
+    dc:description """
+         Optional expiry date of the policy.
+         The policy is not considered valid after this date.
+         """@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
     rdfs:range xsd:dateTime .
 
-ol:extraRightsAPI a owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:multiple true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    dc:description "A field to allow to know which server to contact to get more rights."^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range monk:API .
-
-ol:hasContributedTo a owl:ObjectProperty ;
-    rdfs:domain odrl:Party ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Asset ;
-    owl:inverseOf ol:contributor .
-
-ol:idtype a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:IdType .
-
-ol:isTheAuthorOf a owl:ObjectProperty ;
-    rdfs:domain odrl:Party ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Asset ;
-    owl:inverseOf ol:author .
-
-ol:name a owl:DatatypeProperty,
+ol:modified a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:default "anonymous"^^xsd:string ;
     monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Party ;
+    rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range xsd:string ;
-    rdfs:subPropertyOf dc:name .
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf dct:modified .
 
 ol:permission a owl:ObjectProperty ;
     monk:embedded true ;
@@ -729,30 +1506,6 @@ ol:prohibition a owl:ObjectProperty ;
     rdfs:subPropertyOf monk:embeddedObjectProperty,
         odrl:prohibition .
 
-ol:reproduce a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "reproduce"@en ;
-    skos:narrowerThan ol:use .
-
-ol:rightAgentFor a owl:ObjectProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    owl:inverseOf ol:Party_rightAgent .
-
-ol:rightManager a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    dc:description "A field to allow to know who to contact to get more rights."^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    rdfs:subPropertyOf dct:rightsHolder .
-
 ol:sharedDuty a owl:ObjectProperty ;
     monk:embedded false ;
     monk:multiple true ;
@@ -762,90 +1515,13 @@ ol:sharedDuty a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
     rdfs:range odrl:Duty .
 
-ol:targetOfRule a owl:InverseFunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Rule ;
-    owl:inverseOf ol:target .
-
-ol:title a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range xsd:string ;
-    rdfs:subPropertyOf dc:title .
-
-ol:value a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range xsd:string .
-
-dc:created a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
-    rdfs:range xsd:dateTime .
-
-odrl:outputOfRule a owl:InverseFunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
-    rdfs:range ol:Rule ;
-    owl:inverseOf odrl:output .
-
-<https://ns.void/xnode/cardinality-dc-created-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty dc:created .
-
-<https://ns.void/xnode/cardinality-dc-description-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty dc:description .
-
-<https://ns.void/xnode/cardinality-odrl-output-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Asset ;
-    owl:maxCardinality 1 ;
-    owl:onProperty odrl:output .
-
-<https://ns.void/xnode/cardinality-ol-target-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Asset ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:target .
-
-<https://ns.void/xnode/cardinality-openlicensing-action-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Action ;
+<https://ns.void/xnode/cardinality-ol-created-0> a owl:Restriction ;
     owl:cardinality 1 ;
-    owl:onProperty ol:action .
+    owl:onProperty ol:created .
 
-<https://ns.void/xnode/cardinality-openlicensing-alsoIdentifiedBy-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Id ;
-    owl:onProperty ol:alsoIdentifiedBy .
-
-<https://ns.void/xnode/cardinality-openlicensing-assignee-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Party ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:assignee .
-
-<https://ns.void/xnode/cardinality-openlicensing-assigner-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Party ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:assigner .
-
-<https://ns.void/xnode/cardinality-openlicensing-author-0> a owl:Restriction ;
-    owl:allValuesFrom odrl:Party ;
-    owl:onProperty ol:author .
-
-<https://ns.void/xnode/cardinality-openlicensing-constraint-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Constraint ;
-    owl:onProperty ol:constraint .
-
-<https://ns.void/xnode/cardinality-openlicensing-contributor-0> a owl:Restriction ;
-    owl:allValuesFrom odrl:Party ;
-    owl:onProperty ol:contributor .
+<https://ns.void/xnode/cardinality-ol-modified-0> a owl:Restriction ;
+    owl:cardinality 1 ;
+    owl:onProperty ol:modified .
 
 <https://ns.void/xnode/cardinality-openlicensing-defaultAssignee-0> a owl:Restriction ;
     owl:allValuesFrom ol:Party ;
@@ -866,26 +1542,9 @@ odrl:outputOfRule a owl:InverseFunctionalProperty,
     owl:maxCardinality 1 ;
     owl:onProperty ol:digitalPolicyAuthor .
 
-<https://ns.void/xnode/cardinality-openlicensing-duty-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Rule ;
-    owl:onProperty ol:duty .
-
 <https://ns.void/xnode/cardinality-openlicensing-expires-0> a owl:Restriction ;
     owl:maxCardinality 1 ;
     owl:onProperty ol:expires .
-
-<https://ns.void/xnode/cardinality-openlicensing-extraRightsAPI-0> a owl:Restriction ;
-    owl:allValuesFrom monk:API ;
-    owl:onProperty ol:extraRightsAPI .
-
-<https://ns.void/xnode/cardinality-openlicensing-idtype-0> a owl:Restriction ;
-    owl:allValuesFrom ol:IdType ;
-    owl:cardinality 1 ;
-    owl:onProperty ol:idtype .
-
-<https://ns.void/xnode/cardinality-openlicensing-name-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:name .
 
 <https://ns.void/xnode/cardinality-openlicensing-permission-0> a owl:Restriction ;
     owl:allValuesFrom ol:Permission ;
@@ -915,184 +1574,13 @@ odrl:outputOfRule a owl:InverseFunctionalProperty,
     owl:allValuesFrom ol:Prohibition ;
     owl:onProperty ol:prohibition .
 
-<https://ns.void/xnode/cardinality-openlicensing-relation-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Asset ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:Rule_relation .
-
-<https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Party ;
-    owl:onProperty ol:Party_rightAgent .
-
-<https://ns.void/xnode/cardinality-openlicensing-rightManager-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Party ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:rightManager .
-
 <https://ns.void/xnode/cardinality-openlicensing-sharedDuty-0> a owl:Restriction ;
     owl:allValuesFrom odrl:Duty ;
     owl:onProperty ol:sharedDuty .
 
-<https://ns.void/xnode/cardinality-openlicensing-title-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:title .
-
-<https://ns.void/xnode/cardinality-openlicensing-value-0> a owl:Restriction ;
-    owl:cardinality 1 ;
-    owl:onProperty ol:value .
-
-<http://openlicensing.io/ns/ol/1.0/3rdparty_transfer> a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
-    skos:name "_3rdparty_transfer"@en ;
-    skos:narrowerThan ol:top_3rdpartyAction .
-
-ol:Party_rightAgent a owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:multiple true ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    owl:inverseOf ol:rightAgentFor .
-
-ol:Prohibition a owl:Class ;
-    rdfs:label "Prohibition"^^xsd:string ;
-    dc:description """
-        The Prohibition entity is used in the same way as Permission, with the two differences that it does not refer
-        to Duties and (obviously) that it forbids the Action, e.g. “Alice is forbidden to use abc.mp3 commercially”.
-    """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Rule,
-        odrl:Prohibition .
-
-ol:assignee a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    rdfs:subPropertyOf odrl:assignee ;
-    owl:inverseOf ol:assigneeOfRule .
-
-ol:assigner a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    rdfs:subPropertyOf odrl:assigner ;
-    owl:inverseOf ol:assignerOfRule .
-
-ol:author a owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:multiple true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:comment "Authors are distinguished of contributors."^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range odrl:Party ;
-    rdfs:subPropertyOf ol:contributor ;
-    owl:inverseOf ol:isTheAuthorOf .
-
-ol:target a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Asset ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        ol:relation,
-        odrl:target ;
-    owl:inverseOf ol:targetOfRule .
-
-dc:description a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
-    rdfs:range xsd:string .
-
-odrl:output a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
-    rdfs:range ol:Asset ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        ol:relation ;
-    owl:inverseOf odrl:outputOfRule .
-
-ol:Permission a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-duty-0> ;
-    rdfs:label "Permission"^^xsd:string ;
-    dc:description """
-        A Permission allows a particular Action to be executed on a related Asset, e.g. “play the audio file abc.mp3”.
-        A Constraint like “at most 10 times” might be added to specify the Permission more precisely.
-        The Party that grants this Permission is linked to it with the Role assigner, the Party that is granted the
-         Permission is linked to it with the Role assignee, e.g. “assigner VirtualMusicShop grants the Permission to
-          assignee Alice”. Additionally, a Permission MAY be linked to Duty entities.
-    """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Rule,
-        odrl:Permission .
-
-ol:contributor a owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:multiple true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:comment """They are assumed necessarily as odrl_Party as they have 
-        normally to give their rights at some point if they are contributors."""^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range odrl:Party ;
-    rdfs:subPropertyOf dc:creator ;
-    owl:inverseOf ol:hasContributedTo .
-
-ol:present a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "present"@en ;
-    skos:narrowerThan ol:use .
-
-ol:top_3rdpartyAction a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
-    skos:name "top_3rdpartyAction"@en .
-
-ol:top_action a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "top_action"@en .
-
-ol:Id a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-idtype-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-value-0> ;
-    rdfs:label "Id"^^xsd:string ;
-    dc:description """
-    Identifier for an asset.
-    """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
-
-<http://openlicensing.io/ns/ol/1.0/3rdparyActions> a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:top_3rdpartyAction .
-
 ol:Policy a owl:Class,
+        <https://ns.void/xnode/cardinality-ol-created-0>,
+        <https://ns.void/xnode/cardinality-ol-modified-0>,
         <https://ns.void/xnode/cardinality-openlicensing-defaultAssignee-0>,
         <https://ns.void/xnode/cardinality-openlicensing-defaultAssigner-0>,
         <https://ns.void/xnode/cardinality-openlicensing-defaultTarget-0>,
@@ -1113,108 +1601,133 @@ ol:Policy a owl:Class,
     Policy is the central entity that holds an ODRL policy together. In its encoded form, e.g. in an XML document, it makes the policy addressable from the outside word via its uid attribute. Policy can refer to Permissions and Prohibitions.
     """@en ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf monk:BaseObject,
-        odrl:Policy .
+    rdfs:subClassOf odrl:Policy .
 
-ol:dutyActions a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:top_dutyAction .
 
-ol:top_dutyAction a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "top_dutyAction"@en .
+# -----------------------------------------------------------------------
+# Asset sets
+# -----------------------------------------------------------------------
 
-ol:Rule a owl:Class,
-        <https://ns.void/xnode/cardinality-odrl-output-0>,
-        <https://ns.void/xnode/cardinality-ol-target-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-action-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-assignee-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-assigner-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-constraint-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-relation-0> ;
-    rdfs:label "Rule"^^xsd:string ;
+
+ol:WildcardSet a owl:Class ;
+    rdfs:label "WildcardSet"^^xsd:string ;
+    dc:description " A collection defined by describing informally what a typical asset element of this set should look like"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:AssetSet .
+
+ol:OWLSet_parentClass a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional false ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:OWLSet ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range owl:Class .
+
+ol:elementType a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional false ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:AssetSet ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range owl:Class .
+
+ol:predicate a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:IncomingLinksOnObjects,
+        ol:OWLSet,
+        ol:ReverseExplicitSet ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range owl:ObjectProperty .
+
+ol:sparql a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:SPARQLSet ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range xsd:string .
+
+ol:target_object a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    monk:embedded false ;
+    monk:optional true ;
+    monk:visibility "public"^^xsd:string ;
+    rdfs:domain ol:IncomingLinksOnObjects,
+        ol:OWLSet,
+        ol:ReverseExplicitSet ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:range owl:Thing .
+
+<https://ns.void/xnode/cardinality-ol-elementType-0> a owl:Restriction ;
+    owl:allValuesFrom owl:Class ;
+    owl:cardinality 1 ;
+    owl:onProperty ol:elementType .
+
+<https://ns.void/xnode/cardinality-ol-sparql-0> a owl:Restriction ;
+    owl:cardinality 1 ;
+    owl:onProperty ol:sparql .
+
+<https://ns.void/xnode/cardinality-openlicensing-parentClass-0> a owl:Restriction ;
+    owl:allValuesFrom owl:Class ;
+    owl:cardinality 1 ;
+    owl:onProperty ol:OWLSet_parentClass .
+
+ol:ReverseExplicitSet a owl:Class,
+        <https://ns.void/xnode/cardinality-ol-predicate-0>,
+        <https://ns.void/xnode/cardinality-ol-target_object-0> ;
+    rdfs:label "ReverseExplicitSet"^^xsd:string ;
+    dc:description " A collection of assets referred  as one asset"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:IncomingLinksOnObjects .
+
+ol:SPARQLSet a owl:Class,
+        <https://ns.void/xnode/cardinality-ol-sparql-0> ;
+    rdfs:label "SPARQLSet"^^xsd:string ;
+    dc:description " A collection is defined by a SPARQL query"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:AssetSet .
+
+ol:AssetSet a owl:Class,
+        <https://ns.void/xnode/cardinality-ol-elementType-0> ;
+    rdfs:label "AssetSet"^^xsd:string ;
     dc:description """
-    Permission, Prohibition and Duty are Rules.
-
-    In order for "function" to complete "action" and to obtain "relation", function must satisfay constaint  ?
-    """@en ;
+        A set or collection is either
+         - an explicitely enumerated set
+         - a predicate code that allows to determine wether an elemen belongs to that set
+        """@en ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf odrl:Rule .
+    rdfs:subClassOf ol:Asset .
 
-ol:Party a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-name-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> ;
-    rdfs:label "Party"^^xsd:string ;
+ol:OWLSet a owl:Class,
+        <https://ns.void/xnode/cardinality-ol-predicate-0>,
+        <https://ns.void/xnode/cardinality-ol-target_object-0>,
+        <https://ns.void/xnode/cardinality-openlicensing-parentClass-0> ;
+    rdfs:label "OWLSet"^^xsd:string ;
+    dc:description " A collection is defined as an OWL instance"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:IncomingLinksOnObjects .
+
+<https://ns.void/xnode/cardinality-ol-predicate-0> a owl:Restriction ;
+    owl:allValuesFrom owl:ObjectProperty ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:predicate .
+
+<https://ns.void/xnode/cardinality-ol-target_object-0> a owl:Restriction ;
+    owl:allValuesFrom owl:Thing ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:target_object .
+
+ol:IncomingLinksOnObjects a owl:Class,
+        <https://ns.void/xnode/cardinality-ol-predicate-0>,
+        <https://ns.void/xnode/cardinality-ol-target_object-0> ;
+    rdfs:label "IncomingLinksOnObjects"^^xsd:string ;
     dc:description """
-    A party represent:
-      1. a legal person having duties and rights as part of agreements.
-      2. a person known by an organisation (not necessarily providing its real name)
-
-    """@en ;
+                Belongs to this set if there is a link via the right predicate.
+                """@en ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Asset,
-        odrl:Party .
-
-ol:use a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "use"@en ;
-    skos:narrowerThan ol:top_action .
-
-ol:idtypes a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:top_id_type .
-
-ol:top_id_type a ol:IdType,
-        skos:Concept ;
-    skos:inScheme ol:idtypes ;
-    skos:name "top_id_type"@en .
-
-ol:Asset a owl:Class,
-        <https://ns.void/xnode/cardinality-dc-created-0>,
-        <https://ns.void/xnode/cardinality-dc-description-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-alsoIdentifiedBy-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-author-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-contributor-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-extraRightsAPI-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-rightManager-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-title-0> ;
-    rdfs:label "Asset"^^xsd:string ;
-    dc:description """
-    An asset in ODRL is any object referred by a policy.
-
-    In the copyrighthub these asset generally represent the intellectual work and
-    metadata associated to particular instances of the work should not be included 
-    as metadata of the asset unless they are considered to be characteristic of the 
-    asset.
-    """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf odrl:Asset .
-
-ol:IdType a owl:Class ;
-    rdfs:label "IdType"^^xsd:string ;
-    dc:description "None"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
-
-ol:actions a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:top_action .
-
-ol:Action a owl:Class ;
-    rdfs:label "Action"^^xsd:string ;
-    dc:description "None"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf odrl:Action .
-
-<http://openlicensing.io/ns/ol/1.0/> a owl:Ontology ;
-    monk:CompiledAt "2016-02-19T14:30:00+00:00"^^xsd:dateTime ;
-    ol:hubkey <https://www.copyrighthub.org/s0/hub1/creation/chub/ontologyid/ol-1-0-0> ;
-    dc:creator "Bertrand Nouvel"^^xsd:string,
-        "James Birmingham"^^xsd:string ;
-    dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
-    dct:rights "(C) Digital Catapult Limited 2016"^^xsd:string ;
-    dct:rightsHolder <https://www.copyrighthub.org/s0/hub1/party/chub/pid/digitalcatapult/> ;
-    owl:versionIRI <http://openlicensing.io/ns/ol/1.0/> ;
-    owl:versionInfo "0-0-0-git-d43191a7d36c1e8f869925365f524eb9585f5204"^^xsd:string,
-        "1.0.0"^^xsd:string .
+    rdfs:subClassOf ol:SPARQLSet .
 
