@@ -9,50 +9,15 @@ OpenLicensing vision
 The vision of OpenLicensing is to be a restricted set of ODRL2
 who allows to write well-defined, simple ODRL offers and agreements.
 
-
-
+- Well-defined : 
+  - OpenLicensing removes terms that are loosely defined from ODRL2.1.
+  - OpenLicensing specifies ontologies to be used for monetary and geographical data.
+  
+- Simpler
+  - OpenLicensing provide shortcut construct that simplify the definition of common Policies (such as Creative Commons)
+  - OpenLicensing supports only a limited the scope of licenses supported by ODRL which we think is more likely to be well supported by software.
 
 Todo:
-=====
-* Remove Countries from this ontology, select a suitable external ontology that specialises in this [waiting for review]
-* Each element should have a description [done: comment -> description]
-* remove ns1:[done / waiting for review]
-* Some ids are not valid, needs fixing [done]
-* Check all owl constraints used and limit them to remain at least with the RL profile [done - http://mowl-power.cs.man.ac.uk:8080/validator/]
-* Language notation on descriptive strings [ck: if other fields needed]
-* the dependencies we have on other ontologies should be described and justified in this document [ stripped version?? why? ]
-
-* Move items between OLEX and OL 
-
-In grep olex BAPLA :
-'''
-prefix olex: <http://digicat.io/ns/olex/0.1/> .
-<https://www.copyrighthub.org/s0/hub1/creation/chub/uuid/abd11b12d53d48a09698edb43cb1b2db> a olex:Asset,
-        olex:IncomingLinksOnObjects,
-        olex:SPARQLSet,
-    olex:elementType ol:Asset ;
-    olex:predicate olex:explicitOffer ;
-    olex:sparql "SELECT ?s {WHERE ?s <http://digicat.io/ns/olex/0.1/explicitOffer> <https://www.copyrighthub.org/s0/hub1/offer/chub/4corners-offerid/12> .}"^^xsd:string ;
-    olex:target_object <https://www.copyrighthub.org/s0/hub1/offer/chub/4corners-offerid/12> ;
-<https://www.copyrighthub.org/s0/hub1/creation/chub/uuid/feb9b868378f4904898d7a3bc0a4313f> a olex:Asset,
-        olex:PurposeInfo,
-        olex:WildcardSet,
-    olex:elementType ol:Asset ;
-    olex:purpose ol:commercial_purpose ;
-
-'''
-
-* There are some ASSET ID TYPES defined, needs reviewing, instance vs class [James Review]
-* IdTypes as IRI ? [WARNING ON CONSEQUENCES / ] 
-
-* Monk ontology dependency, is this required? 
-* Many ODRL terms have been redefined in this ontology in order to support serialisation via Monk ... review this.
-* some terms from ODRL have been 'deprecated', this needs reviewing and justification/decision detailed in this document. [wip]
-* some of the ontologies in our dependency folder have been modified (reduced in size) this should be documented in this document [wip]
-* document host constraints (ck dene)
-* review how we version the ontology
-* describe in this document the versioning naming convention
-
 Dependencies
 ============
 
@@ -95,78 +60,7 @@ Specific to OpenLicensing ODRL
 - <http://cvx.iptc.org/iso4217a/> : iso code based ontology for currencies
 
 ** Units **
-
-- or ISO code
-- <http://purl.obolibrary.org/obo/uo#>
-- QUTD ? (pixels, viristor per month)
-unit:JouleSecond
-Property	Value
-qudt:abbreviation	J s
-qudt:code	2036
-qudt:conversionMultiplier	1.0e0
-qudt:conversionOffset	0.0
-qudt:quantityKind	quantity:AngularMomentum
-qudt:symbol	J s
-
-- OM ?
-http://www.wurvoc.org/vocabularies/om-1.8/
-
-<rdf:Description rdf:about="http://www.wurvoc.org/vocabularies/om-1.6/becquerel">
-	<rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/Singular_unit"/>
-	<rdfs:comment xml:lang="en">The becquerel is a unit of activity defined as the activity of a quantity of radioactive material in which one nucleus decays per second. Algebraically it is defined as 1 divided by second.</rdfs:comment>
-	<rdfs:label xml:lang="en">becquerel</rdfs:label>
-	<om:definition rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/reciprocal_second-time"/>
-	<om:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bq</om:symbol>
-	<om:dimension rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/frequency_or_activity-dimension"/>
-	<om:longcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The becquerel is a unit of activity defined as the activity of a quantity of radioactive material in which one nucleus decays per second. Algebraically it is defined as 1 divided by second. The becquerel is a derived unit in the International System of Units.</om:longcomment>
-</rdf:Description>
-
-<rdf:Description rdf:about="http://www.wurvoc.org/vocabularies/om-1.6/reciprocal_second-time">
-	<rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/Unit_exponentiation"/>
-	<rdfs:label xml:lang="en">reciprocal second (time)</rdfs:label>
-	<om:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s-1</om:symbol>
-	<om:dimension rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/frequency_or_activity-dimension"/>
-	<om:base rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/second-time"/>
-	<om:exponent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-1</om:exponent>
-</rdf:Description>
-
-<rdf:Description rdf:about="http://www.wurvoc.org/vocabularies/om-1.6/kelvin">
-	<rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/Singular_unit"/>
-	<rdfs:comment xml:lang="en">The kelvin is a unit of temperature defined as 1/273.16 of the thermodynamic temperature of the triple point of water.</rdfs:comment>
-	<rdfs:label xml:lang="en">kelvin</rdfs:label>
-	<om:definition rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/_1_273_16_of_the_thermodynamic_temperature_of_the_triple_point_of_water"/>
-	<om:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K</om:symbol>
-	<om:dimension rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/thermodynamic_temperature-dimension"/>
-	<om:longcomment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The kelvin is a unit of temperature defined as 1/273.16 of the thermodynamic temperature of the triple point of water. The kelvin is a base unit in the International System of Units.</om:longcomment>
-</rdf:Description>
-
-<rdf:Description rdf:about="http://www.wurvoc.org/vocabularies/om-1.6/thermodynamic_temperature-dimension">
-	<rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/Dimension"/>
-	<rdfs:label xml:lang="en">thermodynamic temperature dimension</rdfs:label>
-	<om:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Θ</om:symbol>
-	<om:SI_length_dimension_exponent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</om:SI_length_dimension_exponent>
-	<om:SI_mass_dimension_exponent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</om:SI_mass_dimension_exponent>
-	<om:SI_time_dimension_exponent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</om:SI_time_dimension_exponent>
-	<om:SI_electric_current_dimension_exponent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</om:SI_electric_current_dimension_exponent>
-	<om:SI_thermodynamic_temperature_dimension_exponent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1</om:SI_thermodynamic_temperature_dimension_exponent>
-	<om:SI_amount_of_substance_dimension_exponent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</om:SI_amount_of_substance_dimension_exponent>
-	<om:SI_luminous_intensity_dimension_exponent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0</om:SI_luminous_intensity_dimension_exponent>
-</rdf:Description>
-
-<rdf:Description rdf:about="http://www.wurvoc.org/vocabularies/om-1.6/degree_Fahrenheit">
-	<rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/Singular_unit"/>
-	<rdfs:comment xml:lang="en">The degree Fahrenheit is a unit of temperature defined as 5.555556e-1 kelvin.</rdfs:comment>
-	<rdfs:label xml:lang="en">degree Fahrenheit</rdfs:label>
-	<om:definition rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/_5.555556e-1_kelvin"/>
-	<om:symbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">°F</om:symbol>
-	<om:dimension rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/thermodynamic_temperature-dimension"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="http://www.wurvoc.org/vocabularies/om-1.6/_5.555556e-1_kelvin">
-	<rdf:type rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/Measure"/>
-	<om:numerical_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.555556e-1</om:numerical_value>
-	<om:unit_of_measure_or_measurement_scale rdf:resource="http://www.wurvoc.org/vocabularies/om-1.6/kelvin"/>
-</rdf:Description>
+- Units should be described by domain specific ontologies
 
 Versioning
 ==========
@@ -257,10 +151,51 @@ We have specified further the ontologies that have to be used to refer to:
 
 Profiles
 ========
-
 Additional profiles can be added on top of OpenLicensing to license assets within specific domains.
 
 Currently the following OpenLicensing profile exist:
    * OLEX - Creative copyrights.
    * SW - A demo profile for software licensing
+
+
+
+=====
+* Remove Countries from this ontology, select a suitable external ontology that specialises in this [waiting for review]
+* Each element should have a description [done: comment -> description]
+* remove ns1:[done / waiting for review]
+* Some ids are not valid, needs fixing [done]
+* Check all owl constraints used and limit them to remain at least with the RL profile [done - http://mowl-power.cs.man.ac.uk:8080/validator/]
+* Language notation on descriptive strings [ck: if other fields needed]
+* the dependencies we have on other ontologies should be described and justified in this document [ stripped version?? why? ]
+
+* Move items between OLEX and OL 
+
+In grep olex BAPLA :
+'''
+prefix olex: <http://digicat.io/ns/olex/0.1/> .
+<https://www.copyrighthub.org/s0/hub1/creation/chub/uuid/abd11b12d53d48a09698edb43cb1b2db> a olex:Asset,
+        olex:IncomingLinksOnObjects,
+        olex:SPARQLSet,
+    olex:elementType ol:Asset ;
+    olex:predicate olex:explicitOffer ;
+    olex:sparql "SELECT ?s {WHERE ?s <http://digicat.io/ns/olex/0.1/explicitOffer> <https://www.copyrighthub.org/s0/hub1/offer/chub/4corners-offerid/12> .}"^^xsd:string ;
+    olex:target_object <https://www.copyrighthub.org/s0/hub1/offer/chub/4corners-offerid/12> ;
+<https://www.copyrighthub.org/s0/hub1/creation/chub/uuid/feb9b868378f4904898d7a3bc0a4313f> a olex:Asset,
+        olex:PurposeInfo,
+        olex:WildcardSet,
+    olex:elementType ol:Asset ;
+    olex:purpose ol:commercial_purpose ;
+
+'''
+
+* There are some ASSET ID TYPES defined, needs reviewing, instance vs class [James Review]
+* IdTypes as IRI ? [WARNING ON CONSEQUENCES / ] 
+
+* Monk ontology dependency, is this required? 
+* Many ODRL terms have been redefined in this ontology in order to support serialisation via Monk ... review this.
+* some terms from ODRL have been 'deprecated', this needs reviewing and justification/decision detailed in this document. [wip]
+* some of the ontologies in our dependency folder have been modified (reduced in size) this should be documented in this document [wip]
+* document host constraints (ck dene)
+* review how we version the ontology
+* describe in this document the versioning naming convention
 
