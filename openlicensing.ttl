@@ -23,7 +23,7 @@
 @prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
 
 <http://openlicensing.io/ns/ol/1.0/> a owl:Ontology ;
-    monk:CompiledAt "2016-02-22T16:45:10Z"^^xsd:dateTime ;
+    monk:CompiledAt "2016-02-22T17:24:55Z"^^xsd:dateTime ;
     ol:hubkey <https://www.copyrighthub.org/s0/hub1/creation/chub/ontologyid/ol-1-0-0> ;
     dc:creator "Bertrand Nouvel"^^xsd:string,
         "James Birmingham"^^xsd:string ;
@@ -39,29 +39,31 @@
 # -----------------------------------------------------------------------
 
 
-ol:Flicker_ID a ol:IdType,
-        owl:Class,
+ol:Flicker a ol:IdType,
         skos:Concept ;
-    rdfs:label "Flicker_ID"^^xsd:string ;
-    dc:description "Id who has the form of a iRI"@en,
-        "a flicker id"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:PhotographicId ;
+    dc:description "a flicker id"@en ;
     skos:inScheme ol:idtypes ;
-    skos:name "Flicker_ID"@en ;
-    skos:narrowerThan ol:PhotographicId .
+    skos:name "Flicker"@en ;
+    skos:narrowerThan ol:Photographic .
 
-ol:Foobar_ID a ol:IdType,
-        owl:Class,
-        skos:Concept ;
-    rdfs:label "Foobar_ID"^^xsd:string ;
-    dc:description "Id who has the form of a URI"@en,
-        "a foo bar id"@en ;
+ol:Flicker_ID a owl:Class ;
+    rdfs:label "Flicker_ID"^^xsd:string ;
+    dc:description "Id who has the form of a iRI"@en ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:PhotographicId ;
+    rdfs:subClassOf ol:PhotographicId .
+
+ol:Foobar a ol:IdType,
+        skos:Concept ;
+    dc:description "a foo bar id"@en ;
     skos:inScheme ol:idtypes ;
-    skos:name "Foobar_ID"@en ;
-    skos:narrowerThan ol:PhotographicId .
+    skos:name "Foobar"@en ;
+    skos:narrowerThan ol:Photographic .
+
+ol:Foobar_ID a owl:Class ;
+    rdfs:label "Foobar_ID"^^xsd:string ;
+    dc:description "Id who has the form of a URI"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:PhotographicId .
 
 ol:Hubkey a ol:IdType,
         skos:Concept ;
@@ -113,6 +115,19 @@ ol:idtype a owl:DatatypeProperty,
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
+ol:Photographic a ol:IdType,
+        skos:Concept ;
+    dc:description "Id of a photo"@en ;
+    skos:inScheme ol:idtypes ;
+    skos:name "Photographic"@en ;
+    skos:narrowerThan ol:top_id_type .
+
+ol:PhotographicId a owl:Class ;
+    rdfs:label "PhotographicId"^^xsd:string ;
+    dc:description "Id of a photo"@en ;
+    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Id .
+
 <https://ns.void/xnode/cardinality-openlicensing-idtype-0> a owl:Restriction ;
     owl:allValuesFrom ol:IdType ;
     owl:cardinality 1 ;
@@ -126,17 +141,6 @@ ol:Id a owl:Class,
     Identifier for an asset.
     """@en ;
     rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
-
-ol:PhotographicId a ol:IdType,
-        owl:Class,
-        skos:Concept ;
-    rdfs:label "PhotographicId"^^xsd:string ;
-    dc:description "Id of a photo"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Id ;
-    skos:inScheme ol:idtypes ;
-    skos:name "PhotographicId"@en ;
-    skos:narrowerThan ol:top_id_type .
 
 ol:top_id_type a ol:IdType,
         skos:Concept ;
