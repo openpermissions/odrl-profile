@@ -2,54 +2,41 @@
 ol:WildcardSet a owl:Class ;
     rdfs:label "WildcardSet"^^xsd:string ;
     dc:description " A collection defined by describing informally what a typical asset element of this set should look like"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:AssetSet .
 
 ol:OWLSet_parentClass a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:OWLSet ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:Class .
 
 ol:elementType a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:Class .
 
 ol:predicate a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:IncomingLinksOnObjects,
         ol:OWLSet,
         ol:ReverseExplicitSet ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:ObjectProperty .
 
 ol:sparql a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:SPARQLSet ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
 ol:target_object a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:IncomingLinksOnObjects,
         ol:OWLSet,
         ol:ReverseExplicitSet ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:Thing .
 
 <https://ns.void/xnode/cardinality-ol-elementType-0> a owl:Restriction ;
@@ -71,14 +58,14 @@ ol:ReverseExplicitSet a owl:Class,
         <https://ns.void/xnode/cardinality-ol-target_object-0> ;
     rdfs:label "ReverseExplicitSet"^^xsd:string ;
     dc:description " A collection of assets referred  as one asset"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:IncomingLinksOnObjects .
 
 ol:SPARQLSet a owl:Class,
         <https://ns.void/xnode/cardinality-ol-sparql-0> ;
     rdfs:label "SPARQLSet"^^xsd:string ;
     dc:description " A collection is defined by a SPARQL query"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:AssetSet .
 
 ol:AssetSet a owl:Class,
@@ -89,7 +76,7 @@ ol:AssetSet a owl:Class,
          - an explicitely enumerated set
          - a predicate code that allows to determine wether an elemen belongs to that set
         """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Asset .
 
 ol:OWLSet a owl:Class,
@@ -98,7 +85,7 @@ ol:OWLSet a owl:Class,
         <https://ns.void/xnode/cardinality-openlicensing-parentClass-0> ;
     rdfs:label "OWLSet"^^xsd:string ;
     dc:description " A collection is defined as an OWL instance"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:IncomingLinksOnObjects .
 
 <https://ns.void/xnode/cardinality-ol-predicate-0> a owl:Restriction ;
@@ -118,6 +105,6 @@ ol:IncomingLinksOnObjects a owl:Class,
     dc:description """
                 Belongs to this set if there is a link via the right predicate.
                 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:SPARQLSet .
 

@@ -1,16 +1,5 @@
 
-dc:modified a owl:DatatypeProperty ;
-    monk:multiple true ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
-    rdfs:range xsd:dateTime .
-
 ol:alsoIdentifiedBy a owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:multiple true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     dc:description """
          alsoIdentifiedBy is used to refer to code that are used to identify the asset 
          in different context. As codes, and identifiers are given to object in different
@@ -36,86 +25,35 @@ ol:alsoIdentifiedBy a owl:ObjectProperty ;
             - it is not ok to use ISBN of a book to refer to a text if the book contain only a part a portion of the text. 
             
           However, it is currently accepted that a visual feature/hash used for content retrieval can be used to designate
-             a whole although this hash is only based on a part of a creation.
-             
-             FIXME: alternative define FullyIncludedInIdentifiers, FullyIncludeIdentifier, and defines alsoIdentifiedBy as the intersection ?
+             a whole although this hash is only based on a part of a creation.             
          """@en ;
     rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Id ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty .
-
-ol:extraRightsAPI a owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:multiple true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    dc:description """
-                                 A field to allow to know which server to contact to get more rights.
-                                 """@en ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range monk:API .
-
-ol:hasContributedTo a owl:ObjectProperty ;
-    rdfs:domain odrl:Party ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Asset ;
-    owl:inverseOf ol:contributor .
-
-ol:isTheAuthorOf a owl:ObjectProperty ;
-    rdfs:domain odrl:Party ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Asset ;
-    owl:inverseOf ol:author .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range ol:Id .
 
 ol:rightManager a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     dc:description """
                                  A field to allow to know who to contact to get more rights.
                                  """@en ;
     rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Party ;
     rdfs:subPropertyOf dct:rightsHolder .
 
 ol:title a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
+    dc:description """
+        Title of the asset presented to the user in UI.
+        """@en ;
     rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:title .
-
-dc:created a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
-    rdfs:range xsd:dateTime .
-
-<https://ns.void/xnode/cardinality-dc-created-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty dc:created .
 
 <https://ns.void/xnode/cardinality-openlicensing-alsoIdentifiedBy-0> a owl:Restriction ;
     owl:allValuesFrom ol:Id ;
     owl:onProperty ol:alsoIdentifiedBy .
-
-<https://ns.void/xnode/cardinality-openlicensing-author-0> a owl:Restriction ;
-    owl:allValuesFrom odrl:Party ;
-    owl:onProperty ol:author .
-
-<https://ns.void/xnode/cardinality-openlicensing-contributor-0> a owl:Restriction ;
-    owl:allValuesFrom odrl:Party ;
-    owl:onProperty ol:contributor .
-
-<https://ns.void/xnode/cardinality-openlicensing-extraRightsAPI-0> a owl:Restriction ;
-    owl:allValuesFrom monk:API ;
-    owl:onProperty ol:extraRightsAPI .
 
 <https://ns.void/xnode/cardinality-openlicensing-rightManager-0> a owl:Restriction ;
     owl:allValuesFrom ol:Party ;
@@ -126,41 +64,8 @@ dc:created a owl:DatatypeProperty,
     owl:maxCardinality 1 ;
     owl:onProperty ol:title .
 
-ol:author a owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:multiple true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    dc:description """
-        Authors are distinguished of contributors.
-        """@en ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range odrl:Party ;
-    rdfs:subPropertyOf ol:contributor ;
-    owl:inverseOf ol:isTheAuthorOf .
-
-ol:contributor a owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:multiple true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
-    dc:description """
-        They are assumed necessarily as odrl_Party as they have 
-        normally to give their rights at some point if they are contributors.
-        """@en ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range odrl:Party ;
-    rdfs:subPropertyOf dc:creator ;
-    owl:inverseOf ol:hasContributedTo .
-
 ol:Asset a owl:Class,
-        <https://ns.void/xnode/cardinality-dc-created-0>,
         <https://ns.void/xnode/cardinality-openlicensing-alsoIdentifiedBy-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-author-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-contributor-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-extraRightsAPI-0>,
         <https://ns.void/xnode/cardinality-openlicensing-rightManager-0>,
         <https://ns.void/xnode/cardinality-openlicensing-title-0> ;
     rdfs:label "Asset"^^xsd:string ;
@@ -172,6 +77,6 @@ ol:Asset a owl:Class,
     as metadata of the asset unless they are considered to be characteristic of the 
     asset.
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf odrl:Asset .
 

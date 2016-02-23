@@ -9,7 +9,7 @@ ol:Flicker a ol:IdType,
 ol:Flicker_ID a owl:Class ;
     rdfs:label "Flicker_ID"^^xsd:string ;
     dc:description "Id who has the form of a iRI"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:PhotographicId .
 
 ol:Foobar a ol:IdType,
@@ -22,7 +22,7 @@ ol:Foobar a ol:IdType,
 ol:Foobar_ID a owl:Class ;
     rdfs:label "Foobar_ID"^^xsd:string ;
     dc:description "Id who has the form of a URI"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:PhotographicId .
 
 ol:Hubkey a ol:IdType,
@@ -35,7 +35,7 @@ ol:Hubkey a ol:IdType,
 ol:Hubkey_ID a owl:Class ;
     rdfs:label "Hubkey_ID"^^xsd:string ;
     dc:description "Id who has the form of a URI"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Id .
 
 ol:IRI a ol:IdType,
@@ -48,7 +48,7 @@ ol:IRI a ol:IdType,
 ol:IRI_ID a owl:Class ;
     rdfs:label "IRI_ID"^^xsd:string ;
     dc:description "Id who has the form of a iRI"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Id .
 
 ol:IdAlt a owl:Class,
@@ -57,22 +57,18 @@ ol:IdAlt a owl:Class,
     dc:description """
     Identifier for an asset.
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
 ol:IdAlt_idtype a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:IdAlt ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:IdType .
 
 ol:idtype a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
 ol:Photographic a ol:IdType,
@@ -85,7 +81,7 @@ ol:Photographic a ol:IdType,
 ol:PhotographicId a owl:Class ;
     rdfs:label "PhotographicId"^^xsd:string ;
     dc:description "Id of a photo"@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Id .
 
 <https://ns.void/xnode/cardinality-openlicensing-idtype-0> a owl:Restriction ;
@@ -100,7 +96,7 @@ ol:Id a owl:Class,
     dc:description """
     Identifier for an asset.
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
 ol:top_id_type a ol:IdType,
         skos:Concept ;
@@ -115,5 +111,5 @@ ol:IdType a owl:Class ;
     dc:description """
     Represents a class of identifiers
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 

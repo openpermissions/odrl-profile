@@ -19,37 +19,32 @@ ol:commercial_purpose a ol:Purpose,
 
 ol:deliveryChannel a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:device a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:elapsedTime a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:event a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:fileFormat a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:humanitarian_purpose a ol:Purpose,
@@ -66,23 +61,20 @@ ol:indexing_purpose a ol:Purpose,
 
 ol:industry a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:language a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:media a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:medical_purpose a ol:Purpose,
@@ -93,9 +85,8 @@ ol:medical_purpose a ol:Purpose,
 
 ol:meteredTime a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:non_commercial_purpose a ol:Purpose,
@@ -112,37 +103,32 @@ ol:pixel a ol:Unit,
 
 ol:proximity a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:purpose a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:recipient a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:relativePosition a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:relativeSize a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:research_purpose a ol:Purpose,
@@ -153,51 +139,44 @@ ol:research_purpose a ol:Purpose,
 
 ol:resolution a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:system a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:systemDevice a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:timedCount a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:timedInterval a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:version a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:virtualLocation a owl:FunctionalProperty,
         owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:visitorsPerMonth a ol:Unit,
@@ -209,70 +188,58 @@ ol:visitorsPerMonth a ol:Unit,
 ol:absolutePosition a owl:FunctionalProperty,
         owl:Property ;
     ol:linkedWithScenarioProperty ol:absolutePosition ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:rightOperand ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:payAmount a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:decimal ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 ol:percentage a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:decimal ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 ol:post a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     ol:linkedWithScenarioProperty ol:doPostAction ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 ol:product a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 ol:spatial a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Region ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 ol:unit a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Unit ;
     rdfs:subPropertyOf odrl:unit .
 
 ol:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
-    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-a4fcfdff1bf44903bbbe8d0c767d7c3e> ;
+    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-d1ca51cbbc0941968e5c03dd46815922> ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
@@ -333,63 +300,54 @@ ol:views a owl:DatatypeProperty,
 
 ol:Region a owl:Class ;
     rdfs:label "Region"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf <http://www.geonames.org/ontology#gn/2016/2/0-0-0-git-37615467d4a4b24f90159de71088ff93ac94219e/#Feature> .
 
 ol:absoluteSize a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     ol:linkedWithScenarioProperty ol:absoluteSize ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:decimal ;
     rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
 ol:count a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     ol:linkedWithScenarioProperty ol:count ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 ol:dateTime a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     ol:linkedWithScenarioProperty ol:dateTime ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 ol:height a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     ol:linkedWithAssetProperty ol:height ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 ol:host a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     ol:linkedWithScenarioProperty ol:host ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Asset ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range ol:Asset .
 
 ol:width a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     ol:linkedWithAssetProperty ol:width ;
     rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
@@ -404,12 +362,12 @@ ol:all_units a ol:Unit,
 
 ol:Unit a owl:Class ;
     rdfs:label "Unit"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     owl:deprecated true .
 
 ol:Purpose a owl:Class ;
     rdfs:label "Purpose"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     owl:deprecated true .
 
 ol:Purposes a skos:ConceptScheme ;
@@ -443,6 +401,6 @@ ol:Constraint a owl:Class,
        "owner/position/country"
     - unit usage is discouraged as they should be specified by left operand property
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf odrl:Constraint .
 

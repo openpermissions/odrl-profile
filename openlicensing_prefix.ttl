@@ -9,27 +9,22 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
-@prefix monk: <http://digicat.io/ns/monk/0.3/> .
-
-
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix geonames: <http://www.geonames.org/ontology#> .
 @prefix gn: <http://www.geonames.org/ontology#> .
 
 @prefix iso4217a: <http://cvx.iptc.org/iso4217a/> .
-@prefix ol: <http://openlicensing.io/ns/ol/1.0/> .
+@prefix ol: <http://openlicensing.org/ns/ol/1.0/> .
 
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
 
-<http://openlicensing.io/ns/ol/1.0/> a owl:Ontology ;
-    monk:CompiledAt "|compiledate|"^^xsd:dateTime ;
-    ol:hubkey <https://www.copyrighthub.org/s0/hub1/creation/chub/ontologyid/ol-1-0-0> ;
+<http://openlicensing.org/ns/ol/1.0/> a owl:Ontology ;
     dc:creator "Bertrand Nouvel"^^xsd:string,
         "James Birmingham"^^xsd:string ;
     dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
+    dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;
     dct:rights "(C) Digital Catapult Limited 2016"^^xsd:string ;
     dct:rightsHolder <https://www.copyrighthub.org/s0/hub1/party/chub/pid/digitalcatapult/> ;
-    owl:versionIRI <http://openlicensing.io/ns/ol/1.0/> ;
-    owl:versionInfo "1.0.0"^^xsd:string .
-
+    owl:versionIRI <http://openlicensing.org/ns/ol/1.1/> ;
+    owl:versionInfo "1.1.0"^^xsd:string .

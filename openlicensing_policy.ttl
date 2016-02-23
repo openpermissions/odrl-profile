@@ -1,135 +1,103 @@
 
 ol:created a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf dct:created .
 
 ol:defaultAssignee a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Party .
 
 ol:defaultAssigner a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Party .
 
 ol:defaultTarget a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Asset .
 
 ol:digitalPolicyAuthor a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     dc:description """
                                  A field to allow the author of the digital policy - if available this person may be
                                  eventually be contacted to obtain infomation about the license.
                                  """@en ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
 ol:expires a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     dc:description """
          Optional expiry date of the policy.
          The policy is not considered valid after this date.
          """@en ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:dateTime .
 
 ol:modified a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf dct:modified .
 
 ol:permission a owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:multiple true ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Permission ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:permission .
+    rdfs:subPropertyOf odrl:permission .
 
 ol:policyDescription a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:description .
 
 ol:policyHTML a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
 ol:policyName a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:name .
 
 ol:policyText a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
 ol:preferredPolicyIdentifier a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
 ol:prohibition a owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:multiple true ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Prohibition ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:prohibition .
+    rdfs:subPropertyOf odrl:prohibition .
 
 ol:sharedDuty a owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:multiple true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range odrl:Duty .
 
 <https://ns.void/xnode/cardinality-ol-created-0> a owl:Restriction ;
@@ -217,6 +185,6 @@ ol:Policy a owl:Class,
 
     Policy is the central entity that holds an ODRL policy together. In its encoded form, e.g. in an XML document, it makes the policy addressable from the outside word via its uid attribute. Policy can refer to Permissions and Prohibitions.
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf odrl:Policy .
 

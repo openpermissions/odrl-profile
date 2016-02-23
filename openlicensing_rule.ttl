@@ -5,7 +5,7 @@ ol:Duty a owl:Class ;
         Similar to Permissions, a Duty states that a certain Action MAY be executed by the Party with the Role assignee
          for the Permission to be valid, e.g. “Alice must pay 5 EUR in order to get the Permission to play abc.mp3″.
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Rule,
         odrl:Duty .
 
@@ -15,7 +15,7 @@ ol:Prohibition a owl:Class ;
         The Prohibition entity is used in the same way as Permission, with the two differences that it does not refer
         to Duties and (obviously) that it forbids the Action, e.g. “Alice is forbidden to use abc.mp3 commercially”.
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Rule,
         odrl:Prohibition .
 
@@ -29,68 +29,52 @@ ol:Permission a owl:Class,
          Permission is linked to it with the Role assignee, e.g. “assigner VirtualMusicShop grants the Permission to
           assignee Alice”. Additionally, a Permission MAY be linked to Duty entities.
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Rule,
         odrl:Permission .
 
 ol:Rule_relation a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "private"^^xsd:string ;
     rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Asset .
 
 ol:action a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Action ;
     rdfs:subPropertyOf odrl:action .
 
 ol:assigneeOfRule a owl:InverseFunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Rule ;
     owl:inverseOf ol:assignee .
 
 ol:assignerOfRule a owl:InverseFunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Rule ;
     owl:inverseOf ol:assigner .
 
 ol:constraint a owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:multiple true ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Constraint ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        odrl:action .
+    rdfs:subPropertyOf odrl:action .
 
 ol:duty a owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:multiple true ;
-    monk:optional false ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Permission ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
-    rdfs:range ol:Rule ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range ol:Rule .
 
 ol:targetOfRule a owl:InverseFunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Rule ;
     owl:inverseOf ol:target .
 
@@ -141,49 +125,35 @@ odrl:outputOfRule a owl:InverseFunctionalProperty,
 
 ol:assignee a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Party ;
     rdfs:subPropertyOf odrl:assignee ;
     owl:inverseOf ol:assigneeOfRule .
 
 ol:assigner a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded false ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Party ;
     rdfs:subPropertyOf odrl:assigner ;
     owl:inverseOf ol:assignerOfRule .
 
 ol:target a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Asset ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        ol:relation,
+    rdfs:subPropertyOf ol:relation,
         odrl:target ;
     owl:inverseOf ol:targetOfRule .
 
 odrl:output a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    monk:embedded true ;
-    monk:optional true ;
-    monk:visibility "public"^^xsd:string ;
     rdfs:domain ol:Rule ;
     rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
     rdfs:range ol:Asset ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty,
-        ol:relation ;
+    rdfs:subPropertyOf ol:relation ;
     owl:inverseOf odrl:outputOfRule .
 
 ol:Rule a owl:Class,
@@ -200,6 +170,6 @@ ol:Rule a owl:Class,
 
     In order for "function" to complete "action" and to obtain "relation", function must satisfay constaint  ?
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf odrl:Rule .
 

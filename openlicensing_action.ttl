@@ -107,16 +107,16 @@ ol:extract a ol:Action,
 ol:give a ol:Action,
         odrl:Action,
         skos:Concept ;
-    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
     skos:name "give"@en ;
-    skos:narrowerThan <http://openlicensing.io/ns/ol/1.0/3rdparty_transfer> .
+    skos:narrowerThan <http://openlicensing.org/ns/ol/1.0/3rdparty_transfer> .
 
 ol:grantUse a ol:Action,
         odrl:Action,
         skos:Concept ;
-    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
     skos:name "grantUse"@en ;
-    skos:narrowerThan <http://openlicensing.io/ns/ol/1.0/3rdparty_use> .
+    skos:narrowerThan <http://openlicensing.org/ns/ol/1.0/3rdparty_use> .
 
 ol:include a ol:Action,
         odrl:Action,
@@ -205,9 +205,9 @@ ol:reviewPolicy a ol:Action,
 ol:sell a ol:Action,
         odrl:Action,
         skos:Concept ;
-    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
     skos:name "sell"@en ;
-    skos:narrowerThan <http://openlicensing.io/ns/ol/1.0/3rdparty_transfer> .
+    skos:narrowerThan <http://openlicensing.org/ns/ol/1.0/3rdparty_transfer> .
 
 ol:textToSpeech a ol:Action,
         odrl:Action,
@@ -251,10 +251,10 @@ ol:watermark a ol:Action,
     skos:name "watermark"@en ;
     skos:narrowerThan ol:top_dutyAction .
 
-<http://openlicensing.io/ns/ol/1.0/3rdparty_use> a ol:Action,
+<http://openlicensing.org/ns/ol/1.0/3rdparty_use> a ol:Action,
         odrl:Action,
         skos:Concept ;
-    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
     skos:name "_3rdparty_use"@en ;
     skos:narrowerThan ol:top_3rdpartyAction .
 
@@ -265,10 +265,10 @@ ol:reproduce a ol:Action,
     skos:name "reproduce"@en ;
     skos:narrowerThan ol:use .
 
-<http://openlicensing.io/ns/ol/1.0/3rdparty_transfer> a ol:Action,
+<http://openlicensing.org/ns/ol/1.0/3rdparty_transfer> a ol:Action,
         odrl:Action,
         skos:Concept ;
-    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
     skos:name "_3rdparty_transfer"@en ;
     skos:narrowerThan ol:top_3rdpartyAction .
 
@@ -282,7 +282,7 @@ ol:present a ol:Action,
 ol:top_3rdpartyAction a ol:Action,
         odrl:Action,
         skos:Concept ;
-    skos:inScheme <http://openlicensing.io/ns/ol/1.0/3rdparyActions> ;
+    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
     skos:name "top_3rdpartyAction"@en .
 
 ol:top_action a ol:Action,
@@ -291,7 +291,7 @@ ol:top_action a ol:Action,
     skos:inScheme ol:actions ;
     skos:name "top_action"@en .
 
-<http://openlicensing.io/ns/ol/1.0/3rdparyActions> a skos:ConceptScheme ;
+<http://openlicensing.org/ns/ol/1.0/3rdparyActions> a skos:ConceptScheme ;
     skos:ConceptScheme_hasTopConcept ol:top_3rdpartyAction .
 
 ol:dutyActions a skos:ConceptScheme ;
@@ -315,6 +315,6 @@ ol:actions a skos:ConceptScheme ;
 
 ol:Action a owl:Class ;
     rdfs:label "Action"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.io/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf odrl:Action .
 
