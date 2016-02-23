@@ -237,7 +237,7 @@ ol:unit a owl:FunctionalProperty,
 
 ol:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-1e507b4e23a642c3bd6b7fe4fdbc551c> ;
+    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-f551e3e0ca39484d9024b838718b3d23> ;
     rdfs:domain ol:Constraint ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer ;
@@ -301,7 +301,7 @@ ol:views a owl:DatatypeProperty,
 ol:Region a owl:Class ;
     rdfs:label "Region"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf <http://www.geonames.org/ontology#gn/2016/2/0-0-0-git-37615467d4a4b24f90159de71088ff93ac94219e/#Feature> .
+    rdfs:subClassOf gn:Feature .
 
 ol:absoluteSize a owl:DatatypeProperty,
         owl:FunctionalProperty ;

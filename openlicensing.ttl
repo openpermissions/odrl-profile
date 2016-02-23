@@ -241,36 +241,8 @@ ol:Asset a owl:Class,
 # -----------------------------------------------------------------------
 
 
-ol:name a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:string ;
-    rdfs:subPropertyOf dc:name .
-
-ol:rightAgentFor a owl:ObjectProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    owl:inverseOf ol:Party_rightAgent .
-
-<https://ns.void/xnode/cardinality-openlicensing-name-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:name .
-
-<https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Party ;
-    owl:onProperty ol:Party_rightAgent .
-
-ol:Party_rightAgent a owl:ObjectProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    owl:inverseOf ol:rightAgentFor .
-
 ol:Party a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-name-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> ;
+        <https://ns.void/xnode/cardinality-openlicensing-name-0> ;
     rdfs:label "Party"^^xsd:string ;
     dc:description """
     A party represent:
@@ -281,6 +253,17 @@ ol:Party a owl:Class,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Asset,
         odrl:Party .
+
+ol:name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain ol:Party ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:name .
+
+<https://ns.void/xnode/cardinality-openlicensing-name-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:name .
 
 
 # -----------------------------------------------------------------------
@@ -526,7 +509,7 @@ ol:unit a owl:FunctionalProperty,
 
 ol:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-1e507b4e23a642c3bd6b7fe4fdbc551c> ;
+    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-f551e3e0ca39484d9024b838718b3d23> ;
     rdfs:domain ol:Constraint ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer ;
@@ -590,7 +573,7 @@ ol:views a owl:DatatypeProperty,
 ol:Region a owl:Class ;
     rdfs:label "Region"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf <http://www.geonames.org/ontology#gn/2016/2/0-0-0-git-37615467d4a4b24f90159de71088ff93ac94219e/#Feature> .
+    rdfs:subClassOf gn:Feature .
 
 ol:absoluteSize a owl:DatatypeProperty,
         owl:FunctionalProperty ;
@@ -950,12 +933,6 @@ ol:policyText a owl:DatatypeProperty,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
-ol:preferredPolicyIdentifier a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:string .
-
 ol:prohibition a owl:ObjectProperty ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
@@ -1018,10 +995,6 @@ ol:sharedDuty a owl:ObjectProperty ;
     owl:maxCardinality 1 ;
     owl:onProperty ol:policyText .
 
-<https://ns.void/xnode/cardinality-openlicensing-preferredPolicyIdentifier-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:preferredPolicyIdentifier .
-
 <https://ns.void/xnode/cardinality-openlicensing-prohibition-0> a owl:Restriction ;
     owl:allValuesFrom ol:Prohibition ;
     owl:onProperty ol:prohibition .
@@ -1043,7 +1016,6 @@ ol:Policy a owl:Class,
         <https://ns.void/xnode/cardinality-openlicensing-policyHTML-0>,
         <https://ns.void/xnode/cardinality-openlicensing-policyName-0>,
         <https://ns.void/xnode/cardinality-openlicensing-policyText-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-preferredPolicyIdentifier-0>,
         <https://ns.void/xnode/cardinality-openlicensing-prohibition-0>,
         <https://ns.void/xnode/cardinality-openlicensing-sharedDuty-0> ;
     rdfs:label "Policy"^^xsd:string ;

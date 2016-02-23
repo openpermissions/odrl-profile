@@ -83,12 +83,6 @@ ol:policyText a owl:DatatypeProperty,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
-ol:preferredPolicyIdentifier a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:string .
-
 ol:prohibition a owl:ObjectProperty ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
@@ -151,10 +145,6 @@ ol:sharedDuty a owl:ObjectProperty ;
     owl:maxCardinality 1 ;
     owl:onProperty ol:policyText .
 
-<https://ns.void/xnode/cardinality-openlicensing-preferredPolicyIdentifier-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:preferredPolicyIdentifier .
-
 <https://ns.void/xnode/cardinality-openlicensing-prohibition-0> a owl:Restriction ;
     owl:allValuesFrom ol:Prohibition ;
     owl:onProperty ol:prohibition .
@@ -176,7 +166,6 @@ ol:Policy a owl:Class,
         <https://ns.void/xnode/cardinality-openlicensing-policyHTML-0>,
         <https://ns.void/xnode/cardinality-openlicensing-policyName-0>,
         <https://ns.void/xnode/cardinality-openlicensing-policyText-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-preferredPolicyIdentifier-0>,
         <https://ns.void/xnode/cardinality-openlicensing-prohibition-0>,
         <https://ns.void/xnode/cardinality-openlicensing-sharedDuty-0> ;
     rdfs:label "Policy"^^xsd:string ;

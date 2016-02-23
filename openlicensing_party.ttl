@@ -1,34 +1,6 @@
 
-ol:name a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:string ;
-    rdfs:subPropertyOf dc:name .
-
-ol:rightAgentFor a owl:ObjectProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    owl:inverseOf ol:Party_rightAgent .
-
-<https://ns.void/xnode/cardinality-openlicensing-name-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:name .
-
-<https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Party ;
-    owl:onProperty ol:Party_rightAgent .
-
-ol:Party_rightAgent a owl:ObjectProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    owl:inverseOf ol:rightAgentFor .
-
 ol:Party a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-name-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-rightAgent-0> ;
+        <https://ns.void/xnode/cardinality-openlicensing-name-0> ;
     rdfs:label "Party"^^xsd:string ;
     dc:description """
     A party represent:
@@ -39,4 +11,15 @@ ol:Party a owl:Class,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Asset,
         odrl:Party .
+
+ol:name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain ol:Party ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:name .
+
+<https://ns.void/xnode/cardinality-openlicensing-name-0> a owl:Restriction ;
+    owl:maxCardinality 1 ;
+    owl:onProperty ol:name .
 

@@ -44,6 +44,7 @@ Required as ODRL implementation
 
 - <http://www.w3c.org/2008/skos/>
 
+
 **ODRL 2.1**
 
 OpenLicensing ontology is built ontop of ODRL2.1, and can be considered as an ODRL2.1 profile
@@ -63,6 +64,7 @@ Specific to OpenLicensing ODRL
 **Currencies**
 
 - <http://cvx.iptc.org/iso4217a/> : iso code based ontology for currencies
+
 
 ** Units **
 
@@ -98,24 +100,22 @@ A release version will generally have the format:
 Only the part that are related to breaking changes will be present in the URL
 
 ```
-http://openlicensing.org/ns/ol/<Release>.<Major> 
+http://openlicensing.org/ns/ol/<Release>.<Major>/ 
 ```
 
 Release is part of the ontology URL
 -----------------------------------
 Denotes a global vision of the ontology. 
-Ideally this shall never been changed.
 
 Major version is part of the ontology URL
 -----------------------------------------
-It is generally asssumed that major version should be present in ontologies URL
-as major are meant to denote incompatible usage of the ontology.
+Major are meant to denote incompatible usage of the ontology.
 Note that major version update can occur as result of what users may think as minor 
 changes.
 
 Minor is not part of the ontology URL
 -------------------------------------
-Bugfixes
+Addition of features in a way that do not break existing features.
 
 Patch is not part of the ontology URL
 -------------------------------------
@@ -192,6 +192,7 @@ Currently the following OpenLicensing profile exist:
 
 <!--
 =====
+
 * Remove Countries from this ontology, select a suitable external ontology that specialises in this [waiting for review]
 * Each element should have a description [done: comment -> description]
 * remove ns1:[done / waiting for review]
@@ -223,11 +224,14 @@ prefix olex: <http://digicat.io/ns/olex/0.1/> .
 * There are some ASSET ID TYPES defined, needs reviewing, instance vs class [James Review]
 * IdTypes as IRI ? [WARNING ON CONSEQUENCES] 
 
-* Monk ontology dependency, is this required? 
-* Many ODRL terms have been redefined in this ontology in order to support serialisation via Monk ... review this.
+* Monk ontology dependency, is this required?  [removed]
+* Removed actions as same as ODRL [done]
+* Many ODRL terms have been redefined in this ontology in order to support serialisation via Monk ... review this. [removed]
 * some terms from ODRL have been 'deprecated', this needs reviewing and justification/decision detailed in this document. [wip]
 * some of the ontologies in our dependency folder have been modified (reduced in size) this should be documented in this document [wip]
 * document host constraints (ck dene) | CONSTRAINT: (...)
-* review how we version the ontology | ...
-* describe in this document the versioning naming convention | ...
+* review how we version the ontology | [wip]
+* describe in this document the versioning naming convention | [wip]
+* * term host !!
 -->
+
