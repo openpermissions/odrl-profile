@@ -54,6 +54,9 @@ ol:assignerOfRule a owl:InverseFunctionalProperty,
     owl:inverseOf ol:assigner .
 
 ol:constraint a owl:ObjectProperty ;
+    dc:description """
+                                 Constraint limiting the scope of the action
+                                 """@en ;
     rdfs:domain ol:Rule ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Constraint ;

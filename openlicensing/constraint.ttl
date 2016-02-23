@@ -1,22 +1,4 @@
 
-ol:academic_purpose a ol:Purpose,
-        skos:Concept ;
-    skos:inScheme ol:Purposes ;
-    skos:name "academic_purpose"@en ;
-    skos:narrowerThan ol:all_purpose .
-
-ol:advertising_purpose a ol:Purpose,
-        skos:Concept ;
-    skos:inScheme ol:Purposes ;
-    skos:name "advertising_purpose"@en ;
-    skos:narrowerThan ol:all_purpose .
-
-ol:commercial_purpose a ol:Purpose,
-        skos:Concept ;
-    skos:inScheme ol:Purposes ;
-    skos:name "commercial_purpose"@en ;
-    skos:narrowerThan ol:all_purpose .
-
 ol:deliveryChannel a owl:FunctionalProperty,
         owl:Property ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
@@ -47,18 +29,6 @@ ol:fileFormat a owl:FunctionalProperty,
     rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
-ol:humanitarian_purpose a ol:Purpose,
-        skos:Concept ;
-    skos:inScheme ol:Purposes ;
-    skos:name "humanitarian_purpose"@en ;
-    skos:narrowerThan ol:all_purpose .
-
-ol:indexing_purpose a ol:Purpose,
-        skos:Concept ;
-    skos:inScheme ol:Purposes ;
-    skos:name "indexing_purpose"@en ;
-    skos:narrowerThan ol:all_purpose .
-
 ol:industry a owl:FunctionalProperty,
         owl:Property ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
@@ -77,29 +47,11 @@ ol:media a owl:FunctionalProperty,
     rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
-ol:medical_purpose a ol:Purpose,
-        skos:Concept ;
-    skos:inScheme ol:Purposes ;
-    skos:name "medical_purpose"@en ;
-    skos:narrowerThan ol:all_purpose .
-
 ol:meteredTime a owl:FunctionalProperty,
         owl:Property ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
-
-ol:non_commercial_purpose a ol:Purpose,
-        skos:Concept ;
-    skos:inScheme ol:Purposes ;
-    skos:name "non_commercial_purpose"@en ;
-    skos:narrowerThan ol:all_purpose .
-
-ol:pixel a ol:Unit,
-        skos:Concept ;
-    skos:inScheme ol:Units ;
-    skos:name "pixel"@en ;
-    skos:narrowerThan ol:all_units .
 
 ol:proximity a owl:FunctionalProperty,
         owl:Property ;
@@ -130,12 +82,6 @@ ol:relativeSize a owl:FunctionalProperty,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
-
-ol:research_purpose a ol:Purpose,
-        skos:Concept ;
-    skos:inScheme ol:Purposes ;
-    skos:name "research_purpose"@en ;
-    skos:narrowerThan ol:all_purpose .
 
 ol:resolution a owl:FunctionalProperty,
         owl:Property ;
@@ -179,19 +125,6 @@ ol:virtualLocation a owl:FunctionalProperty,
     rdfs:subPropertyOf odrl:rightOperand ;
     owl:deprecated true .
 
-ol:visitorsPerMonth a ol:Unit,
-        skos:Concept ;
-    skos:inScheme ol:Units ;
-    skos:name "visitorsPerMonth"@en ;
-    skos:narrowerThan ol:all_units .
-
-ol:absolutePosition a owl:FunctionalProperty,
-        owl:Property ;
-    ol:linkedWithScenarioProperty ol:absolutePosition ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
 ol:payAmount a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain ol:Constraint ;
@@ -204,14 +137,6 @@ ol:percentage a owl:DatatypeProperty,
     rdfs:domain ol:Constraint ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:decimal ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-ol:post a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    ol:linkedWithScenarioProperty ol:doPostAction ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 ol:product a owl:DatatypeProperty,
@@ -235,35 +160,6 @@ ol:unit a owl:FunctionalProperty,
     rdfs:range ol:Unit ;
     rdfs:subPropertyOf odrl:unit .
 
-ol:views a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-f551e3e0ca39484d9024b838718b3d23> ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:integer ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-<https://ns.void/xnode/cardinality-openlicensing-absoluteSize-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:absoluteSize .
-
-<https://ns.void/xnode/cardinality-openlicensing-count-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:count .
-
-<https://ns.void/xnode/cardinality-openlicensing-dateTime-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:dateTime .
-
-<https://ns.void/xnode/cardinality-openlicensing-height-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:height .
-
-<https://ns.void/xnode/cardinality-openlicensing-host-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Asset ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:host .
-
 <https://ns.void/xnode/cardinality-openlicensing-payAmount-0> a owl:Restriction ;
     owl:maxCardinality 1 ;
     owl:onProperty ol:payAmount .
@@ -271,10 +167,6 @@ ol:views a owl:DatatypeProperty,
 <https://ns.void/xnode/cardinality-openlicensing-percentage-0> a owl:Restriction ;
     owl:maxCardinality 1 ;
     owl:onProperty ol:percentage .
-
-<https://ns.void/xnode/cardinality-openlicensing-post-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:post .
 
 <https://ns.void/xnode/cardinality-openlicensing-product-0> a owl:Restriction ;
     owl:maxCardinality 1 ;
@@ -290,109 +182,21 @@ ol:views a owl:DatatypeProperty,
     owl:maxCardinality 1 ;
     owl:onProperty ol:unit .
 
-<https://ns.void/xnode/cardinality-openlicensing-views-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:views .
-
-<https://ns.void/xnode/cardinality-openlicensing-width-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:width .
-
 ol:Region a owl:Class ;
     rdfs:label "Region"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf gn:Feature .
 
-ol:absoluteSize a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    ol:linkedWithScenarioProperty ol:absoluteSize ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:decimal ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:count a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    ol:linkedWithScenarioProperty ol:count ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:integer ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-ol:dateTime a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    ol:linkedWithScenarioProperty ol:dateTime ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:dateTime ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-ol:height a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    ol:linkedWithAssetProperty ol:height ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:integer ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-ol:host a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    ol:linkedWithScenarioProperty ol:host ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Asset .
-
-ol:width a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    ol:linkedWithAssetProperty ol:width ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:integer ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-ol:Units a skos:ConceptScheme ;
-    owl:deprecated true ;
-    skos:ConceptScheme_hasTopConcept ol:all_units .
-
-ol:all_units a ol:Unit,
-        skos:Concept ;
-    skos:inScheme ol:Units ;
-    skos:name "all_units"@en .
-
 ol:Unit a owl:Class ;
     rdfs:label "Unit"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    owl:deprecated true .
-
-ol:Purpose a owl:Class ;
-    rdfs:label "Purpose"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    owl:deprecated true .
-
-ol:Purposes a skos:ConceptScheme ;
-    owl:deprecated true ;
-    skos:ConceptScheme_hasTopConcept ol:all_purpose .
-
-ol:all_purpose a ol:Purpose,
-        skos:Concept ;
-    skos:inScheme ol:Purposes ;
-    skos:name "all_purpose"@en .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
 ol:Constraint a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-absoluteSize-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-count-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-dateTime-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-height-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-host-0>,
         <https://ns.void/xnode/cardinality-openlicensing-payAmount-0>,
         <https://ns.void/xnode/cardinality-openlicensing-percentage-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-post-0>,
         <https://ns.void/xnode/cardinality-openlicensing-product-0>,
         <https://ns.void/xnode/cardinality-openlicensing-spatial-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-unit-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-views-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-width-0> ;
+        <https://ns.void/xnode/cardinality-openlicensing-unit-0> ;
     rdfs:label "Constraint"^^xsd:string ;
     dc:description """
     Changes

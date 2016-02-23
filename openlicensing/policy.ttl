@@ -8,18 +8,27 @@ ol:created a owl:DatatypeProperty,
 
 ol:defaultAssignee a owl:FunctionalProperty,
         owl:ObjectProperty ;
+    dc:description """
+                                 Implicit default assignee of a rule.
+                                 """@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Party .
 
 ol:defaultAssigner a owl:FunctionalProperty,
         owl:ObjectProperty ;
+    dc:description """
+                                 Implicit default assigner of a rule.
+                                 """@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Party .
 
 ol:defaultTarget a owl:FunctionalProperty,
         owl:ObjectProperty ;
+    dc:description """
+                                 Implicit default target of a rule.
+                                 """@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Asset .
@@ -90,6 +99,9 @@ ol:prohibition a owl:ObjectProperty ;
     rdfs:subPropertyOf odrl:prohibition .
 
 ol:sharedDuty a owl:ObjectProperty ;
+    dc:description """
+                                 Duties that are shared by all Permissions in this policy.
+                                 """@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range odrl:Duty .

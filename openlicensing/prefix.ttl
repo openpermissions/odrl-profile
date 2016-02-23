@@ -25,6 +25,5 @@
     dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
     dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;
     dct:rights "(C) Digital Catapult Limited 2016"^^xsd:string ;
-    dct:rightsHolder <https://www.copyrighthub.org/s0/hub1/party/chub/pid/digitalcatapult/> ;
     owl:versionIRI <http://openlicensing.org/ns/ol/1.1/> ;
     owl:versionInfo "1.1.0"^^xsd:string .
