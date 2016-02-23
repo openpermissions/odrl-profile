@@ -19,8 +19,6 @@ section "Parties"
 cat openlicensing_party.ttl
 
 
-section "Actions"
-cat openlicensing_action.ttl
 section "Constraints"
 cat openlicensing_constraint.ttl
 section "Rules"

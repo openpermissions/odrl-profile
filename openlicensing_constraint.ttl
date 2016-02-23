@@ -237,7 +237,7 @@ ol:unit a owl:FunctionalProperty,
 
 ol:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-d1ca51cbbc0941968e5c03dd46815922> ;
+    ol:linkedWithScenarioPropertyPath <https://ns.void/xnode/xnuuid4-1e507b4e23a642c3bd6b7fe4fdbc551c> ;
     rdfs:domain ol:Constraint ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer ;

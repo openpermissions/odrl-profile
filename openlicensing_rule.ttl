@@ -39,13 +39,6 @@ ol:Rule_relation a owl:FunctionalProperty,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Asset .
 
-ol:action a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Action ;
-    rdfs:subPropertyOf odrl:action .
-
 ol:assigneeOfRule a owl:InverseFunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:Party ;
@@ -64,7 +57,7 @@ ol:constraint a owl:ObjectProperty ;
     rdfs:domain ol:Rule ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Constraint ;
-    rdfs:subPropertyOf odrl:action .
+    rdfs:subPropertyOf odrl:constraint .
 
 ol:duty a owl:ObjectProperty ;
     rdfs:domain ol:Permission ;
@@ -94,11 +87,6 @@ odrl:outputOfRule a owl:InverseFunctionalProperty,
     owl:allValuesFrom ol:Asset ;
     owl:maxCardinality 1 ;
     owl:onProperty ol:target .
-
-<https://ns.void/xnode/cardinality-openlicensing-action-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Action ;
-    owl:cardinality 1 ;
-    owl:onProperty ol:action .
 
 <https://ns.void/xnode/cardinality-openlicensing-assignee-0> a owl:Restriction ;
     owl:allValuesFrom ol:Party ;
@@ -159,7 +147,6 @@ odrl:output a owl:FunctionalProperty,
 ol:Rule a owl:Class,
         <https://ns.void/xnode/cardinality-odrl-output-0>,
         <https://ns.void/xnode/cardinality-ol-target-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-action-0>,
         <https://ns.void/xnode/cardinality-openlicensing-assignee-0>,
         <https://ns.void/xnode/cardinality-openlicensing-assigner-0>,
         <https://ns.void/xnode/cardinality-openlicensing-constraint-0>,
