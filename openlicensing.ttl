@@ -33,331 +33,6 @@
     owl:versionInfo "1.1.0"^^xsd:string .
 
 # -----------------------------------------------------------------------
-# action.ttl
-# -----------------------------------------------------------------------
-
-
-ol:acceptTracking a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "acceptTracking"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:aggregate a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "aggregate"@en ;
-    skos:narrowerThan ol:use .
-
-ol:annotate a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "annotate"@en ;
-    skos:narrowerThan ol:use .
-
-ol:anonymize a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "anonymize"@en ;
-    skos:narrowerThan ol:use .
-
-ol:archive a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "archive"@en ;
-    skos:narrowerThan ol:use .
-
-ol:attribute a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "attribute"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:compensate a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "compensate"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:concurrentUse a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "concurrentUse"@en ;
-    skos:narrowerThan ol:use .
-
-ol:delete a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "delete"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:derive a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "derive"@en ;
-    skos:narrowerThan ol:use .
-
-ol:digitize a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "digitize"@en ;
-    skos:narrowerThan ol:use .
-
-ol:display a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "display"@en ;
-    skos:narrowerThan ol:present .
-
-ol:distribute a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "distribute"@en ;
-    skos:narrowerThan ol:use .
-
-ol:ensureExclusivity a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "ensureExclusivity"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:extract a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "extract"@en ;
-    skos:narrowerThan ol:reproduce .
-
-ol:give a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
-    skos:name "give"@en ;
-    skos:narrowerThan <http://openlicensing.org/ns/ol/1.0/3rdparty_transfer> .
-
-ol:grantUse a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
-    skos:name "grantUse"@en ;
-    skos:narrowerThan <http://openlicensing.org/ns/ol/1.0/3rdparty_use> .
-
-ol:include a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "include"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:index a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "index"@en ;
-    skos:narrowerThan ol:use .
-
-ol:inform a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "inform"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:install a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "install"@en ;
-    skos:narrowerThan ol:use .
-
-ol:modify a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "modify"@en ;
-    skos:narrowerThan ol:use .
-
-ol:move a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "move"@en ;
-    skos:narrowerThan ol:use .
-
-ol:nextPolicy a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "nextPolicy"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:obtainConsent a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "obtainConsent"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:play a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "play"@en ;
-    skos:narrowerThan ol:present .
-
-ol:print_ a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "print_"@en ;
-    skos:narrowerThan ol:present .
-
-ol:read a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "read"@en ;
-    skos:narrowerThan ol:use .
-
-ol:reviewPolicy a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "reviewPolicy"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:sell a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
-    skos:name "sell"@en ;
-    skos:narrowerThan <http://openlicensing.org/ns/ol/1.0/3rdparty_transfer> .
-
-ol:textToSpeech a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "textToSpeech"@en ;
-    skos:narrowerThan ol:use .
-
-ol:transfer a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "transfer"@en ;
-    skos:narrowerThan ol:top_action .
-
-ol:transform a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "transform"@en ;
-    skos:narrowerThan ol:use .
-
-ol:translate a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "translate"@en ;
-    skos:narrowerThan ol:use .
-
-ol:uninstall a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "uninstall"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-ol:watermark a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "watermark"@en ;
-    skos:narrowerThan ol:top_dutyAction .
-
-<http://openlicensing.org/ns/ol/1.0/3rdparty_use> a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
-    skos:name "_3rdparty_use"@en ;
-    skos:narrowerThan ol:top_3rdpartyAction .
-
-ol:reproduce a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "reproduce"@en ;
-    skos:narrowerThan ol:use .
-
-<http://openlicensing.org/ns/ol/1.0/3rdparty_transfer> a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
-    skos:name "_3rdparty_transfer"@en ;
-    skos:narrowerThan ol:top_3rdpartyAction .
-
-ol:present a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "present"@en ;
-    skos:narrowerThan ol:use .
-
-ol:top_3rdpartyAction a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme <http://openlicensing.org/ns/ol/1.0/3rdparyActions> ;
-    skos:name "top_3rdpartyAction"@en .
-
-ol:top_action a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "top_action"@en .
-
-<http://openlicensing.org/ns/ol/1.0/3rdparyActions> a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:top_3rdpartyAction .
-
-ol:dutyActions a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:top_dutyAction .
-
-ol:top_dutyAction a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:dutyActions ;
-    skos:name "top_dutyAction"@en .
-
-ol:use a ol:Action,
-        odrl:Action,
-        skos:Concept ;
-    skos:inScheme ol:actions ;
-    skos:name "use"@en ;
-    skos:narrowerThan ol:top_action .
-
-ol:actions a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:top_action .
-
-ol:Action a owl:Class ;
-    rdfs:label "Action"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf odrl:Action .
-
-
-# -----------------------------------------------------------------------
 # asset.ttl
 # -----------------------------------------------------------------------
 
@@ -405,11 +80,11 @@ ol:title a owl:DatatypeProperty,
     rdfs:subPropertyOf dc:title .
 
 ol:Asset a [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:title ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ol:Id ;
             owl:onProperty ol:alsoIdentifiedBy ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:title ],
         owl:Class ;
     rdfs:label "Asset"^^xsd:string ;
     dc:description """
@@ -422,221 +97,6 @@ ol:Asset a [ a owl:Restriction ;
     """@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf odrl:Asset .
-
-
-# -----------------------------------------------------------------------
-# constraint.ttl
-# -----------------------------------------------------------------------
-
-
-ol:deliveryChannel a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:device a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:elapsedTime a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:event a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:fileFormat a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:industry a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:language a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:media a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:meteredTime a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:proximity a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:purpose a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:recipient a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:relativePosition a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:relativeSize a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:resolution a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:system a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:systemDevice a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:timedCount a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:timedInterval a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:version a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:virtualLocation a owl:FunctionalProperty,
-        owl:Property ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subPropertyOf odrl:rightOperand ;
-    owl:deprecated true .
-
-ol:payAmount a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:decimal ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-ol:percentage a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:decimal ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-ol:product a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:string ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-ol:spatial a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Region ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-ol:unit a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Unit ;
-    rdfs:subPropertyOf odrl:unit .
-
-<https://ns.void/xnode/cardinality-openlicensing-payAmount-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:payAmount .
-
-<https://ns.void/xnode/cardinality-openlicensing-percentage-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:percentage .
-
-<https://ns.void/xnode/cardinality-openlicensing-product-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:product .
-
-<https://ns.void/xnode/cardinality-openlicensing-spatial-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Region ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:spatial .
-
-<https://ns.void/xnode/cardinality-openlicensing-unit-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Unit ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:unit .
-
-ol:Region a owl:Class ;
-    rdfs:label "Region"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf gn:Feature .
-
-ol:Unit a owl:Class ;
-    rdfs:label "Unit"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
-
-ol:Constraint a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-payAmount-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-percentage-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-product-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-spatial-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-unit-0> ;
-    rdfs:label "Constraint"^^xsd:string ;
-    dc:description """
-    Changes
-    - added leftOperandProperty to give formal semantic linking original usecase / asset with the property checked
-    - added leftOperandPropertyPath instead of a leftOperantProperty a properyt path may be used for instance
-       "owner/position/country"
-    - unit usage is discouraged as they should be specified by left operand property
-    """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf odrl:Constraint .
 
 
 # -----------------------------------------------------------------------
@@ -860,22 +320,22 @@ ol:policyDescription a owl:DatatypeProperty,
 
 ol:Policy a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:Policy_policyName ],
+            owl:onProperty ol:policyDescription ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty ol:modified ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:Policy_policyName ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:digitalPolicyAuthor ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:expires ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty ol:created ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:policyDescription ],
         owl:Class ;
     rdfs:label "Policy"^^xsd:string ;
     dc:description """
@@ -1014,16 +474,16 @@ ol:Rule a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:target ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:Asset ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:Rule_relation ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ol:Constraint ;
             owl:onProperty ol:constraint ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:Party ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:assignee ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:Asset ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:Rule_relation ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:Party ;
             owl:maxCardinality 1 ;

@@ -59,22 +59,22 @@ ol:policyDescription a owl:DatatypeProperty,
 
 ol:Policy a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:Policy_policyName ],
+            owl:onProperty ol:policyDescription ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty ol:modified ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:Policy_policyName ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:digitalPolicyAuthor ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:expires ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty ol:created ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:policyDescription ],
         owl:Class ;
     rdfs:label "Policy"^^xsd:string ;
     dc:description """

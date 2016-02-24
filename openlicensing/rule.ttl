@@ -121,16 +121,16 @@ ol:Rule a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:target ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:Asset ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:Rule_relation ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ol:Constraint ;
             owl:onProperty ol:constraint ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:Party ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:assignee ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:Asset ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:Rule_relation ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:Party ;
             owl:maxCardinality 1 ;

@@ -42,11 +42,11 @@ ol:title a owl:DatatypeProperty,
     rdfs:subPropertyOf dc:title .
 
 ol:Asset a [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:title ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ol:Id ;
             owl:onProperty ol:alsoIdentifiedBy ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:title ],
         owl:Class ;
     rdfs:label "Asset"^^xsd:string ;
     dc:description """
