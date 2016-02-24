@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3c.org/2008/skos/> .
 
-
+@prefix id: <http://openlicensing.org/ns/id/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
@@ -80,32 +80,23 @@ ol:title a owl:DatatypeProperty,
     rdfs:subPropertyOf dc:title .
 
 ol:Asset a [ a owl:Restriction ;
-            owl:allValuesFrom ol:Id ;
-            owl:onProperty ol:alsoIdentifiedBy ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:Id ;
+            owl:onProperty ol:alsoIdentifiedBy ],
         owl:Class ;
     rdfs:label "Asset"^^xsd:string ;
     dc:description """
-    An asset in ODRL is any object referred by a policy.
+An asset in ODRL is any object referred by a policy.
 
-    In the copyrighthub these asset generally represent the intellectual work and
-    metadata associated to particular instances of the work should not be included 
-    as metadata of the asset unless they are considered to be characteristic of the 
-    asset.
-    """@en ;
+In the copyrighthub these asset generally represent the intellectual work and
+metadata associated to particular instances of the work should not be included 
+as metadata of the asset unless they are considered to be characteristic of the 
+asset.
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf odrl:Asset .
-
-
-# -----------------------------------------------------------------------
-# default.ttl
-# -----------------------------------------------------------------------
-
-
-ol:actionSemantic a owl:AnnotationProperty ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
 
 # -----------------------------------------------------------------------
@@ -172,8 +163,8 @@ ol:IdAlt a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "IdAlt"^^xsd:string ;
     dc:description """
-    Identifier for an asset.
-    """@en ;
+Identifier for an asset.
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
 ol:IdAlt_idtype a owl:FunctionalProperty,
@@ -207,8 +198,8 @@ ol:Id a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "Id"^^xsd:string ;
     dc:description """
-    Identifier for an asset.
-    """@en ;
+Identifier for an asset.
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
 ol:top_id_type a ol:IdType,
@@ -222,8 +213,8 @@ ol:idtypes a skos:ConceptScheme ;
 ol:IdType a owl:Class ;
     rdfs:label "IdType"^^xsd:string ;
     dc:description """
-    Represents a class of identifiers
-    """@en ;
+Represents a class of identifiers
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
 
@@ -238,11 +229,11 @@ ol:Party a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "Party"^^xsd:string ;
     dc:description """
-    A party represent:
-      1. a legal person having duties and rights as part of agreements.
-      2. a person known by an organisation (not necessarily providing its real name)
+A party represent:
+  1. a legal person having duties and rights as part of agreements.
+  2. a person known by an organisation (not necessarily providing its real name)
 
-    """@en ;
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Asset,
         odrl:Party .
@@ -268,19 +259,6 @@ ol:policyText a owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string .
 
-ol:Policy_policyName a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:string .
-
-ol:created a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:dateTime ;
-    rdfs:subPropertyOf dct:created .
-
 ol:digitalPolicyAuthor a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
@@ -301,13 +279,6 @@ ol:expires a owl:DatatypeProperty,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:dateTime .
 
-ol:modified a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range xsd:dateTime ;
-    rdfs:subPropertyOf dct:modified .
-
 ol:policyDescription a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
@@ -320,187 +291,22 @@ ol:policyDescription a owl:DatatypeProperty,
 
 ol:Policy a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:policyDescription ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty ol:modified ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty ol:created ],
+            owl:onProperty ol:expires ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:Policy_policyName ],
+            owl:onProperty ol:policyDescription ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:digitalPolicyAuthor ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:expires ],
         owl:Class ;
     rdfs:label "Policy"^^xsd:string ;
     dc:description """
-    An ODRL policy representing an agreement or a potential agreement.
+An ODRL policy representing an agreement or a potential agreement.
 
-    Policy is the central entity that holds an ODRL policy together. In its encoded form, e.g. in an XML document, it makes the policy addressable from the outside word via its uid attribute. Policy can refer to Permissions and Prohibitions.
-    """@en ;
+Policy is the central entity that holds an ODRL policy together. In its encoded form, e.g. in an XML document, it makes the policy addressable from the outside word via its uid attribute. Policy can refer to Permissions and Prohibitions.
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf odrl:Policy .
-
-
-# -----------------------------------------------------------------------
-# rule.ttl
-# -----------------------------------------------------------------------
-
-
-ol:Duty a owl:Class ;
-    rdfs:label "Duty"^^xsd:string ;
-    dc:description """
-        Similar to Permissions, a Duty states that a certain Action MAY be executed by the Party with the Role assignee
-         for the Permission to be valid, e.g. “Alice must pay 5 EUR in order to get the Permission to play abc.mp3″.
-    """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Rule,
-        odrl:Duty .
-
-ol:Prohibition a owl:Class ;
-    rdfs:label "Prohibition"^^xsd:string ;
-    dc:description """
-        The Prohibition entity is used in the same way as Permission, with the two differences that it does not refer
-        to Duties and (obviously) that it forbids the Action, e.g. “Alice is forbidden to use abc.mp3 commercially”.
-    """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Rule,
-        odrl:Prohibition .
-
-ol:Permission a [ a owl:Restriction ;
-            owl:allValuesFrom ol:Rule ;
-            owl:onProperty ol:duty ],
-        owl:Class ;
-    rdfs:label "Permission"^^xsd:string ;
-    dc:description """
-        A Permission allows a particular Action to be executed on a related Asset, e.g. “play the audio file abc.mp3”.
-        A Constraint like “at most 10 times” might be added to specify the Permission more precisely.
-        The Party that grants this Permission is linked to it with the Role assigner, the Party that is granted the
-         Permission is linked to it with the Role assignee, e.g. “assigner VirtualMusicShop grants the Permission to
-          assignee Alice”. Additionally, a Permission MAY be linked to Duty entities.
-    """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Rule,
-        odrl:Permission .
-
-ol:Rule_relation a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Asset .
-
-ol:assigneeOfRule a owl:InverseFunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Rule ;
-    owl:inverseOf ol:assignee .
-
-ol:assignerOfRule a owl:InverseFunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Rule ;
-    owl:inverseOf ol:assigner .
-
-ol:constraint a owl:ObjectProperty ;
-    dc:description """
-                                 Constraint limiting the scope of the action
-                                 """@en ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Constraint ;
-    rdfs:subPropertyOf odrl:constraint .
-
-ol:duty a owl:ObjectProperty ;
-    rdfs:domain ol:Permission ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Rule .
-
-ol:targetOfRule a owl:InverseFunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Rule ;
-    owl:inverseOf ol:target .
-
-odrl:outputOfRule a owl:InverseFunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
-    rdfs:range ol:Rule ;
-    owl:inverseOf odrl:output .
-
-ol:assignee a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    rdfs:subPropertyOf odrl:assignee ;
-    owl:inverseOf ol:assigneeOfRule .
-
-ol:assigner a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    rdfs:subPropertyOf odrl:assigner ;
-    owl:inverseOf ol:assignerOfRule .
-
-ol:target a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Asset ;
-    rdfs:subPropertyOf ol:relation,
-        odrl:target ;
-    owl:inverseOf ol:targetOfRule .
-
-odrl:output a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ol:Rule ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
-    rdfs:range ol:Asset ;
-    rdfs:subPropertyOf ol:relation ;
-    owl:inverseOf odrl:outputOfRule .
-
-ol:Rule a [ a owl:Restriction ;
-            owl:allValuesFrom ol:Asset ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:target ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ol:Constraint ;
-            owl:onProperty ol:constraint ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ol:Party ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:assignee ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ol:Asset ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:Rule_relation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ol:Party ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:assigner ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ol:Asset ;
-            owl:maxCardinality 1 ;
-            owl:onProperty odrl:output ],
-        owl:Class ;
-    rdfs:label "Rule"^^xsd:string ;
-    dc:description """
-    Permission, Prohibition and Duty are Rules.
-
-    In order for "function" to complete "action" and to obtain "relation", function must satisfay constaint  ?
-    """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf odrl:Rule .
 
 
 # -----------------------------------------------------------------------
@@ -533,24 +339,24 @@ ol:AssetSet a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "AssetSet"^^xsd:string ;
     dc:description """
-        A set or collection of elements of type elementType
-        """@en ;
+A set or collection of elements of type elementType
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Asset .
 
 ol:IncomingLinksOnObjectsSet a [ a owl:Restriction ;
-            owl:allValuesFrom owl:ObjectProperty ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:predicate ],
-        [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:target_object ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:ObjectProperty ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:predicate ],
         owl:Class ;
     rdfs:label "IncomingLinksOnObjectsSet"^^xsd:string ;
     dc:description """
-            A set defined as the set of element pointing to a target object via a certain predicate.
-            """@en ;
+A set defined as the set of element pointing to a target object via a certain predicate.
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:AssetSet .
 
