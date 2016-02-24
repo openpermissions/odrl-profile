@@ -58,8 +58,8 @@ ol:IdAlt a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "IdAlt"^^xsd:string ;
     dc:description """
-    Identifier for an asset.
-    """@en ;
+Identifier for an asset.
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
 ol:IdAlt_idtype a owl:FunctionalProperty,
@@ -93,8 +93,8 @@ ol:Id a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "Id"^^xsd:string ;
     dc:description """
-    Identifier for an asset.
-    """@en ;
+Identifier for an asset.
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
 ol:top_id_type a ol:IdType,
@@ -108,7 +108,7 @@ ol:idtypes a skos:ConceptScheme ;
 ol:IdType a owl:Class ;
     rdfs:label "IdType"^^xsd:string ;
     dc:description """
-    Represents a class of identifiers
-    """@en ;
+Represents a class of identifiers
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 

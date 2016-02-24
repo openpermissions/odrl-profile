@@ -24,24 +24,24 @@ ol:AssetSet a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "AssetSet"^^xsd:string ;
     dc:description """
-        A set or collection of elements of type elementType
-        """@en ;
+A set or collection of elements of type elementType
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Asset .
 
 ol:IncomingLinksOnObjectsSet a [ a owl:Restriction ;
-            owl:allValuesFrom owl:ObjectProperty ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:predicate ],
-        [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:target_object ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:ObjectProperty ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:predicate ],
         owl:Class ;
     rdfs:label "IncomingLinksOnObjectsSet"^^xsd:string ;
     dc:description """
-            A set defined as the set of element pointing to a target object via a certain predicate.
-            """@en ;
+A set defined as the set of element pointing to a target object via a certain predicate.
+"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:AssetSet .
 
