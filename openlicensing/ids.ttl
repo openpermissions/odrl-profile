@@ -51,8 +51,11 @@ ol:IRI_ID a owl:Class ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Id .
 
-ol:IdAlt a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-idtype-0> ;
+ol:IdAlt a [ a owl:Restriction ;
+            owl:allValuesFrom ol:IdType ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:IdAlt_idtype ],
+        owl:Class ;
     rdfs:label "IdAlt"^^xsd:string ;
     dc:description """
     Identifier for an asset.
@@ -84,14 +87,10 @@ ol:PhotographicId a owl:Class ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Id .
 
-<https://ns.void/xnode/cardinality-openlicensing-idtype-0> a owl:Restriction ;
-    owl:allValuesFrom ol:IdType ;
-    owl:cardinality 1 ;
-    owl:onProperty ol:IdAlt_idtype,
-        ol:idtype .
-
-ol:Id a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-idtype-0> ;
+ol:Id a [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:idtype ],
+        owl:Class ;
     rdfs:label "Id"^^xsd:string ;
     dc:description """
     Identifier for an asset.

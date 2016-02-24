@@ -19,8 +19,10 @@ ol:Prohibition a owl:Class ;
     rdfs:subClassOf ol:Rule,
         odrl:Prohibition .
 
-ol:Permission a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-duty-0> ;
+ol:Permission a [ a owl:Restriction ;
+            owl:allValuesFrom ol:Rule ;
+            owl:onProperty ol:duty ],
+        owl:Class ;
     rdfs:label "Permission"^^xsd:string ;
     dc:description """
         A Permission allows a particular Action to be executed on a related Asset, e.g. “play the audio file abc.mp3”.
@@ -81,39 +83,6 @@ odrl:outputOfRule a owl:InverseFunctionalProperty,
     rdfs:range ol:Rule ;
     owl:inverseOf odrl:output .
 
-<https://ns.void/xnode/cardinality-odrl-output-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Asset ;
-    owl:maxCardinality 1 ;
-    owl:onProperty odrl:output .
-
-<https://ns.void/xnode/cardinality-ol-target-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Asset ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:target .
-
-<https://ns.void/xnode/cardinality-openlicensing-assignee-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Party ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:assignee .
-
-<https://ns.void/xnode/cardinality-openlicensing-assigner-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Party ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:assigner .
-
-<https://ns.void/xnode/cardinality-openlicensing-constraint-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Constraint ;
-    owl:onProperty ol:constraint .
-
-<https://ns.void/xnode/cardinality-openlicensing-duty-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Rule ;
-    owl:onProperty ol:duty .
-
-<https://ns.void/xnode/cardinality-openlicensing-relation-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Asset ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:Rule_relation .
-
 ol:assignee a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:Rule ;
@@ -147,13 +116,30 @@ odrl:output a owl:FunctionalProperty,
     rdfs:subPropertyOf ol:relation ;
     owl:inverseOf odrl:outputOfRule .
 
-ol:Rule a owl:Class,
-        <https://ns.void/xnode/cardinality-odrl-output-0>,
-        <https://ns.void/xnode/cardinality-ol-target-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-assignee-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-assigner-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-constraint-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-relation-0> ;
+ol:Rule a [ a owl:Restriction ;
+            owl:allValuesFrom ol:Asset ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:target ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:Asset ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:Rule_relation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:Constraint ;
+            owl:onProperty ol:constraint ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:Party ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:assignee ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:Party ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:assigner ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:Asset ;
+            owl:maxCardinality 1 ;
+            owl:onProperty odrl:output ],
+        owl:Class ;
     rdfs:label "Rule"^^xsd:string ;
     dc:description """
     Permission, Prohibition and Duty are Rules.

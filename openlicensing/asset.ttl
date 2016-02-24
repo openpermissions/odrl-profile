@@ -31,16 +31,6 @@ ol:alsoIdentifiedBy a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Id .
 
-ol:rightManager a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    dc:description """
-                                 A field to allow to know who to contact to get more rights.
-                                 """@en ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:range ol:Party ;
-    rdfs:subPropertyOf dct:rightsHolder .
-
 ol:title a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
@@ -51,23 +41,13 @@ ol:title a owl:DatatypeProperty,
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:title .
 
-<https://ns.void/xnode/cardinality-openlicensing-alsoIdentifiedBy-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Id ;
-    owl:onProperty ol:alsoIdentifiedBy .
-
-<https://ns.void/xnode/cardinality-openlicensing-rightManager-0> a owl:Restriction ;
-    owl:allValuesFrom ol:Party ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:rightManager .
-
-<https://ns.void/xnode/cardinality-openlicensing-title-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:title .
-
-ol:Asset a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-alsoIdentifiedBy-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-rightManager-0>,
-        <https://ns.void/xnode/cardinality-openlicensing-title-0> ;
+ol:Asset a [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:Id ;
+            owl:onProperty ol:alsoIdentifiedBy ],
+        owl:Class ;
     rdfs:label "Asset"^^xsd:string ;
     dc:description """
     An asset in ODRL is any object referred by a policy.

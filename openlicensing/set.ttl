@@ -17,23 +17,11 @@ ol:target_object a owl:FunctionalProperty,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:Thing .
 
-<https://ns.void/xnode/cardinality-ol-elementType-0> a owl:Restriction ;
-    owl:allValuesFrom owl:Class ;
-    owl:cardinality 1 ;
-    owl:onProperty ol:elementType .
-
-<https://ns.void/xnode/cardinality-ol-predicate-0> a owl:Restriction ;
-    owl:allValuesFrom owl:ObjectProperty ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:predicate .
-
-<https://ns.void/xnode/cardinality-ol-target_object-0> a owl:Restriction ;
-    owl:allValuesFrom owl:Thing ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:target_object .
-
-ol:AssetSet a owl:Class,
-        <https://ns.void/xnode/cardinality-ol-elementType-0> ;
+ol:AssetSet a [ a owl:Restriction ;
+            owl:allValuesFrom owl:Class ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:elementType ],
+        owl:Class ;
     rdfs:label "AssetSet"^^xsd:string ;
     dc:description """
         A set or collection of elements of type elementType
@@ -41,9 +29,15 @@ ol:AssetSet a owl:Class,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:subClassOf ol:Asset .
 
-ol:IncomingLinksOnObjectsSet a owl:Class,
-        <https://ns.void/xnode/cardinality-ol-predicate-0>,
-        <https://ns.void/xnode/cardinality-ol-target_object-0> ;
+ol:IncomingLinksOnObjectsSet a [ a owl:Restriction ;
+            owl:allValuesFrom owl:ObjectProperty ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:predicate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:target_object ],
+        owl:Class ;
     rdfs:label "IncomingLinksOnObjectsSet"^^xsd:string ;
     dc:description """
             A set defined as the set of element pointing to a target object via a certain predicate.

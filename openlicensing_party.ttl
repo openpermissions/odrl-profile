@@ -1,6 +1,8 @@
 
-ol:Party a owl:Class,
-        <https://ns.void/xnode/cardinality-openlicensing-name-0> ;
+ol:Party a [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:name ],
+        owl:Class ;
     rdfs:label "Party"^^xsd:string ;
     dc:description """
     A party represent:
@@ -18,8 +20,4 @@ ol:name a owl:DatatypeProperty,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:name .
-
-<https://ns.void/xnode/cardinality-openlicensing-name-0> a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty ol:name .
 
