@@ -14,18 +14,11 @@ This is an extension of the ODRL 2.1 Ontology to support the Open Licensing Plat
 OpenLicensing vision
 ====================
 
-The vision of OpenLicensing is to be a restricted set of ODRL2
-who allows to write well-defined, simple ODRL offers and agreements.
+OpenLicensing is a restricted set of ODRL2 that is designed to support the Open Licensing Platform.
 
-Well-defined terms for licensing
---------------------------------
-  - OpenLicensing removes terms that are loosely defined from ODRL2.1.
-  - OpenLicensing specifies ontologies to be used for monetary and geographical data.
-  
 Simple, simple, simple
 -----------------------
   - OpenLicensing supports only a limited the scope of licenses supported by ODRL which we think is more likely to be well supported by software.
-  - OpenLicensing removes from ODRL terms that are domain specific
   - OpenLicensing provide shortcut to ODRL construct that simplify the definition of common Policies (such as Creative Commons)
 
 Dependencies
@@ -51,24 +44,10 @@ OpenLicensing ontology is built ontop of ODRL2.1, and can be considered as an OD
 - <http://www.w3.org/ns/odrl/2/>
 
 
-Specific to OpenLicensing ODRL
-------------------------------
-
-**Geographic names**
-
-- <http://www.w3.org/2003/01/geo/wgs84_pos#> : core earth positioning type
-- <http://www.geonames.org/ontology#> : region of the world
-
-
 **Currencies**
 
 - <http://cvx.iptc.org/iso4217a/> : iso code based ontology for currencies
 
-
-** Units **
-
-- Units should be simple to reference according to established standard
-  Units are referenced using string
 
 
 Versioning
@@ -125,59 +104,15 @@ in features shall not be present as part of the namespace URL.
  
 
 
-OpenLicensing Additions to ODRL
-===============================
-
-** Policy level shared duties **
-You are allowed to specify shared duty at the level of the policy.
-Openlicensing does not recommend to have multiple sets of duties attached to one policy.
-As much as possible OpenLicensing recommends to split different permissions with different polcies.
-
-** Policy level default assignees**
-OpenLicensing provides ways to specify a default assigner for all the permissions at the level of the policy.
-The usage of this field is recommended as it decreases verbosity.
 
 
 
 Definition of "Sets"
 ====================
 
-In ODRL, there is no standard to discuss about sets of assets.
+In ODRL, there is no standard to discuss about sets of assets or license to set of assets.
 
-OpenLicensing introduce primitives to discuss about sets.
-
-- **TODO: COMPLETE THIS SECTION**
-- **TODO: COMPLETE THIS SECTION**
-- **TODO: COMPLETE THIS SECTION**
-
-
-OpenLicensing Deprecations
-==========================
-
-** Some ODRL Constraints : Towards data-aligned use-case driven **
-We have deprecated many terms used in the "constraint" as RightOperand in `ODRL` due to the fact
-that these terms to be useful need to be aligned with domain data. For instance,
-RelativePosition and RelativeSize as a scalar did not seem us to make sense when talking about 2d/3d assets.
-Also we recommend to use the same properties in metadata assets and in constraints. 
-Adding a triple specifying that these properties are rightOperand to make things clearer.
-
-** OpenLicensing Units **
-OpenLicensing does encourage re-using standard units for each property and discourage the absence of standard
-on representation of units on each constraint.
-(property must indicate their unit using monk:expressedIn)
-OR 
-(we reuse same as ODRL) but UNIT have to be expressed ...
-OR 
-(we tolerate ODRL notes, but recommend specifications of units via additional labels)
-
-
-OpenLicensing Specialisations with respect to ODRL
-==================================================
-
-We have specified further the ontologies that have to be used to refer to:
-   *  Spatial regions
-   *  Currencies
-   *  Parties
+OpenLicensing introduce primitives to discuss about sets of assets.
 
 
 Profiles
