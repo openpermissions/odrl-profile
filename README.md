@@ -5,8 +5,7 @@ The OpenLicensing Ontology
 - Download : [rdf]( http://openlicensing.org/ontologies/ol-1.1.rdf), [xml]( http://openlicensing.org/ontologies/ol-1.1.xml)
 - Version : 1.1
 - Release date: Febuary 2016, the 22nd
-- Authors : Digital Catapult ( jbirmingham@digit, B.Nouvel )
-
+- Authors : Digital Catapult 
 
 
 This is an extension of the ODRL 2.1 Ontology to support the Open Licensing Platform.
