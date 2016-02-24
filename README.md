@@ -102,11 +102,6 @@ It is also fairly consensual that patch level which are not meant to signify cha
 in features shall not be present as part of the namespace URL. 
 
  
-
-
-
-
-
 Definition of "Sets"
 ====================
 
@@ -114,6 +109,21 @@ In ODRL, there is no standard to discuss about sets of assets or license to set 
 
 OpenLicensing introduce primitives to discuss about sets of assets.
 
+Definition of "IdTypes"
+=======================
+
+OpenLicensing platform assumes generally that `IdType` instances have semantic IRI and 
+are defined as a `skos` taxonomy in single centrally-governed hub-specific namespace.
+It is the responsiblity of the hub owner to ensure the consistency of the taxonomy.
+
+
+ODRL syntaxes not supported by the OpenLicensing Platform
+=========================================================
+ 
+  * `nextPolicy`;
+  * policies with different set of duties;
+  * policies with inheritance;
+  * policies with non default behaviour on `undefined` and `conflict`.
 
 Profiles
 ========
