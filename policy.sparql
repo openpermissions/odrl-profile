@@ -11,13 +11,13 @@
         odrl:permission/(
             odrl:duty|(
                 odrl:duty/(
-                    odrl:constraint|odrl:output|odrl:target)
+                    odrl:constraint)
             )
-            |odrl:constraint|odrl:output|odrl:target)
+            |odrl:constraint)
     )
     |odrl:prohibition|(
         odrl:prohibition/(
-            odrl:constraint|odrl:output|odrl:target)
+            odrl:constraint)
     )
     )? ?s .
     } }
