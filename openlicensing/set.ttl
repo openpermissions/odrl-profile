@@ -1,47 +1,184 @@
 
+ol:chosen_sequentially a ol:AssetSetSamplePolicy,
+        skos:Concept ;
+    dc:description "chosen according to a predefined order"@en ;
+    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:name "chosen_sequentially"@en ;
+    skos:narrowerThan ol:any_sample_policy .
+
+ol:pointing_from a ol:AssetSetEdgeDirection,
+        skos:Concept ;
+    dc:description "Point from the element to the target_object"@en ;
+    skos:inScheme ol:AssetSetEdgeDirections ;
+    skos:name "pointing_from"@en ;
+    skos:narrowerThan ol:any_edge_direction .
+
+ol:pointing_to a ol:AssetSetEdgeDirection,
+        skos:Concept ;
+    dc:description "Point from the target_object to the element"@en ;
+    skos:inScheme ol:AssetSetEdgeDirections ;
+    skos:name "pointing_to"@en ;
+    skos:narrowerThan ol:any_edge_direction .
+
+ol:randomly_chosen a ol:AssetSetSamplePolicy,
+        skos:Concept ;
+    dc:description "chosen in an arbitrary manner not controller by assignee or assigner"@en ;
+    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:name "randomly_chosen"@en ;
+    skos:narrowerThan ol:any_sample_policy .
+
+ol:selected_by_assignee a ol:AssetSetSamplePolicy,
+        skos:Concept ;
+    dc:description "chosen by the assignee party"@en ;
+    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:name "selected_by_assignee"@en ;
+    skos:narrowerThan ol:any_sample_policy .
+
+ol:selected_by_assigner a ol:AssetSetSamplePolicy,
+        skos:Concept ;
+    dc:description "chosen by the assigner party"@en ;
+    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:name "selected_by_assigner"@en ;
+    skos:narrowerThan ol:any_sample_policy .
+
+ol:AssetSetSample_count a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    dc:description """ 
+                Default value is 1. A negative value -n can be used to mean "all the assets but n".
+                """@en ;
+    rdfs:domain ol:AssetSetSample ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range xsd:integer .
+
+ol:edgeDirection a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    dc:description """
+                Indicates in which direction the predicate is used to connect elements to the set target_object.
+                Default is ol:pointing_to.
+                """@en ;
+    rdfs:domain ol:AssetSet ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range ol:AssetSetEdgeDirection .
+
 ol:elementType a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:Class .
 
+ol:fromSet a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    dc:description """ 
+                The set asset can be picked from.
+                """@en ;
+    rdfs:domain ol:AssetSetSample ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range ol:AssetSet .
+
 ol:predicate a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    rdfs:domain ol:IncomingLinksOnObjectsSet ;
+    dc:description """ 
+                Indicates which predicate is used to Indicate that element belong to a set.
+                """@en ;
+    rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:ObjectProperty .
 
-ol:target_object a owl:FunctionalProperty,
+ol:samplePolicy a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    rdfs:domain ol:IncomingLinksOnObjectsSet ;
+    dc:description """ 
+                The way asset are selected. Default is selected_by_assignee.
+                """@en ;
+    rdfs:domain ol:AssetSetSample ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range ol:AssetSetSamplePolicy .
+
+ol:targetObject a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    dc:description """
+                Indicates the entity that the elements must connect to through the predicate in order to be part of the set.
+                Default is the AssetSet instance itself.
+                """@en ;
+    rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:Thing .
+
+ol:AssetSetEdgeDirections a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:any_edge_direction .
+
+ol:AssetSetSample a [ a owl:Restriction ;
+            owl:allValuesFrom ol:AssetSet ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:fromSet ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:AssetSetSample_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:AssetSetSamplePolicy ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:samplePolicy ],
+        owl:Class ;
+    rdfs:label "AssetSetSample"^^xsd:string ;
+    dc:description """
+An asset that is actually sampled from a set. An AssetSetSample must indicate the set asset must be selected from, muay contain a sample policy,  and may contain the number of 
+asset that must be sampled. 
+"""@en ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:subClassOf ol:Asset .
+
+ol:any_edge_direction a ol:AssetSetEdgeDirection,
+        skos:Concept ;
+    skos:inScheme ol:AssetSetEdgeDirections ;
+    skos:name "any_edge_direction"@en .
+
+ol:AssetSetEdgeDirection a owl:Class ;
+    rdfs:label "AssetSetEdgeDirection"^^xsd:string ;
+    dc:description """
+Indicates if the predicate used to connect the set to its elements,
+are "pointing to" the elements or "pointing from" the elements 
+"""@en ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
+
+ol:AssetSetSamplePolicies a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:any_sample_policy .
+
+ol:any_sample_policy a ol:AssetSetSamplePolicy,
+        skos:Concept ;
+    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:name "any_sample_policy"@en .
 
 ol:AssetSet a [ a owl:Restriction ;
             owl:allValuesFrom owl:Class ;
             owl:cardinality 1 ;
             owl:onProperty ol:elementType ],
-        owl:Class ;
-    rdfs:label "AssetSet"^^xsd:string ;
-    dc:description """
-A set or collection of elements of type elementType
-"""@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Asset .
-
-ol:IncomingLinksOnObjectsSet a [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:target_object ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:ObjectProperty ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:predicate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:targetObject ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:AssetSetEdgeDirection ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:edgeDirection ],
         owl:Class ;
-    rdfs:label "IncomingLinksOnObjectsSet"^^xsd:string ;
+    rdfs:label "AssetSet"^^xsd:string ;
     dc:description """
 A set defined as the set of element pointing to a target object via a certain predicate.
+"""@en,
+        """
+A set or collection of elements of type elementType
 """@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:AssetSet .
+    rdfs:subClassOf ol:Asset,
+        ol:AssetSet .
+
+ol:AssetSetSamplePolicy a owl:Class ;
+    rdfs:label "AssetSetSamplePolicy"^^xsd:string ;
+    dc:description """
+Indicates the way sampling from a set is done. 
+"""@en ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
 
