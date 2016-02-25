@@ -39,32 +39,32 @@
 
 ol:alsoIdentifiedBy a owl:ObjectProperty ;
     dc:description """
-         alsoIdentifiedBy is used to refer to code that are used to identify the asset 
-         in different context. As codes, and identifiers are given to object in different
-         context, it is not considered that there is a semantic equality between the different
-         identifiers used to refer to an asset, however it is assumed that :
-           1. Knowing the type of an asset and its identifier shall be completely unambiguous.
-           2. Except for algorithmic ideas used for content retrieval,  
-               that identifier necessarily refer to the whole asset and not to parts of the asset, that may
-              have their own identifiers, but that cannot be associated with it.
-              (I.e. in general the asset is fully included in the "alsoIdentifiedBy" asset,
-                    and we cannot use and "alsoIdentifiedBy" for something that is actually
-                    only included in the asset)
-              
-          For instance, it is ok to use
-            - the ISBN of book to refer to a text that is the main content of the book
-              although the book it self may actually contain more creative works: typography, illustrations,...
-              The book is semantically slightlt larger than the text it self but can be assumed connected with the 
-              the text.
-            
-          Oppositely it is not ok to use :
-            - the name of a Poem to refer to an entire book, as the poem may later be included in other books.
-            - it is not ok to use the id of a song to refer to CD - even if distributor current has exclusivity.
-            - it is not ok to use ISBN of a book to refer to a text if the book contain only a part a portion of the text. 
-            
-          However, it is currently accepted that a visual feature/hash used for content retrieval can be used to designate
-             a whole although this hash is only based on a part of a creation.             
-         """@en ;
+alsoIdentifiedBy is used to refer to code that are used to identify the asset 
+in different context. As codes, and identifiers are given to object in different
+context, it is not considered that there is a semantic equality between the different
+identifiers used to refer to an asset, however it is assumed that :
+  1. Knowing the type of an asset and its identifier shall be completely unambiguous.
+  2. Except for algorithmic ideas used for content retrieval,  
+      that identifier necessarily refer to the whole asset and not to parts of the asset, that may
+     have their own identifiers, but that cannot be associated with it.
+     (I.e. in general the asset is fully included in the "alsoIdentifiedBy" asset,
+           and we cannot use and "alsoIdentifiedBy" for something that is actually
+           only included in the asset)
+
+ For instance, it is ok to use
+   - the ISBN of book to refer to a text that is the main content of the book
+     although the book it self may actually contain more creative works: typography, illustrations,...
+     The book is semantically slightlt larger than the text it self but can be assumed connected with the 
+     the text.
+
+ Oppositely it is not ok to use :
+   - the name of a Poem to refer to an entire book, as the poem may later be included in other books.
+   - it is not ok to use the id of a song to refer to CD - even if distributor current has exclusivity.
+   - it is not ok to use ISBN of a book to refer to a text if the book contain only a part a portion of the text. 
+
+ However, it is currently accepted that a visual feature/hash used for content retrieval can be used to designate
+    a whole although this hash is only based on a part of a creation.             
+"""@en ;
     rdfs:domain ol:Asset ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:Id .
@@ -72,8 +72,8 @@ ol:alsoIdentifiedBy a owl:ObjectProperty ;
 ol:title a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
-        Title of the asset presented to the user in UI.
-        """@en ;
+Title of the asset presented to the user in UI.
+"""@en ;
     rdfs:domain ol:Asset ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:string ;
@@ -131,12 +131,12 @@ ol:value a owl:DatatypeProperty,
     rdfs:range xsd:string .
 
 ol:Id a [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:value ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ol:IdType ;
             owl:cardinality 1 ;
             owl:onProperty ol:idtype ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty ol:value ],
         owl:Class ;
     rdfs:label "Id"^^xsd:string ;
     dc:description """
@@ -214,9 +214,9 @@ ol:digitalPolicyAuthor a owl:DatatypeProperty,
 ol:expires a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
-         Optional expiry date of the policy.
-         The policy is not considered valid after this date.
-         """@en ;
+Optional expiry date of the policy.
+The policy is not considered valid after this date.
+"""@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:dateTime .
@@ -236,10 +236,10 @@ ol:Policy a [ a owl:Restriction ;
             owl:onProperty ol:expires ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:policyDescription ],
+            owl:onProperty ol:digitalPolicyAuthor ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:digitalPolicyAuthor ],
+            owl:onProperty ol:policyDescription ],
         owl:Class ;
     rdfs:label "Policy"^^xsd:string ;
     dc:description """
@@ -300,9 +300,9 @@ ol:selected_by_assigner a ol:AssetSetSamplePolicy,
 
 ol:AssetSetSample_count a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """ 
-                Default value is 1. A negative value -n can be used to mean "all the assets but n".
-                """@en ;
+    dc:description """
+Default value is 1. A negative value -n can be used to mean "all the assets but n".
+"""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer .
@@ -310,9 +310,9 @@ ol:AssetSetSample_count a owl:DatatypeProperty,
 ol:edgeDirection a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
-                Indicates in which direction the predicate is used to connect elements to the set target_object.
-                Default is ol:pointing_to.
-                """@en ;
+Indicates in which direction the predicate is used to connect elements to the set target_object.
+Default is ol:pointing_to.
+"""@en ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:AssetSetEdgeDirection .
@@ -325,27 +325,27 @@ ol:elementType a owl:FunctionalProperty,
 
 ol:fromSet a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """ 
-                The set asset can be picked from.
-                """@en ;
+    dc:description """
+The set asset can be picked from.
+"""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:AssetSet .
 
 ol:predicate a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """ 
-                Indicates which predicate is used to Indicate that element belong to a set.
-                """@en ;
+    dc:description """
+Indicates which predicate is used to Indicate that element belong to a set.
+"""@en ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:ObjectProperty .
 
 ol:samplePolicy a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """ 
-                The way asset are selected. Default is selected_by_assignee.
-                """@en ;
+    dc:description """
+The way asset are selected. Default is selected_by_assignee.
+"""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:AssetSetSamplePolicy .
@@ -353,9 +353,9 @@ ol:samplePolicy a owl:FunctionalProperty,
 ol:targetObject a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
-                Indicates the entity that the elements must connect to through the predicate in order to be part of the set.
-                Default is the AssetSet instance itself.
-                """@en ;
+Indicates the entity that the elements must connect to through the predicate in order to be part of the set.
+Default is the AssetSet instance itself.
+"""@en ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:Thing .
@@ -405,21 +405,21 @@ ol:any_sample_policy a ol:AssetSetSamplePolicy,
     skos:name "any_sample_policy"@en .
 
 ol:AssetSet a [ a owl:Restriction ;
-            owl:allValuesFrom owl:Class ;
-            owl:cardinality 1 ;
-            owl:onProperty ol:elementType ],
-        [ a owl:Restriction ;
             owl:allValuesFrom owl:ObjectProperty ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:predicate ],
         [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:targetObject ],
+            owl:allValuesFrom owl:Class ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:elementType ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:AssetSetEdgeDirection ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:edgeDirection ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:targetObject ],
         owl:Class ;
     rdfs:label "AssetSet"^^xsd:string ;
     dc:description """

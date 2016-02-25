@@ -20,9 +20,9 @@ ol:digitalPolicyAuthor a owl:DatatypeProperty,
 ol:expires a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
-         Optional expiry date of the policy.
-         The policy is not considered valid after this date.
-         """@en ;
+Optional expiry date of the policy.
+The policy is not considered valid after this date.
+"""@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:dateTime .
@@ -42,10 +42,10 @@ ol:Policy a [ a owl:Restriction ;
             owl:onProperty ol:expires ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:policyDescription ],
+            owl:onProperty ol:digitalPolicyAuthor ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:digitalPolicyAuthor ],
+            owl:onProperty ol:policyDescription ],
         owl:Class ;
     rdfs:label "Policy"^^xsd:string ;
     dc:description """

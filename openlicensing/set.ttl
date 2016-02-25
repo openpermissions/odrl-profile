@@ -43,9 +43,9 @@ ol:selected_by_assigner a ol:AssetSetSamplePolicy,
 
 ol:AssetSetSample_count a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """ 
-                Default value is 1. A negative value -n can be used to mean "all the assets but n".
-                """@en ;
+    dc:description """
+Default value is 1. A negative value -n can be used to mean "all the assets but n".
+"""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range xsd:integer .
@@ -53,9 +53,9 @@ ol:AssetSetSample_count a owl:DatatypeProperty,
 ol:edgeDirection a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
-                Indicates in which direction the predicate is used to connect elements to the set target_object.
-                Default is ol:pointing_to.
-                """@en ;
+Indicates in which direction the predicate is used to connect elements to the set target_object.
+Default is ol:pointing_to.
+"""@en ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:AssetSetEdgeDirection .
@@ -68,27 +68,27 @@ ol:elementType a owl:FunctionalProperty,
 
 ol:fromSet a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """ 
-                The set asset can be picked from.
-                """@en ;
+    dc:description """
+The set asset can be picked from.
+"""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:AssetSet .
 
 ol:predicate a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """ 
-                Indicates which predicate is used to Indicate that element belong to a set.
-                """@en ;
+    dc:description """
+Indicates which predicate is used to Indicate that element belong to a set.
+"""@en ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:ObjectProperty .
 
 ol:samplePolicy a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """ 
-                The way asset are selected. Default is selected_by_assignee.
-                """@en ;
+    dc:description """
+The way asset are selected. Default is selected_by_assignee.
+"""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range ol:AssetSetSamplePolicy .
@@ -96,9 +96,9 @@ ol:samplePolicy a owl:FunctionalProperty,
 ol:targetObject a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
-                Indicates the entity that the elements must connect to through the predicate in order to be part of the set.
-                Default is the AssetSet instance itself.
-                """@en ;
+Indicates the entity that the elements must connect to through the predicate in order to be part of the set.
+Default is the AssetSet instance itself.
+"""@en ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
     rdfs:range owl:Thing .
@@ -148,21 +148,21 @@ ol:any_sample_policy a ol:AssetSetSamplePolicy,
     skos:name "any_sample_policy"@en .
 
 ol:AssetSet a [ a owl:Restriction ;
-            owl:allValuesFrom owl:Class ;
-            owl:cardinality 1 ;
-            owl:onProperty ol:elementType ],
-        [ a owl:Restriction ;
             owl:allValuesFrom owl:ObjectProperty ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:predicate ],
         [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:targetObject ],
+            owl:allValuesFrom owl:Class ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:elementType ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:AssetSetEdgeDirection ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:edgeDirection ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:targetObject ],
         owl:Class ;
     rdfs:label "AssetSet"^^xsd:string ;
     dc:description """
