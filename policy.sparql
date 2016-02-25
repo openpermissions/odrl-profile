@@ -2,7 +2,10 @@
  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
  PREFIX owl: <http://www.w3.org/2002/07/owl#>
  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
- 
+ PREFIX id: <http://openlicensing.org/ns/id/>
+ PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+ PREFIX ol: <http://openlicensing.org/ns/ol/1.0/>
+
  CONSTRUCT { ?s ?p ?o } WHERE {
     $startid$ rdf:type odrl:Policy .	
     { SELECT DISTINCT ?s {
