@@ -3,7 +3,7 @@
  PREFIX owl: <http://www.w3.org/2002/07/owl#>
  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
  
- SELECT ?s ?p ?o WHERE {
+ CONSTRUCT { ?s ?p ?o } WHERE {
     $startid$ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://openlicensing.org/ns/ol/1.0/Policy>.	
     { SELECT DISTINCT ?s {
     $startid$ (
