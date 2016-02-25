@@ -379,21 +379,21 @@ olex:supplies a owl:InverseFunctionalProperty,
     rdfs:range olex:DistributionInfo ;
     owl:inverseOf olex:suppliedBy .
 
-olex:usedInREVacd3b462f87243cdb728d24048775155 a owl:ObjectProperty ;
-    rdfs:domain olex:Glyph ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
-    rdfs:range olex:Typography ;
-    rdfs:subPropertyOf olex:usedIn ;
-    owl:inverseOf olex:Typography_glyph .
-
-olex:usedInREVb83f184583414bb89a766a21b6c5b4ea a owl:ObjectProperty ;
+olex:usedInREVa0a4085a1c5f4426b03776f8ad1f2c2a a owl:ObjectProperty ;
     rdfs:domain ol:Asset ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range olex:PackagedProduct ;
     rdfs:subPropertyOf olex:usedIn ;
     owl:inverseOf olex:PackagedProduct_packageDesign .
 
-olex:usedInREVb8745146abd546d2a10ea3d0dd6fb715 a owl:InverseFunctionalProperty,
+olex:usedInREVbe31817729684379b127b3f41a77f0b3 a owl:ObjectProperty ;
+    rdfs:domain olex:Glyph ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Typography ;
+    rdfs:subPropertyOf olex:usedIn ;
+    owl:inverseOf olex:Typography_glyph .
+
+olex:usedInREVbf41fb74f4a045c3896bd8f8b71fdf0e a owl:InverseFunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain olex:Typography ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
@@ -401,42 +401,21 @@ olex:usedInREVb8745146abd546d2a10ea3d0dd6fb715 a owl:InverseFunctionalProperty,
     rdfs:subPropertyOf olex:usedIn ;
     owl:inverseOf olex:Book_typography .
 
-olex:usedInREVc27c115c1bb64deea3595d4fedd1e8e9 a owl:ObjectProperty ;
-    rdfs:domain olex:Music ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
-    rdfs:range olex:CD ;
-    rdfs:subPropertyOf olex:usedIn ;
-    owl:inverseOf olex:CD_includedmusic .
-
-olex:usedInREVc611cf01cd67440898d438fc74736dd6 a owl:ObjectProperty ;
+olex:usedInREVc0cc7cc59604467dbb40dcc3cee122ac a owl:ObjectProperty ;
     rdfs:domain ol:Asset ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
-    rdfs:range olex:PackagedProduct ;
+    rdfs:range olex:Compilation ;
     rdfs:subPropertyOf olex:usedIn ;
-    owl:inverseOf olex:PackagedProduct_coverDesign .
+    owl:inverseOf olex:Compilation_part .
 
-olex:usedInREVc6ccaf924eff4109b9aadfe212e8d311 a owl:ObjectProperty ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
-    rdfs:range olex:Patchwork ;
-    rdfs:subPropertyOf olex:usedIn ;
-    owl:inverseOf olex:Patchwork_part .
-
-olex:usedInREVe030688664574bd289ee8340cfba8624 a owl:ObjectProperty ;
+olex:usedInREVc3d084a767fa4088a48275110649a31b a owl:ObjectProperty ;
     rdfs:domain olex:Text ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range olex:Book ;
     rdfs:subPropertyOf olex:usedIn ;
     owl:inverseOf olex:Book_content .
 
-olex:usedInREVe0b8bcc608d143c9b771bbdf85f42316 a owl:ObjectProperty ;
-    rdfs:domain olex:GraphicsWork ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
-    rdfs:range olex:CD ;
-    rdfs:subPropertyOf olex:usedIn ;
-    owl:inverseOf olex:CD_cover .
-
-olex:usedInREVe8eb41ce7d494bb0916f6c5c4dff5391 a owl:InverseFunctionalProperty,
+olex:usedInREVc92d4d6a4d214878bc8913d46a825348 a owl:InverseFunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain olex:Text ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
@@ -444,7 +423,14 @@ olex:usedInREVe8eb41ce7d494bb0916f6c5c4dff5391 a owl:InverseFunctionalProperty,
     rdfs:subPropertyOf olex:usedIn ;
     owl:inverseOf olex:Song_songLyrics .
 
-olex:usedInREVf8e078b1360a4f5fb7a78b52a22764fd a owl:InverseFunctionalProperty,
+olex:usedInREVcd396d116da142208fd1862c063bb7f5 a owl:ObjectProperty ;
+    rdfs:domain olex:GraphicsWork ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:CD ;
+    rdfs:subPropertyOf olex:usedIn ;
+    owl:inverseOf olex:CD_cover .
+
+olex:usedInREVcdd2248f48674301a6312fb1e08009ad a owl:InverseFunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain olex:Tune ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
@@ -452,30 +438,44 @@ olex:usedInREVf8e078b1360a4f5fb7a78b52a22764fd a owl:InverseFunctionalProperty,
     rdfs:subPropertyOf olex:usedIn ;
     owl:inverseOf olex:Music_tune .
 
-olex:usedInREVfd19ec9d30834ed98b2fcfdfb5bb685d a owl:ObjectProperty ;
+olex:usedInREVd528174678be4bae8ce082952badc4d4 a owl:ObjectProperty ;
+    rdfs:domain olex:Music ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:CD ;
+    rdfs:subPropertyOf olex:usedIn ;
+    owl:inverseOf olex:CD_includedmusic .
+
+olex:usedInREVf46c1de48fb44514884ccf7843da6e0e a owl:ObjectProperty ;
     rdfs:domain ol:Asset ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
-    rdfs:range olex:Compilation ;
+    rdfs:range olex:PackagedProduct ;
     rdfs:subPropertyOf olex:usedIn ;
-    owl:inverseOf olex:Compilation_part .
+    owl:inverseOf olex:PackagedProduct_coverDesign .
+
+olex:usedInREVf836189f0ee84109bdae98da3fcabbec a owl:ObjectProperty ;
+    rdfs:domain ol:Asset ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Patchwork ;
+    rdfs:subPropertyOf olex:usedIn ;
+    owl:inverseOf olex:Patchwork_part .
 
 ol:extraRightsAPI a owl:ObjectProperty ;
     dc:description """
                                  A field to allow to know which server to contact to get more rights.
                                  """@en ;
     rdfs:domain olex:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range monk:API .
 
 ol:hasContributedTo a owl:ObjectProperty ;
     rdfs:domain odrl:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range olex:Asset ;
     owl:inverseOf ol:contributor .
 
 ol:isTheAuthorOf a owl:ObjectProperty ;
     rdfs:domain odrl:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range olex:Asset ;
     owl:inverseOf ol:author .
 
@@ -491,7 +491,7 @@ olex:Book_content a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range olex:Text ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVe030688664574bd289ee8340cfba8624 .
+    owl:inverseOf olex:usedInREVc3d084a767fa4088a48275110649a31b .
 
 olex:Book_typography a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -499,35 +499,35 @@ olex:Book_typography a owl:FunctionalProperty,
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range olex:Typography ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVb8745146abd546d2a10ea3d0dd6fb715 .
+    owl:inverseOf olex:usedInREVbf41fb74f4a045c3896bd8f8b71fdf0e .
 
 olex:CD_cover a owl:ObjectProperty ;
     rdfs:domain olex:CD ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range olex:GraphicsWork ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVe0b8bcc608d143c9b771bbdf85f42316 .
+    owl:inverseOf olex:usedInREVcd396d116da142208fd1862c063bb7f5 .
 
 olex:CD_includedmusic a owl:ObjectProperty ;
     rdfs:domain olex:CD ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range olex:Music ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVc27c115c1bb64deea3595d4fedd1e8e9 .
+    owl:inverseOf olex:usedInREVd528174678be4bae8ce082952badc4d4 .
 
 olex:Compilation_part a owl:ObjectProperty ;
     rdfs:domain olex:Compilation ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range ol:Asset ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVfd19ec9d30834ed98b2fcfdfb5bb685d .
+    owl:inverseOf olex:usedInREVc0cc7cc59604467dbb40dcc3cee122ac .
 
 olex:DigitizedVideo a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:DigitizedVideo_videoBitRate ],
+            owl:onProperty olex:DigitizedVideo_framePerSecond ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:DigitizedVideo_framePerSecond ],
+            owl:onProperty olex:DigitizedVideo_videoBitRate ],
         owl:Class ;
     rdfs:label "DigitizedVideo"^^xsd:string ;
     dc:description """
@@ -557,28 +557,28 @@ olex:Music_tune a owl:FunctionalProperty,
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range olex:Tune ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVf8e078b1360a4f5fb7a78b52a22764fd .
+    owl:inverseOf olex:usedInREVcdd2248f48674301a6312fb1e08009ad .
 
 olex:PackagedProduct_coverDesign a owl:ObjectProperty ;
     rdfs:domain olex:PackagedProduct ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range ol:Asset ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVc611cf01cd67440898d438fc74736dd6 .
+    owl:inverseOf olex:usedInREVf46c1de48fb44514884ccf7843da6e0e .
 
 olex:PackagedProduct_packageDesign a owl:ObjectProperty ;
     rdfs:domain olex:PackagedProduct ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range ol:Asset ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVb83f184583414bb89a766a21b6c5b4ea .
+    owl:inverseOf olex:usedInREVa0a4085a1c5f4426b03776f8ad1f2c2a .
 
 olex:Patchwork_part a owl:ObjectProperty ;
     rdfs:domain olex:Patchwork ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range ol:Asset ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVc6ccaf924eff4109b9aadfe212e8d311 .
+    owl:inverseOf olex:usedInREVf836189f0ee84109bdae98da3fcabbec .
 
 olex:PurposeInfo a [ a owl:Restriction ;
             owl:allValuesFrom ol:Purpose ;
@@ -607,11 +607,11 @@ olex:RentableInfo a [ a owl:Restriction ;
     rdfs:subClassOf olex:InHouseMixins .
 
 olex:SignedRES a [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty olex:SignedRES_signature ],
-        [ a owl:Restriction ;
             owl:allValuesFrom monk:Person ;
             owl:onProperty olex:SignedRES_trustedSigner ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty olex:SignedRES_signature ],
         owl:Class ;
     rdfs:label "SignedRES"^^xsd:string ;
     dc:description """A collection of assets referred as one asset that can evolve through time and
@@ -629,7 +629,7 @@ olex:Song_songLyrics a owl:FunctionalProperty,
     rdfs:range olex:Text ;
     rdfs:subPropertyOf olex:lyrics,
         olex:subcontent ;
-    owl:inverseOf olex:usedInREVe8eb41ce7d494bb0916f6c5c4dff5391 .
+    owl:inverseOf olex:usedInREVc92d4d6a4d214878bc8913d46a825348 .
 
 olex:TagBasedSet a [ a owl:Restriction ;
             owl:allValuesFrom owl:Property ;
@@ -646,7 +646,7 @@ olex:Typography_glyph a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
     rdfs:range olex:Glyph ;
     rdfs:subPropertyOf olex:subcontent ;
-    owl:inverseOf olex:usedInREVacd3b462f87243cdb728d24048775155 .
+    owl:inverseOf olex:usedInREVbe31817729684379b127b3f41a77f0b3 .
 
 olex:distributedBy a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -689,7 +689,7 @@ ol:author a owl:ObjectProperty ;
         Authors are distinguished of contributors.
         """@en ;
     rdfs:domain olex:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range odrl:Party ;
     rdfs:subPropertyOf ol:contributor ;
     owl:inverseOf ol:isTheAuthorOf .
@@ -746,13 +746,13 @@ olex:Dataset a owl:Class ;
 
 olex:DigitizedAudioInfo a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:DigitizedAudioInfo_audioBitsPerSample ],
+            owl:onProperty olex:DigitizedAudioInfo_audioBitRate ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:DigitizedAudioInfo_audioFrequency ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:DigitizedAudioInfo_audioBitRate ],
+            owl:onProperty olex:DigitizedAudioInfo_audioBitsPerSample ],
         owl:Class ;
     rdfs:label "DigitizedAudioInfo"^^xsd:string ;
     dc:description """
@@ -789,17 +789,17 @@ olex:Lead a owl:Class ;
         olex:Supporting .
 
 olex:OWLSet a [ a owl:Restriction ;
-            owl:allValuesFrom owl:Class ;
-            owl:cardinality 1 ;
-            owl:onProperty olex:OWLSet_parentClass ],
+            owl:allValuesFrom owl:ObjectProperty ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:predicate ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:target_object ],
         [ a owl:Restriction ;
-            owl:allValuesFrom owl:ObjectProperty ;
-            owl:maxCardinality 1 ;
-            owl:onProperty olex:predicate ],
+            owl:allValuesFrom owl:Class ;
+            owl:cardinality 1 ;
+            owl:onProperty olex:OWLSet_parentClass ],
         owl:Class ;
     rdfs:label "OWLSet"^^xsd:string ;
     dc:description "A collection is defined as an OWL instance"@en ;
@@ -904,7 +904,7 @@ ol:contributor a owl:ObjectProperty ;
         normally to give their rights at some point if they are contributors.
         """@en ;
     rdfs:domain olex:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range odrl:Party ;
     rdfs:subPropertyOf dc:creator ;
     owl:inverseOf ol:hasContributedTo .
@@ -919,9 +919,6 @@ olex:CompanyDataAsset a owl:Class ;
 
 olex:DigitizedImageInfo a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:DigitizedImageInfo_heightResolution ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty olex:DigitizedImageInfo_width ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -929,6 +926,9 @@ olex:DigitizedImageInfo a [ a owl:Restriction ;
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:DigitizedImageInfo_widthResolution ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:DigitizedImageInfo_heightResolution ],
         owl:Class ;
     rdfs:label "DigitizedImageInfo"^^xsd:string ;
     dc:description """
@@ -1013,16 +1013,16 @@ olex:Architecture a owl:Class ;
 
 olex:AssetDateInfo a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:AssetDateInfo_dateOfPublication ],
+            owl:onProperty olex:AssetDateInfo_dateOfCreation ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:AssetDateInfo_dateOfCreation ],
+            owl:onProperty olex:AssetDateInfo_dateOfRelease ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:AssetDateInfo_dateOfLastModification ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:AssetDateInfo_dateOfRelease ],
+            owl:onProperty olex:AssetDateInfo_dateOfPublication ],
         owl:Class ;
     rdfs:label "AssetDateInfo"^^xsd:string ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
@@ -1045,11 +1045,11 @@ A book is the concept of putting a content that can be composed of text ang grap
         olex:PackagedProduct .
 
 olex:CD a [ a owl:Restriction ;
-            owl:allValuesFrom olex:Music ;
-            owl:onProperty olex:CD_includedmusic ],
-        [ a owl:Restriction ;
             owl:allValuesFrom olex:GraphicsWork ;
             owl:onProperty olex:CD_cover ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Music ;
+            owl:onProperty olex:CD_includedmusic ],
         owl:Class ;
     rdfs:label "CD"^^xsd:string ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
@@ -1203,10 +1203,10 @@ olex:SellableInfo a [ a owl:Restriction ;
             owl:onProperty olex:SellableInfo_suggestedPrice ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:SellableInfo_minimumPrice ],
+            owl:onProperty olex:SellableInfo_wholesalePrice ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:SellableInfo_wholesalePrice ],
+            owl:onProperty olex:SellableInfo_minimumPrice ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:SellableInfo_price ],
@@ -1228,10 +1228,10 @@ olex:UrbanDesign a owl:Class ;
 
 olex:VirtualAsset a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:VirtualAsset_fileSize ],
+            owl:onProperty olex:VirtualAsset_fileFormat ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:VirtualAsset_fileFormat ],
+            owl:onProperty olex:VirtualAsset_fileSize ],
         owl:Class ;
     rdfs:label "VirtualAsset"^^xsd:string ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
@@ -2038,6 +2038,9 @@ olex:VocalPerformance a owl:Class ;
 
 olex:Asset a [ a owl:Restriction ;
             owl:allValuesFrom odrl:Party ;
+            owl:onProperty ol:contributor ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom odrl:Party ;
             owl:onProperty ol:author ],
         [ a owl:Restriction ;
             owl:allValuesFrom monk:API ;
@@ -2045,9 +2048,6 @@ olex:Asset a [ a owl:Restriction ;
         [ a owl:Restriction ;
             owl:allValuesFrom olex:Asset ;
             owl:onProperty olex:Asset_subcontent ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom odrl:Party ;
-            owl:onProperty ol:contributor ],
         owl:Class ;
     rdfs:label "Asset"^^xsd:string ;
     dc:description """

@@ -16,13 +16,13 @@ ol:IRI a ol:IdType,
 ol:idtype a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:IdType .
 
 ol:value a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range xsd:string .
 
 ol:Id a [ a owl:Restriction ;
@@ -37,7 +37,7 @@ ol:Id a [ a owl:Restriction ;
     dc:description """
 Identifier for an asset.
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 
 ol:idtypes a skos:ConceptScheme ;
     skos:ConceptScheme_hasTopConcept ol:top_id_type .
@@ -52,5 +52,5 @@ ol:IdType a owl:Class ;
     dc:description """
 Represents a class of identifiers
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 

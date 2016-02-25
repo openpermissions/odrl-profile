@@ -14,12 +14,12 @@
 @prefix gn: <http://www.geonames.org/ontology#> .
 
 @prefix iso4217a: <http://cvx.iptc.org/iso4217a/> .
-@prefix ol: <http://openlicensing.org/ns/ol/1.0/> .
+@prefix ol: <http://openlicensing.org/ns/ol/1.1/> .
 
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
 
-<http://openlicensing.org/ns/ol/1.0/> a owl:Ontology ;
+<http://openlicensing.org/ns/ol/1.1/> a owl:Ontology ;
     dc:creator "Digital Catapult Software Engineering Team"^^xsd:string;
     dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
     dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;

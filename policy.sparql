@@ -1,13 +1,15 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-
-SELECT ?s ?p ?o WHERE {
-    $startid$ <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://openlicensing.org/ns/ol/1.0/Policy>.
-{ SELECT DISTINCT ?s {
-    $startid$ (<http://openlicensing.org/ns/ol/1.0/permission>|(<http://openlicensing.org/ns/ol/1.0/permission>/(<http://openlicensing.org/ns/ol/1.0/duty>|(<http://openlicensing.org/ns/ol/1.0/duty>/(<http://openlicensing.org/ns/ol/1.0/constraint>|(<http://openlicensing.org/ns/ol/1.0/constraint>/(<http://openlicensing.org/ns/ol/1.0/host>|(<http://openlicensing.org/ns/ol/1.0/host>/(<http://openlicensing.org/ns/ol/1.0/alsoIdentifiedBy>))))|<http://www.w3.org/ns/odrl/2/output>|(<http://www.w3.org/ns/odrl/2/output>/(<http://openlicensing.org/ns/ol/1.0/alsoIdentifiedBy>))|<http://openlicensing.org/ns/ol/1.0/target>|(<http://openlicensing.org/ns/ol/1.0/target>/(<http://openlicensing.org/ns/ol/1.0/alsoIdentifiedBy>))|<http://www.w3.org/ns/odrl/2/constraint>|<http://www.w3.org/ns/odrl/2/output>|<http://www.w3.org/ns/odrl/2/target>))|<http://www.w3.org/ns/odrl/2/constraint>|<http://www.w3.org/ns/odrl/2/output>|<http://www.w3.org/ns/odrl/2/target>|<http://www.w3.org/ns/odrl/2/duty>|(<http://www.w3.org/ns/odrl/2/duty>/(<http://www.w3.org/ns/odrl/2/constraint>|<http://www.w3.org/ns/odrl/2/output>|<http://www.w3.org/ns/odrl/2/target>))|<http://www.w3.org/ns/odrl/2/constraint>|<http://www.w3.org/ns/odrl/2/output>|<http://www.w3.org/ns/odrl/2/target>|<http://openlicensing.org/ns/ol/1.0/constraint>|(<http://openlicensing.org/ns/ol/1.0/constraint>/(<http://openlicensing.org/ns/ol/1.0/host>|(<http://openlicensing.org/ns/ol/1.0/host>/(<http://openlicensing.org/ns/ol/1.0/alsoIdentifiedBy>))))|<http://www.w3.org/ns/odrl/2/output>|(<http://www.w3.org/ns/odrl/2/output>/(<http://openlicensing.org/ns/ol/1.0/alsoIdentifiedBy>))|<http://openlicensing.org/ns/ol/1.0/target>|(<http://openlicensing.org/ns/ol/1.0/target>/(<http://openlicensing.org/ns/ol/1.0/alsoIdentifiedBy>))))|<http://openlicensing.org/ns/ol/1.0/prohibition>|(<http://openlicensing.org/ns/ol/1.0/prohibition>/(<http://www.w3.org/ns/odrl/2/constraint>|<http://www.w3.org/ns/odrl/2/output>|<http://www.w3.org/ns/odrl/2/target>|<http://www.w3.org/ns/odrl/2/constraint>|<http://www.w3.org/ns/odrl/2/output>|<http://www.w3.org/ns/odrl/2/target>|<http://openlicensing.org/ns/ol/1.0/constraint>|(<http://openlicensing.org/ns/ol/1.0/constraint>/(<http://openlicensing.org/ns/ol/1.0/host>|(<http://openlicensing.org/ns/ol/1.0/host>/(<http://openlicensing.org/ns/ol/1.0/alsoIdentifiedBy>))))|<http://www.w3.org/ns/odrl/2/output>|(<http://www.w3.org/ns/odrl/2/output>/(<http://openlicensing.org/ns/ol/1.0/alsoIdentifiedBy>))|<http://openlicensing.org/ns/ol/1.0/target>|(<http://openlicensing.org/ns/ol/1.0/target>/(<http://openlicensing.org/ns/ol/1.0/alsoIdentifiedBy>))))|<http://www.w3.org/ns/odrl/2/permission>|(<http://www.w3.org/ns/odrl/2/permission>/(<http://www.w3.org/ns/odrl/2/duty>|(<http://www.w3.org/ns/odrl/2/duty>/(<http://www.w3.org/ns/odrl/2/constraint>|<http://www.w3.org/ns/odrl/2/output>|<http://www.w3.org/ns/odrl/2/target>))|<http://www.w3.org/ns/odrl/2/constraint>|<http://www.w3.org/ns/odrl/2/output>|<http://www.w3.org/ns/odrl/2/target>))|<http://www.w3.org/ns/odrl/2/prohibition>|(<http://www.w3.org/ns/odrl/2/prohibition>/(<http://www.w3.org/ns/odrl/2/constraint>|<http://www.w3.org/ns/odrl/2/output>|<http://www.w3.org/ns/odrl/2/target>)))? ?s .
-} } .
-?s ?p ?o .
-FILTER ( LANG(?o)="" || LANG(?o)="en" ) .
+$startid$ (
+    <odrl:permission>|(
+        <odrl:permission>/(
+            <odrl:duty>|(
+                <odrl:duty>/(
+                    <odrl:constraint>|<odrl:output>|<odrl:target>)
+            )
+            |<odrl:constraint>|<odrl:output>|<odrl:target>)
+    )
+    |<odrl:prohibition>|(
+        <odrl:prohibition>/(
+            <odrl:constraint>|<odrl:output>|<odrl:target>)
+    )
+)
+? ?s ..

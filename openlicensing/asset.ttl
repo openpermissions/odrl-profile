@@ -28,7 +28,7 @@ identifiers used to refer to an asset, however it is assumed that :
     a whole although this hash is only based on a part of a creation.             
 """@en ;
     rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:Id .
 
 ol:title a owl:DatatypeProperty,
@@ -37,7 +37,7 @@ ol:title a owl:DatatypeProperty,
 Title of the asset presented to the user in UI.
 """@en ;
     rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:title .
 
@@ -57,6 +57,6 @@ metadata associated to particular instances of the work should not be included
 as metadata of the asset unless they are considered to be characteristic of the 
 asset.
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:subClassOf odrl:Asset .
 

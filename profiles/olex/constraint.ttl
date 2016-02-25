@@ -496,19 +496,19 @@ olex:all_units a olex:Unit,
     skos:name "all_units"@en .
 
 olex:ConstraintPayAmount a [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty olex:amount ],
+        [ a owl:Restriction ;
             owl:allValuesFrom monk:Person ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:authorisedBy ],
+            owl:onProperty olex:payTo ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:currency ],
         [ a owl:Restriction ;
             owl:allValuesFrom monk:Person ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:payTo ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty olex:amount ],
+            owl:onProperty olex:authorisedBy ],
         owl:Class ;
     rdfs:label "ConstraintPayAmount"^^xsd:string ;
     dc:description "The value of financial payment "@en ;
@@ -534,25 +534,25 @@ olex:all_purpose a olex:Purpose,
     skos:name "all_purpose"@en .
 
 olex:Constraint a [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty odrl:views ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty odrl:post ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty odrl:width ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom olex:Unit ;
-            owl:maxCardinality 1 ;
-            owl:onProperty odrl:unit ],
-        [ a owl:Restriction ;
             owl:allValuesFrom odrl:Region ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:spatial ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:height ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty odrl:views ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Unit ;
+            owl:maxCardinality 1 ;
+            owl:onProperty odrl:unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty odrl:post ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty odrl:width ],
         owl:Class ;
     rdfs:label "Constraint"^^xsd:string ;
     rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;

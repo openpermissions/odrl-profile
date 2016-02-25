@@ -47,7 +47,7 @@ ol:AssetSetSample_count a owl:DatatypeProperty,
 Default value is 1. A negative value -n can be used to mean "all the assets but n".
 """@en ;
     rdfs:domain ol:AssetSetSample ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range xsd:integer .
 
 ol:edgeDirection a owl:FunctionalProperty,
@@ -57,13 +57,13 @@ Indicates in which direction the predicate is used to connect elements to the se
 Default is ol:pointing_to.
 """@en ;
     rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:AssetSetEdgeDirection .
 
 ol:elementType a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range owl:Class .
 
 ol:fromSet a owl:FunctionalProperty,
@@ -72,7 +72,7 @@ ol:fromSet a owl:FunctionalProperty,
 The set asset can be picked from.
 """@en ;
     rdfs:domain ol:AssetSetSample ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:AssetSet .
 
 ol:predicate a owl:FunctionalProperty,
@@ -81,7 +81,7 @@ ol:predicate a owl:FunctionalProperty,
 Indicates which predicate is used to Indicate that element belong to a set.
 """@en ;
     rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range owl:ObjectProperty .
 
 ol:samplePolicy a owl:FunctionalProperty,
@@ -90,7 +90,7 @@ ol:samplePolicy a owl:FunctionalProperty,
 The way asset are selected. Default is selected_by_assignee.
 """@en ;
     rdfs:domain ol:AssetSetSample ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:AssetSetSamplePolicy .
 
 ol:targetObject a owl:FunctionalProperty,
@@ -100,7 +100,7 @@ Indicates the entity that the elements must connect to through the predicate in 
 Default is the AssetSet instance itself.
 """@en ;
     rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range owl:Thing .
 
 ol:AssetSetEdgeDirections a skos:ConceptScheme ;
@@ -123,7 +123,7 @@ ol:AssetSetSample a [ a owl:Restriction ;
 An asset that is actually sampled from a set. An AssetSetSample must indicate the set asset must be selected from, muay contain a sample policy,  and may contain the number of 
 asset that must be sampled. 
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:subClassOf ol:Asset .
 
 ol:any_edge_direction a ol:AssetSetEdgeDirection,
@@ -137,7 +137,7 @@ ol:AssetSetEdgeDirection a owl:Class ;
 Indicates if the predicate used to connect the set to its elements,
 are "pointing to" the elements or "pointing from" the elements 
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 
 ol:AssetSetSamplePolicies a skos:ConceptScheme ;
     skos:ConceptScheme_hasTopConcept ol:any_sample_policy .
@@ -152,10 +152,6 @@ ol:AssetSet a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:predicate ],
         [ a owl:Restriction ;
-            owl:allValuesFrom owl:Class ;
-            owl:cardinality 1 ;
-            owl:onProperty ol:elementType ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ol:AssetSetEdgeDirection ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:edgeDirection ],
@@ -163,6 +159,10 @@ ol:AssetSet a [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:targetObject ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Class ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:elementType ],
         owl:Class ;
     rdfs:label "AssetSet"^^xsd:string ;
     dc:description """
@@ -171,7 +171,7 @@ A set defined as the set of element pointing to a target object via a certain pr
         """
 A set or collection of elements of type elementType
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:subClassOf ol:Asset,
         ol:AssetSet .
 
@@ -180,5 +180,5 @@ ol:AssetSetSamplePolicy a owl:Class ;
     dc:description """
 Indicates the way sampling from a set is done. 
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 

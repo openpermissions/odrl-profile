@@ -127,31 +127,16 @@ olex:rightAgent a owl:ObjectProperty ;
 
 olex:Party a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:website ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty olex:twitter ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty olex:dateOfBirth ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty olex:Party_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty olex:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty olex:Party_state ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:address ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:email ],
+            owl:onProperty olex:phone ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:phone ],
+            owl:onProperty olex:website ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:dateOfDeath ],
@@ -160,7 +145,22 @@ olex:Party a [ a owl:Restriction ;
             owl:onProperty olex:rightAgent ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty olex:dateOfBirth ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty olex:resolution_redirect ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:Party_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:Party_state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:twitter ],
         owl:Class ;
     rdfs:label "Party"^^xsd:string ;
     monk:hasSparqlVirtualField olex:sparqlvirtualfield_Party_direct_assignees,

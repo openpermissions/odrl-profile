@@ -57,7 +57,7 @@ olex:duty a owl:ObjectProperty ;
 ol:targetOfRule a owl:InverseFunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain olex:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range olex:Rule ;
     owl:inverseOf ol:target .
 
@@ -87,7 +87,7 @@ olex:assigner a owl:FunctionalProperty,
 ol:target a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain olex:Rule ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range olex:Asset ;
     rdfs:subPropertyOf olex:relation,
         odrl:target ;
@@ -104,18 +104,11 @@ odrl:output a owl:FunctionalProperty,
 olex:Rule a [ a owl:Restriction ;
             owl:allValuesFrom olex:Asset ;
             owl:maxCardinality 1 ;
-            owl:onProperty odrl:output ],
+            owl:onProperty olex:Rule_relation ],
         [ a owl:Restriction ;
             owl:allValuesFrom olex:Party ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:assignee ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom olex:Constraint ;
-            owl:onProperty olex:constraint ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom olex:Asset ;
-            owl:maxCardinality 1 ;
-            owl:onProperty olex:Rule_relation ],
         [ a owl:Restriction ;
             owl:allValuesFrom olex:Party ;
             owl:maxCardinality 1 ;
@@ -123,7 +116,14 @@ olex:Rule a [ a owl:Restriction ;
         [ a owl:Restriction ;
             owl:allValuesFrom olex:Asset ;
             owl:maxCardinality 1 ;
+            owl:onProperty odrl:output ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Asset ;
+            owl:maxCardinality 1 ;
             owl:onProperty ol:target ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Constraint ;
+            owl:onProperty olex:constraint ],
         owl:Class ;
     rdfs:label "Rule"^^xsd:string ;
     dc:description """
