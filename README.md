@@ -106,8 +106,8 @@ Definition of "Sets"
 ====================
 
 In ODRL, there is no standard to discuss about sets of assets or license to set of assets.
+OpenLicensing is introducing primitives to discuss about sets of assets.
 
-OpenLicensing introduce primitives to discuss about sets of assets.
 
 Definition of "IdTypes"
 =======================
@@ -133,49 +133,4 @@ Currently the following OpenLicensing profile exist:
    * CREATIVE - Creative copyrights.
    * SW - A demo profile for software licensing
 
-
-<!--
-=====
-
-* Remove Countries from this ontology, select a suitable external ontology that specialises in this [waiting for review]
-* Each element should have a description [done: comment -> description]
-* remove ns1:[done / waiting for review]
-* Some ids are not valid, needs fixing [done]
-* Check all owl constraints used and limit them to remain at least with the RL profile [done - http://mowl-power.cs.man.ac.uk:8080/validator/]
-* Language notation on descriptive strings [ck: if other fields needed]
-* the dependencies we have on other ontologies should be described and justified in this document [ stripped version?? why? ]
-
-* Move items between OLEX and OL 
-
-In grep olex BAPLA :
-'''
-prefix olex: <http://digicat.io/ns/olex/0.1/> .
-<https://www.copyrighthub.org/s0/hub1/creation/chub/uuid/abd11b12d53d48a09698edb43cb1b2db> a olex:Asset,
-        olex:IncomingLinksOnObjects,
-        olex:SPARQLSet,
-    olex:elementType ol:Asset ;
-    olex:predicate olex:explicitOffer ;
-    olex:sparql "SELECT ?s {WHERE ?s <http://digicat.io/ns/olex/0.1/explicitOffer> <https://www.copyrighthub.org/s0/hub1/offer/chub/4corners-offerid/12> .}"^^xsd:string ;
-    olex:target_object <https://www.copyrighthub.org/s0/hub1/offer/chub/4corners-offerid/12> ;
-<https://www.copyrighthub.org/s0/hub1/creation/chub/uuid/feb9b868378f4904898d7a3bc0a4313f> a olex:Asset,
-        olex:PurposeInfo,
-        olex:WildcardSet,
-    olex:elementType ol:Asset ;
-    olex:purpose ol:commercial_purpose ;
-
-'''
-
-* There are some ASSET ID TYPES defined, needs reviewing, instance vs class [James Review]
-* IdTypes as IRI ? [WARNING ON CONSEQUENCES] 
-
-* Monk ontology dependency, is this required?  [removed]
-* Removed actions as same as ODRL [done]
-* Many ODRL terms have been redefined in this ontology in order to support serialisation via Monk ... review this. [removed]
-* some terms from ODRL have been 'deprecated', this needs reviewing and justification/decision detailed in this document. [wip]
-* some of the ontologies in our dependency folder have been modified (reduced in size) this should be documented in this document [wip]
-* document host constraints (ck dene) | CONSTRAINT: (...)
-* review how we version the ontology | [wip]
-* describe in this document the versioning naming convention | [wip]
-* * term host !!
--->
 
