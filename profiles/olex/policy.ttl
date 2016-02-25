@@ -1,0 +1,25 @@
+
+olex:permission a owl:ObjectProperty ;
+    rdfs:domain olex:Policy ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Permission ;
+    rdfs:subPropertyOf ol:permission .
+
+olex:prohibition a owl:ObjectProperty ;
+    rdfs:domain olex:Policy ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Prohibition ;
+    rdfs:subPropertyOf ol:prohibition .
+
+olex:Policy a [ a owl:Restriction ;
+            owl:allValuesFrom olex:Permission ;
+            owl:onProperty olex:permission ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Prohibition ;
+            owl:onProperty olex:prohibition ],
+        owl:Class ;
+    rdfs:label "Policy"^^xsd:string ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:subClassOf olex:SPARQLSet,
+        ol:Policy .
+

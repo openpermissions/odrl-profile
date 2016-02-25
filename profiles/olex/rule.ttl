@@ -1,0 +1,135 @@
+
+olex:Duty a owl:Class ;
+    rdfs:label "Duty"^^xsd:string ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:subClassOf olex:Rule,
+        odrl:Duty .
+
+olex:Prohibition a owl:Class ;
+    rdfs:label "Prohibition"^^xsd:string ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:subClassOf olex:Rule,
+        odrl:Prohibition .
+
+olex:Permission a [ a owl:Restriction ;
+            owl:allValuesFrom olex:Rule ;
+            owl:onProperty olex:duty ],
+        owl:Class ;
+    rdfs:label "Permission"^^xsd:string ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:subClassOf olex:Rule,
+        odrl:Permission .
+
+olex:Rule_relation a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Rule ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Asset .
+
+olex:assigneeOfRule a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Party ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Rule ;
+    owl:inverseOf olex:assignee .
+
+olex:assignerOfRule a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Party ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Rule ;
+    owl:inverseOf olex:assigner .
+
+olex:constraint a owl:ObjectProperty ;
+    dc:description """
+                                 Constraint limiting the scope of the action
+                                 """@en ;
+    rdfs:domain olex:Rule ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Constraint ;
+    rdfs:subPropertyOf odrl:constraint .
+
+olex:duty a owl:ObjectProperty ;
+    rdfs:domain olex:Permission ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Rule .
+
+ol:targetOfRule a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Asset ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range olex:Rule ;
+    owl:inverseOf ol:target .
+
+odrl:outputOfRule a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Asset ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range olex:Rule ;
+    owl:inverseOf odrl:output .
+
+olex:assignee a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Rule ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Party ;
+    rdfs:subPropertyOf odrl:assignee ;
+    owl:inverseOf olex:assigneeOfRule .
+
+olex:assigner a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Rule ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:range olex:Party ;
+    rdfs:subPropertyOf odrl:assigner ;
+    owl:inverseOf olex:assignerOfRule .
+
+ol:target a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Rule ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:range olex:Asset ;
+    rdfs:subPropertyOf olex:relation,
+        odrl:target ;
+    owl:inverseOf ol:targetOfRule .
+
+odrl:output a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Rule ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:range olex:Asset ;
+    rdfs:subPropertyOf olex:relation ;
+    owl:inverseOf odrl:outputOfRule .
+
+olex:Rule a [ a owl:Restriction ;
+            owl:allValuesFrom olex:Asset ;
+            owl:maxCardinality 1 ;
+            owl:onProperty odrl:output ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Party ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:assignee ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Constraint ;
+            owl:onProperty olex:constraint ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Asset ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:Rule_relation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Party ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:assigner ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom olex:Asset ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ol:target ],
+        owl:Class ;
+    rdfs:label "Rule"^^xsd:string ;
+    dc:description """
+We add semantic to rules
+"""@en ;
+    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:subClassOf olex:SPARQLSet,
+        odrl:Rule .
+
