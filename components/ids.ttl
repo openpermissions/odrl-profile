@@ -1,0 +1,62 @@
+ol:HubkeyS0 a ol:IdType,
+        skos:Concept ;
+    dc:description "Id who has the form of a Hubkey.  This refers to schema 0 of the Hubkey."@en ;
+    skos:inScheme ol:idtypes ;
+    skos:name "HubkeyS0"@en ;
+    skos:narrowerThan ol:top_id_type .
+
+ol:Hubkey a ol:IdType,
+        skos:Concept ;
+    dc:description "Id who has the form of a Hubkey.  This refers to the latest schema of a Hubkey."@en ;
+    skos:inScheme ol:idtypes ;
+    skos:name "Hubkey"@en ;
+    skos:narrowerThan ol:top_id_type .
+
+ol:IRI a ol:IdType,
+        skos:Concept ;
+    dc:description "Id which has the form of an IRI"@en ;
+    skos:inScheme ol:idtypes ;
+    skos:name "IRI"@en ;
+    skos:narrowerThan ol:top_id_type .
+
+ol:idtype a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ol:Id ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:range ol:IdType .
+
+ol:value a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain ol:Id ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:range xsd:string .
+
+ol:Id a [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ol:IdType ;
+            owl:cardinality 1 ;
+            owl:onProperty ol:idtype ],
+        owl:Class ;
+    rdfs:label "Id"^^xsd:string ;
+    dc:description """
+Identifier for an asset.
+"""@en ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
+
+ol:idtypes a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept ol:top_id_type .
+
+ol:top_id_type a ol:IdType,
+        skos:Concept ;
+    skos:inScheme ol:idtypes ;
+    skos:name "top_id_type"@en .
+
+ol:IdType a owl:Class ;
+    rdfs:label "IdType"^^xsd:string ;
+    dc:description """
+Represents a class of identifiers
+"""@en ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
+

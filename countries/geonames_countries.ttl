@@ -950,7 +950,7 @@
     cc:attributionURL <http://sws.geonames.org/298795/> ;
     cc:license <http://creativecommons.org/licenses/by/3.0/> ;
     dcterms:created "2006-01-15"^^xsd:date ;
-    dcterms:modified "2016-02-01"^^xsd:date ;
+    dcterms:modified "2016-02-19"^^xsd:date ;
     foaf:primaryTopic <http://sws.geonames.org/298795/> .
 
 <http://sws.geonames.org/2993457/about.rdf> a foaf:Document ;
@@ -1766,7 +1766,7 @@
     cc:attributionURL <http://sws.geonames.org/6252001/> ;
     cc:license <http://creativecommons.org/licenses/by/3.0/> ;
     dcterms:created "2006-03-14"^^xsd:date ;
-    dcterms:modified "2016-01-07"^^xsd:date ;
+    dcterms:modified "2016-02-20"^^xsd:date ;
     foaf:primaryTopic <http://sws.geonames.org/6252001/> .
 
 <http://sws.geonames.org/6254930/about.rdf> a foaf:Document ;
@@ -22317,7 +22317,6 @@
         "ترکیه"@fa,
         "Turkki"@fi,
         "Turkaland"@fo,
-        "Détroit de Gibraltar"@fr,
         "estroict de Sibyle"@fr,
         "Turkije"@fy,
         "An Tuirc"@ga,
@@ -38268,7 +38267,6 @@
         "USA"@de,
         "USA nutome"@ee,
         "Ηνωμένες Πολιτείες της Αμερικής"@el,
-        "United States"@en,
         "United States of America"@en,
         "Estados Unidos"@es,
         "Estatu Batuak"@eu,
@@ -38329,6 +38327,7 @@
     gn:parentFeature <http://sws.geonames.org/6255149/> ;
     gn:population "310232863" ;
     gn:shortName "USA"@da,
+        "United States"@en,
         "JAV"@lt,
         "Jungtinės Valstijos"@lt,
         "USA"@nb,
