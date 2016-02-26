@@ -25,6 +25,7 @@
 @prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
 
 <http://openlicensing.org/ns/ol/1.1/> a owl:Ontology ;
+# todo: whilst I want the whole dev team attributed I don't mind individually listing them.
     dc:creator "Digital Catapult Software Engineering Team"^^xsd:string;
     dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
     dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;
@@ -35,7 +36,6 @@
 # -----------------------------------------------------------------------
 # asset.ttl
 # -----------------------------------------------------------------------
-
 
 ol:alsoIdentifiedBy a owl:ObjectProperty ;
     dc:description """
@@ -76,22 +76,27 @@ Only metadata about the Asset that is required for the licensing of the Asset sh
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:subClassOf odrl:Asset .
 
-
 # -----------------------------------------------------------------------
 # ids.ttl
 # -----------------------------------------------------------------------
 
+ol:HubkeyS0 a ol:IdType,
+        skos:Concept ;
+    dc:description "Id who has the form of a Hubkey.  This refers to schema 0 of the Hubkey."@en ;
+    skos:inScheme ol:idtypes ;
+    skos:name "HubkeyS0"@en ;
+    skos:narrowerThan ol:top_id_type .
 
 ol:Hubkey a ol:IdType,
         skos:Concept ;
-    dc:description "Id who has the form of a Hubkey"@en ;
+    dc:description "Id who has the form of a Hubkey.  This refers to the latest schema of a Hubkey."@en ;
     skos:inScheme ol:idtypes ;
     skos:name "Hubkey"@en ;
     skos:narrowerThan ol:top_id_type .
 
 ol:IRI a ol:IdType,
         skos:Concept ;
-    dc:description "Id who has the form of an IRI"@en ;
+    dc:description "Id which has the form of an IRI"@en ;
     skos:inScheme ol:idtypes ;
     skos:name "IRI"@en ;
     skos:narrowerThan ol:top_id_type .
@@ -139,51 +144,22 @@ Represents a class of identifiers
 
 
 # -----------------------------------------------------------------------
-# party.ttl
-# -----------------------------------------------------------------------
-
-
-ol:Party a [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ol:name ],
-        owl:Class ;
-    rdfs:label "Party"^^xsd:string ;
-    dc:description """
-A party represent:
-  1. a legal person having duties and rights as part of agreements.
-  2. a person known by an organisation (not necessarily providing its real name)
-
-"""@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:subClassOf ol:Asset,
-        odrl:Party .
-
-ol:name a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range xsd:string ;
-    rdfs:subPropertyOf dc:name .
-
-
-# -----------------------------------------------------------------------
 # policy.ttl
 # -----------------------------------------------------------------------
 
 
 ol:policyText a owl:DatatypeProperty ;
-    dc:description """
-                                 The policy "small print"
-                                 """@en ;
+    dc:description """The policy 'small print'"""@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range xsd:string .
 
+# todo : would policyAuthor be better?
 ol:digitalPolicyAuthor a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 A field to allow the author of the digital policy - if available this person may be
-eventually be contacted to obtain infomation about the license.
+eventually be contacted to obtain information about the policy.
 """@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
@@ -201,9 +177,7 @@ The policy is not considered valid after this date.
 
 ol:policyDescription a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """
-                                 A short desription of the policy - usable to give a user rapidly information about the policy.
-                                 """@en ;
+    dc:description """A short description of the policy - usable to give a user rapidly information about the policy."""@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range xsd:string ;
@@ -233,6 +207,7 @@ Policy is the central entity that holds an ODRL policy together. In its encoded 
 # set.ttl
 # -----------------------------------------------------------------------
 
+# todo: we need to work through all of this
 
 ol:chosen_sequentially a ol:AssetSetSamplePolicy,
         skos:Concept ;
@@ -278,9 +253,7 @@ ol:selected_by_assigner a ol:AssetSetSamplePolicy,
 
 ol:AssetSetSample_count a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """
-Default value is 1. A negative value -n can be used to mean "all the assets but n".
-"""@en ;
+    dc:description """Default value is 1. A negative value -n can be used to mean "all the assets but n"."""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range xsd:integer .
@@ -303,27 +276,21 @@ ol:elementType a owl:FunctionalProperty,
 
 ol:fromSet a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """
-The set asset can be picked from.
-"""@en ;
+    dc:description """The set asset can be picked from."""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:AssetSet .
 
 ol:predicate a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """
-Indicates which predicate is used to Indicate that element belong to a set.
-"""@en ;
+    dc:description """Indicates which predicate is used to Indicate that element belong to a set."""@en ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range owl:ObjectProperty .
 
 ol:samplePolicy a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """
-The way asset are selected. Default is selected_by_assignee.
-"""@en ;
+    dc:description """The way asset are selected. Default is selected_by_assignee."""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:AssetSetSamplePolicy .
@@ -400,20 +367,14 @@ ol:AssetSet a [ a owl:Restriction ;
             owl:onProperty ol:elementType ],
         owl:Class ;
     rdfs:label "AssetSet"^^xsd:string ;
-    dc:description """
-A set defined as the set of element pointing to a target object via a certain predicate.
-"""@en,
-        """
-A set or collection of elements of type elementType
-"""@en ;
+    dc:description """A set defined as the set of element pointing to a target object via a certain predicate."""@en,
+        """A set or collection of elements of type elementType"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:subClassOf ol:Asset,
         ol:AssetSet .
 
 ol:AssetSetSamplePolicy a owl:Class ;
     rdfs:label "AssetSetSamplePolicy"^^xsd:string ;
-    dc:description """
-Indicates the way sampling from a set is done. 
-"""@en ;
+    dc:description """Indicates the way sampling from a set is done."""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 
