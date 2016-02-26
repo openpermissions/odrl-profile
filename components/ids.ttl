@@ -1,14 +1,20 @@
+ol:HubkeyS0 a ol:IdType,
+        skos:Concept ;
+    dc:description "Id who has the form of a Hubkey.  This refers to schema 0 of the Hubkey."@en ;
+    skos:inScheme ol:idtypes ;
+    skos:name "HubkeyS0"@en ;
+    skos:narrowerThan ol:top_id_type .
 
 ol:Hubkey a ol:IdType,
         skos:Concept ;
-    dc:description "Id who has the form of a Hubkey"@en ;
+    dc:description "Id who has the form of a Hubkey.  This refers to the latest schema of a Hubkey."@en ;
     skos:inScheme ol:idtypes ;
     skos:name "Hubkey"@en ;
     skos:narrowerThan ol:top_id_type .
 
 ol:IRI a ol:IdType,
         skos:Concept ;
-    dc:description "Id who has the form of an IRI"@en ;
+    dc:description "Id which has the form of an IRI"@en ;
     skos:inScheme ol:idtypes ;
     skos:name "IRI"@en ;
     skos:narrowerThan ol:top_id_type .

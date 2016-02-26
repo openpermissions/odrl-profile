@@ -20,6 +20,7 @@
 @prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
 
 <http://openlicensing.org/ns/ol/1.1/> a owl:Ontology ;
+# todo: whilst I want the whole dev team attributed I don't mind individually listing them.
     dc:creator "Digital Catapult Software Engineering Team"^^xsd:string;
     dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
     dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;

@@ -1,3 +1,4 @@
+# todo: we need to work through all of this
 
 ol:chosen_sequentially a ol:AssetSetSamplePolicy,
         skos:Concept ;
@@ -43,9 +44,7 @@ ol:selected_by_assigner a ol:AssetSetSamplePolicy,
 
 ol:AssetSetSample_count a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """
-Default value is 1. A negative value -n can be used to mean "all the assets but n".
-"""@en ;
+    dc:description """Default value is 1. A negative value -n can be used to mean "all the assets but n"."""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range xsd:integer .
@@ -68,27 +67,21 @@ ol:elementType a owl:FunctionalProperty,
 
 ol:fromSet a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """
-The set asset can be picked from.
-"""@en ;
+    dc:description """The set asset can be picked from."""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:AssetSet .
 
 ol:predicate a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """
-Indicates which predicate is used to Indicate that element belong to a set.
-"""@en ;
+    dc:description """Indicates which predicate is used to Indicate that element belong to a set."""@en ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range owl:ObjectProperty .
 
 ol:samplePolicy a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """
-The way asset are selected. Default is selected_by_assignee.
-"""@en ;
+    dc:description """The way asset are selected. Default is selected_by_assignee."""@en ;
     rdfs:domain ol:AssetSetSample ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:AssetSetSamplePolicy .
@@ -165,20 +158,14 @@ ol:AssetSet a [ a owl:Restriction ;
             owl:onProperty ol:elementType ],
         owl:Class ;
     rdfs:label "AssetSet"^^xsd:string ;
-    dc:description """
-A set defined as the set of element pointing to a target object via a certain predicate.
-"""@en,
-        """
-A set or collection of elements of type elementType
-"""@en ;
+    dc:description """A set defined as the set of element pointing to a target object via a certain predicate."""@en,
+        """A set or collection of elements of type elementType"""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:subClassOf ol:Asset,
         ol:AssetSet .
 
 ol:AssetSetSamplePolicy a owl:Class ;
     rdfs:label "AssetSetSamplePolicy"^^xsd:string ;
-    dc:description """
-Indicates the way sampling from a set is done. 
-"""@en ;
+    dc:description """Indicates the way sampling from a set is done."""@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 

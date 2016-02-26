@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ONTOLOGY_PATH="openlicensing"
+ONTOLOGY_PATH="components"
 
 function section {
 echo

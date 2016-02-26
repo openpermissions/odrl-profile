@@ -1,3 +1,4 @@
+# todo: why is this not in the openlicensing folder with the other sub components?
 
 ol:Party a [ a owl:Restriction ;
             owl:maxCardinality 1 ;

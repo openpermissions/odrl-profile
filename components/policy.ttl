@@ -1,17 +1,16 @@
 
 ol:policyText a owl:DatatypeProperty ;
-    dc:description """
-                                 The policy "small print"
-                                 """@en ;
+    dc:description """The policy 'small print'"""@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range xsd:string .
 
+# todo : would policyAuthor be better?
 ol:digitalPolicyAuthor a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 A field to allow the author of the digital policy - if available this person may be
-eventually be contacted to obtain infomation about the license.
+eventually be contacted to obtain information about the policy.
 """@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
@@ -29,9 +28,7 @@ The policy is not considered valid after this date.
 
 ol:policyDescription a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """
-                                 A short desription of the policy - usable to give a user rapidly information about the policy.
-                                 """@en ;
+    dc:description """A short description of the policy - usable to give a user rapidly information about the policy."""@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range xsd:string ;
