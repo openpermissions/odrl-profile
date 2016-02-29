@@ -4,7 +4,7 @@ The OpenLicensing Ontology
 - URI : http://openlicensing.org/ns/ol/1.1/
 - Download : [rdf]( http://openlicensing.org/ontologies/ol-1.1.rdf), [xml]( http://openlicensing.org/ontologies/ol-1.1.xml)
 - Version : 1.1
-- Release date: Febuary 2016, the 22nd
+- Release date: February 2016, the 22nd
 - Authors : Digital Catapult
 
 This is an ODRL 2.1 profile used in conjunction with the Open Licensing Platform.
@@ -23,11 +23,9 @@ Required as ODRL implementation
 - <http://purl.org/dc/elements/1.1/>
 - <http://purl.org/dc/terms/>
 
-
 **Taxonomies**
 
 - <http://www.w3c.org/2008/skos/>
-
 
 **ODRL 2.1**
 
@@ -38,11 +36,9 @@ OpenLicensing ontology is built ontop of ODRL2.1, and can be considered as an OD
 Recommendations
 ===============
 
-
 **Currencies**
 
 - <http://cvx.iptc.org/iso4217a/> : iso code based ontology for currencies
-
 
 Versioning
 ==========
@@ -79,35 +75,44 @@ Definition of "Sets" and "Samples"
 ==================================
 
 In ODRL, there is no standard to discuss about sets of assets or license to set of assets,
-no simple way  to saythat an offer is linked to a set of asset nor to clarify how many can 
+no simple way  to say that an offer is linked to a set of asset nor to clarify how many can 
 be picked from the asset.
 
 OpenLicensing is introducing primitives to discuss about sets of assets and picking elements 
 from sets.
-
 
 Definition of "IdTypes"
 =======================
 
 OpenLicensing platform assumes generally that `IdType` instances have semantic IRI and 
 are defined as a `skos` taxonomy in single centrally-governed hub-specific namespace.
-It is the responsiblity of the hub owner to ensure the consistency of the taxonomy.
+It is the responsibility of the hub owner to ensure the consistency of the taxonomy.
 
-
-ODRL syntaxes not supported by the OpenLicensing Platform
+ODRL that is not supported by the OpenLicensing Platform
 =========================================================
  
-  * `nextPolicy`;
-  * policies with different set of duties for each permission;
-  * policies with inheritance;
-  * policies with non default behaviour on `undefined` and `conflict`.
+### `nextPolicy` is not supported yet.
+This is a a nice feature but adds complexity.
+It is intended to be added in a future release.
+
+### Policies with different set of duties for each permission
+The issue here is that a Policy is to be a offered as a whole.  
+If permissions have different payment duties the semantics are not clear, and adds an unnecessary complexity.  
+For example, if a permission duty requires a payment of £5 and another permission duty requires payment of £2, how much is to be paid?
+What if I only use the asset in the way described om pne of the permissions.
+
+### Policies with inheritance
+This adds additional complexity and is not a requirement at this time.
+
+### Policies with non default behaviour on `undefined` and `conflict`
+todo: essentially doesn't make sense.
 
 Profiles
 ========
 Additional profiles can be added on top of OpenLicensing to license assets within specific domains.
 
 Currently the following OpenLicensing profile exist:
-   * CREATIVE - Creative copyrights.
+   * OLEX - Creative copyrights.
    * SW - A demo profile for software licensing
 
 

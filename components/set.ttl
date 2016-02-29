@@ -1,5 +1,14 @@
 # todo: we need to work through all of this
 
+# Set requirements:
+# 1. MUST be able to add an Asset to a Set
+# 2. Given a Set id it must be trivial to identify all members
+# 3. MUST be able to remove an item from a Set
+# 4. An Asset MUST be able to be a member of multiple Sets
+# 5. A single Set may be referenced by multiple Asset Selectors
+# 6. A Set must be able to exist without an Offer being related to it
+
+
 ol:chosen_sequentially a ol:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen according to a predefined order"@en ;
@@ -113,7 +122,7 @@ ol:AssetSetSample a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "AssetSetSample"^^xsd:string ;
     dc:description """
-An asset that is actually sampled from a set. An AssetSetSample must indicate the set asset must be selected from, muay contain a sample policy,  and may contain the number of 
+An asset that is actually sampled from a set. An AssetSetSample must indicate the set asset must be selected from, may contain a sample policy,  and may contain the number of
 asset that must be sampled. 
 """@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
