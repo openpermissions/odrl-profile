@@ -67,8 +67,7 @@ ol:sharedDuties a owl:ObjectProperty ;
                                  """@en ;
     rdfs:domain ol:Policy ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range odrl:Duty ;
-    rdfs:subPropertyOf monk:embeddedObjectProperty .
+    rdfs:range odrl:Duty .
 
 ol:Policy a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
