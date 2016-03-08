@@ -1,25 +1,25 @@
 ol:HubkeyS0 a ol:IdType,
         skos:Concept ;
     dc:description "Id who has the form of a Hubkey.  This refers to schema 0 of the Hubkey."@en ;
-    skos:inScheme ol:idtypes ;
+    skos:inScheme ol:id_types ;
     skos:name "HubkeyS0"@en ;
     skos:narrowerThan ol:top_id_type .
 
 ol:Hubkey a ol:IdType,
         skos:Concept ;
     dc:description "Id who has the form of a Hubkey.  This refers to the latest schema of a Hubkey."@en ;
-    skos:inScheme ol:idtypes ;
+    skos:inScheme ol:id_types ;
     skos:name "Hubkey"@en ;
     skos:narrowerThan ol:top_id_type .
 
 ol:IRI a ol:IdType,
         skos:Concept ;
     dc:description "Id which has the form of an IRI"@en ;
-    skos:inScheme ol:idtypes ;
+    skos:inScheme ol:id_types ;
     skos:name "IRI"@en ;
     skos:narrowerThan ol:top_id_type .
 
-ol:idtype a owl:FunctionalProperty,
+ol:id_type a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:Id ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
@@ -37,7 +37,7 @@ ol:Id a [ a owl:Restriction ;
         [ a owl:Restriction ;
             owl:allValuesFrom ol:IdType ;
             owl:cardinality 1 ;
-            owl:onProperty ol:idtype ],
+            owl:onProperty ol:id_type ],
         owl:Class ;
     rdfs:label "Id"^^xsd:string ;
     dc:description """
@@ -45,12 +45,12 @@ Identifier for an asset.
 """@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 
-ol:idtypes a skos:ConceptScheme ;
+ol:id_types a skos:ConceptScheme ;
     skos:ConceptScheme_hasTopConcept ol:top_id_type .
 
 ol:top_id_type a ol:IdType,
         skos:Concept ;
-    skos:inScheme ol:idtypes ;
+    skos:inScheme ol:id_types ;
     skos:name "top_id_type"@en .
 
 ol:IdType a owl:Class ;

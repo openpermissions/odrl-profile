@@ -28,7 +28,7 @@ ol:selected_by_assigner a ol:AssetSetSelectorPolicy,
     skos:name "selected_by_assigner"@en ;
     skos:narrowerThan ol:any_sample_policy .
 
-ol:AssetSetSelector_count a owl:DatatypeProperty,
+ol:count a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """Default value is 1. A negative value -n can be used to mean "all the assets but n"."""@en ;
     rdfs:domain ol:AssetSetSelector ;
@@ -57,7 +57,7 @@ ol:AssetSetSelector a [ a owl:Restriction ;
             owl:onProperty ol:fromSet ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty ol:AssetSetSelector_count ],
+            owl:onProperty ol:count ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:AssetSetSelectorPolicy ;
             owl:cardinality 1 ;
@@ -88,6 +88,13 @@ ol:AssetSet a owl:Class ;
     rdfs:subClassOf ol:Asset,
         ol:AssetSet .
 
+
+ol:hasElement a owl:ObjectProperty ;
+    rdfs:domain ol:AssetSet ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:range owl:Thing .
+
+        
 ol:AssetSetSelectorPolicy a owl:Class ;
     rdfs:label "AssetSetSelectorPolicy"^^xsd:string ;
     dc:description """Indicates the way sampling from a set is done."""@en ;

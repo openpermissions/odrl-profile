@@ -75,8 +75,11 @@ Incompatible changes would mean that the same term could be interpreted differen
 http://openlicensing.org/ns/ol/<Release>.<Major>/ 
 ```
 
+OpenLicensing ODRL Profile
+==========================
+
 Definition of "Sets" and "Samples"
-==================================
+----------------------------------
 
 In ODRL, there is no standard to discuss about sets of assets or license to set of assets,
 no simple way  to saythat an offer is linked to a set of asset nor to clarify how many can 
@@ -87,27 +90,54 @@ from sets.
 
 
 Definition of "IdTypes"
-=======================
+-----------------------
 
 OpenLicensing platform assumes generally that `IdType` instances have semantic IRI and 
 are defined as a `skos` taxonomy in single centrally-governed hub-specific namespace.
 It is the responsiblity of the hub owner to ensure the consistency of the taxonomy.
 
 
-ODRL syntaxes not supported by the OpenLicensing Platform
-=========================================================
- 
-  * `nextPolicy`;
-  * policies with different set of duties for each permission;
-  * policies with inheritance;
-  * policies with non default behaviour on `undefined` and `conflict`.
+Shared Duty
+-----------
 
-Profiles
+Open Licensing allow to defined sharedDuty at the level of the policy.
+Some of duties such as those related one off payments can only be expressed at the level of the Policy.
+
+Offer Expiry data
+-----------------
+
+Open Licensing provides a special term to indicate when a license is going to be expired.
+
+
+Limitation of ODRL expressivity by the OpenLicensing Platform
+-------------------------------------------------------------
+
+  * Policies with inheritance are not supported;
+  * Policies with `conflict` term different from `prohibit` are not supported;
+  * Policies with `undefined` term different from `invalid` are not recommended;
+  * Policies with no `Permission` are not supported;
+  * Policies using ODRL 2.1 experimental features are not supported;
+  * `nextPolicy` constraint are currently not enforced and we recommend currently using the Open Licensing Platform only with policies that 
+    that do not rely on this constraint;
+  * Policies with types : `Set`, `Ticket` are not supported;
+  * Policies with different set of duties for each permissions are supported however the set of duties that can be expressed at the permission level 
+    is restricted to;
+  * Profile should be set to the most specialised profile.
+
+Profiles                            
 ========
 Additional profiles can be added on top of OpenLicensing to license assets within specific domains.
 
 Currently the following OpenLicensing profile exist:
+
    * CREATIVE - Creative copyrights.
-   * SW - A demo profile for software licensing
+   * SW - A demo profile for software licensing.
 
 
+Best practices when building a Profile and managing a hub
+=========================================================
+
+* make all the metadata predicate used by your asset a subproperty of the `odrl:rightOperand` property so that the constraint defined in the policy match with your asset definition;
+* on all numerical property whenever possible specify the unit in which the value has to be expressed as part of the ontology definition as it avoids all the other parties to have to deal with interoperability issues later on.
+* It is strongly recommended not to reuse Permission or Duties accross different Policies. 
+ 
