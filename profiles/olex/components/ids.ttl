@@ -1,86 +1,86 @@
 
 olex:BFIPictureId a owl:Class ;
     rdfs:label "BFIPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:BLManuscriptId a owl:Class ;
     rdfs:label "BLManuscriptId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:CaptureCreationId a owl:Class ;
     rdfs:label "CaptureCreationId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:ClixtaPictureId a owl:Class ;
     rdfs:label "ClixtaPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:ELXArtPictureId a owl:Class ;
     rdfs:label "ELXArtPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:ExampleCoPictureId a owl:Class ;
     rdfs:label "ExampleCoPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:FourCornersPictureId a owl:Class ;
     rdfs:label "FourCornersPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:GardenWorldImagesPictureId a owl:Class ;
     rdfs:label "GardenWorldImagesPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:GettyPictureId a owl:Class ;
     rdfs:label "GettyPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:IPublishingPictureId a owl:Class ;
     rdfs:label "IPublishingPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:MaryEvansAssetId a owl:Class ;
     rdfs:label "MaryEvansAssetId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:MaryEvansPictureId a owl:Class ;
     rdfs:label "MaryEvansPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:OUIImagesPictureId a owl:Class ;
     rdfs:label "OUIImagesPictureId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:PLSAgentId a owl:Class ;
     rdfs:label "PLSAgentId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:PLSAuthorId a owl:Class ;
     rdfs:label "PLSAuthorId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:PLSWorkId a owl:Class ;
     rdfs:label "PLSWorkId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:ProprietaryId .
 
 olex:ProprietaryId a owl:Class ;
     rdfs:label "ProprietaryId"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf ol:Id .
 

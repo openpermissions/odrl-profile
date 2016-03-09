@@ -5,7 +5,7 @@ olex:ConstraintAbsoluteSize a owl:Class ;
          decimal is too restrictive and inadapted for this field.
          conversion of units should be avoid for the making the standard usable...
 """@en ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint ;
     owl:deprecated true .
 
@@ -15,12 +15,12 @@ olex:ConstraintCount a owl:Class ;
     dct:Description """
               The number of times the action may be executed
               """^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:Region a owl:Class ;
     rdfs:label "Region"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf gn:Feature .
 
 olex:academic_purpose a olex:Purpose,
@@ -214,7 +214,7 @@ olex:ConstraintAbsolutePixelHeight a [ a owl:Restriction ;
             owl:onProperty olex:absolutePixelHeight ],
         owl:Class ;
     rdfs:label "ConstraintAbsolutePixelHeight"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintAbsolutePixelWidth a [ a owl:Restriction ;
@@ -222,7 +222,7 @@ olex:ConstraintAbsolutePixelWidth a [ a owl:Restriction ;
             owl:onProperty olex:absolutePixelWidth ],
         owl:Class ;
     rdfs:label "ConstraintAbsolutePixelWidth"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintAbsolutePosition a [ a owl:Restriction ;
@@ -231,7 +231,7 @@ olex:ConstraintAbsolutePosition a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "ConstraintAbsolutePosition"^^xsd:string ;
     dc:description "Information about absolute position "@en ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintActionStartDateTime a [ a owl:Restriction ;
@@ -240,7 +240,7 @@ olex:ConstraintActionStartDateTime a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "ConstraintActionStartDateTime"^^xsd:string ;
     dc:description "Reason to deprecate date/time on action is potentially unclear  "@en ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintActionStopDateTime a [ a owl:Restriction ;
@@ -249,7 +249,7 @@ olex:ConstraintActionStopDateTime a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "ConstraintActionStopDateTime"^^xsd:string ;
     dc:description "Reason to deprecate date/time on action is potentially unclear  "@en ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintContractAgreementDateTime a [ a owl:Restriction ;
@@ -258,7 +258,7 @@ olex:ConstraintContractAgreementDateTime a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "ConstraintContractAgreementDateTime"^^xsd:string ;
     dc:description "Reason to deprecate date/time on action is potentially unclear  "@en ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintDateTime a [ a owl:Restriction ;
@@ -267,7 +267,7 @@ olex:ConstraintDateTime a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "ConstraintDateTime"^^xsd:string ;
     dc:description "Reason to deprecate date/time on action is potentially unclear  "@en ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint ;
     owl:deprecated true .
 
@@ -277,7 +277,7 @@ olex:ConstraintNextPolicy a [ a owl:Restriction ;
             owl:onProperty odrl:nextPolicy ],
         owl:Class ;
     rdfs:label "ConstraintNextPolicy"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintNowDateTime a [ a owl:Restriction ;
@@ -286,7 +286,7 @@ olex:ConstraintNowDateTime a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "ConstraintNowDateTime"^^xsd:string ;
     dc:description "Reason to deprecate date/time on action is potentially unclear  "@en ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintRealCMHeight a [ a owl:Restriction ;
@@ -294,7 +294,7 @@ olex:ConstraintRealCMHeight a [ a owl:Restriction ;
             owl:onProperty olex:realCMHeight ],
         owl:Class ;
     rdfs:label "ConstraintRealCMHeight"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintRealCMWidth a [ a owl:Restriction ;
@@ -302,7 +302,7 @@ olex:ConstraintRealCMWidth a [ a owl:Restriction ;
             owl:onProperty olex:realCMWidth ],
         owl:Class ;
     rdfs:label "ConstraintRealCMWidth"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintRelativePecentageHeight a [ a owl:Restriction ;
@@ -310,7 +310,7 @@ olex:ConstraintRelativePecentageHeight a [ a owl:Restriction ;
             owl:onProperty olex:relativePercentageHeight ],
         owl:Class ;
     rdfs:label "ConstraintRelativePecentageHeight"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:ConstraintRelativePecentageWidth a [ a owl:Restriction ;
@@ -318,101 +318,101 @@ olex:ConstraintRelativePecentageWidth a [ a owl:Restriction ;
             owl:onProperty olex:relativePercentageWidth ],
         owl:Class ;
     rdfs:label "ConstraintRelativePecentageWidth"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:absolutePixelHeight a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintAbsolutePixelHeight ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:absolutePixelWidth a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintAbsolutePixelWidth ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:actionEndDateTime a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintActionStopDateTime ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:actionStartDateTime a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintActionStartDateTime ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:amount a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintPayAmount ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:decimal ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:authorisedBy a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain olex:ConstraintPayAmount ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range monk:Person .
 
 olex:contractAgreementDateTime a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintContractAgreementDateTime ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:currency a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintPayAmount ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:string .
 
 olex:nowDateTime a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintNowDateTime ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:dateTime ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:payTo a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain olex:ConstraintPayAmount ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range monk:Person .
 
 olex:realCMHeight a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintRealCMHeight ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:realCMWidth a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintRealCMWidth ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:relativePercentageHeight a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintRelativePecentageHeight ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:relativePercentageWidth a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:ConstraintRelativePecentageWidth ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
@@ -496,9 +496,6 @@ olex:all_units a olex:Unit,
     skos:name "all_units"@en .
 
 olex:ConstraintPayAmount a [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty olex:amount ],
-        [ a owl:Restriction ;
             owl:allValuesFrom monk:Person ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:payTo ],
@@ -506,22 +503,25 @@ olex:ConstraintPayAmount a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:currency ],
         [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty olex:amount ],
+        [ a owl:Restriction ;
             owl:allValuesFrom monk:Person ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:authorisedBy ],
         owl:Class ;
     rdfs:label "ConstraintPayAmount"^^xsd:string ;
     dc:description "The value of financial payment "@en ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Constraint .
 
 olex:Unit a owl:Class ;
     rdfs:label "Unit"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> .
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
 
 olex:Purpose a owl:Class ;
     rdfs:label "Purpose"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     owl:deprecated true .
 
 olex:Purposes a skos:ConceptScheme ;
@@ -534,12 +534,15 @@ olex:all_purpose a olex:Purpose,
     skos:name "all_purpose"@en .
 
 olex:Constraint a [ a owl:Restriction ;
-            owl:allValuesFrom odrl:Region ;
             owl:maxCardinality 1 ;
-            owl:onProperty odrl:spatial ],
+            owl:onProperty odrl:width ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:height ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom odrl:Region ;
+            owl:maxCardinality 1 ;
+            owl:onProperty odrl:spatial ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:views ],
@@ -550,11 +553,8 @@ olex:Constraint a [ a owl:Restriction ;
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:post ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty odrl:width ],
         owl:Class ;
     rdfs:label "Constraint"^^xsd:string ;
-    rdfs:isDefinedBy <http://digicat.io/ns/olex/0.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf odrl:Constraint .
 
