@@ -1,7 +1,7 @@
 
-olex:WildcardSet a owl:Class ;
-    rdfs:label "WildcardSet"^^xsd:string ;
-    dc:description "A collection described by describing informally what a typical asset element of this set should look like"@en ;
+olex:MatchSet a owl:Class ;
+    rdfs:label "MatchSet"^^xsd:string ;
+    dc:description "A collection described by describing informally what a typical asset element of this set should look like. "@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:AssetSet .
 
@@ -16,18 +16,6 @@ ol:isTheAuthorOf a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range olex:Asset ;
     owl:inverseOf ol:author .
-
-olex:Rating_agency a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain olex:Rating ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    rdfs:range odrl:Party .
-
-olex:Rating_rating a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain olex:Rating ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    rdfs:range xsd:float .
 
 olex:elementType a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -53,17 +41,6 @@ olex:AssetSet a [ a owl:Restriction ;
     rdfs:label "AssetSet"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Asset .
-
-olex:Rating a [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty olex:Rating_rating ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom odrl:Party ;
-            owl:maxCardinality 1 ;
-            owl:onProperty olex:Rating_agency ],
-        owl:Class ;
-    rdfs:label "Rating"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
 
 ol:contributor a owl:ObjectProperty ;
     dc:description """

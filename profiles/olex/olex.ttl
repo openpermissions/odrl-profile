@@ -39,9 +39,9 @@
 # -----------------------------------------------------------------------
 
 
-olex:WildcardSet a owl:Class ;
-    rdfs:label "WildcardSet"^^xsd:string ;
-    dc:description "A collection described by describing informally what a typical asset element of this set should look like"@en ;
+olex:MatchSet a owl:Class ;
+    rdfs:label "MatchSet"^^xsd:string ;
+    dc:description "A collection described by describing informally what a typical asset element of this set should look like. "@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:AssetSet .
 
@@ -56,18 +56,6 @@ ol:isTheAuthorOf a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range olex:Asset ;
     owl:inverseOf ol:author .
-
-olex:Rating_agency a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain olex:Rating ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    rdfs:range odrl:Party .
-
-olex:Rating_rating a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain olex:Rating ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    rdfs:range xsd:float .
 
 olex:elementType a owl:FunctionalProperty,
         owl:ObjectProperty ;
@@ -93,17 +81,6 @@ olex:AssetSet a [ a owl:Restriction ;
     rdfs:label "AssetSet"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf olex:Asset .
-
-olex:Rating a [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty olex:Rating_rating ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom odrl:Party ;
-            owl:maxCardinality 1 ;
-            owl:onProperty olex:Rating_agency ],
-        owl:Class ;
-    rdfs:label "Rating"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
 
 ol:contributor a owl:ObjectProperty ;
     dc:description """
@@ -189,6 +166,15 @@ olex:pixel a olex:Unit,
     skos:name "pixel"@en ;
     skos:narrowerThan olex:all_units .
 
+olex:postOnSocialNetwork a odrl:Action,
+        skos:Concept ;
+    dc:description """
+                    The Assigner permits/prohibits the Assignee(s) to present the content on a social network.
+                    """@en ;
+    skos:inScheme olex:actions ;
+    skos:name "postOnSocialNetwork"@en ;
+    skos:narrowerThan olex:present .
+
 olex:research_purpose a olex:Purpose,
         skos:Concept ;
     skos:inScheme olex:Purposes ;
@@ -201,6 +187,21 @@ olex:visitorsPerMonth a olex:Unit,
     skos:name "visitorsPerMonth"@en ;
     skos:narrowerThan olex:all_units .
 
+olex:present a odrl:Action,
+        skos:Concept ;
+    skos:inScheme olex:actions ;
+    skos:name "present"@en ;
+    skos:narrowerThan olex:use .
+
+olex:use a odrl:Action,
+        skos:Concept ;
+    dc:description """
+            The Assigner permits/prohibits the Assignee to use the Asset as agreed.
+            """@en ;
+    skos:inScheme olex:actions ;
+    skos:name "use"@en ;
+    skos:narrowerThan olex:top_action .
+
 odrl:height a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:Constraint ;
@@ -208,11 +209,11 @@ odrl:height a owl:DatatypeProperty,
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
-odrl:post a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
+odrl:post a owl:FunctionalProperty,
+        owl:ObjectProperty ;
     rdfs:domain olex:Constraint ;
     rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
-    rdfs:range xsd:integer ;
+    rdfs:range olex:MatchSet ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 odrl:views a owl:DatatypeProperty,
@@ -228,6 +229,11 @@ odrl:width a owl:DatatypeProperty,
     rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
+
+olex:top_action a odrl:Action,
+        skos:Concept ;
+    skos:inScheme olex:actions ;
+    skos:name "top_action"@en .
 
 olex:Unit a owl:Class ;
     rdfs:label "Unit"^^xsd:string ;
@@ -246,18 +252,22 @@ olex:Constraint a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:height ],
         [ a owl:Restriction ;
+            owl:allValuesFrom olex:MatchSet ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:post ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty odrl:views ],
+            owl:onProperty odrl:width ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty odrl:width ],
+            owl:onProperty odrl:views ],
         owl:Class ;
     rdfs:label "Constraint"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf odrl:Constraint .
+
+olex:actions a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept olex:top_action .
 
 olex:Purpose a owl:Class ;
     rdfs:label "Purpose"^^xsd:string ;
