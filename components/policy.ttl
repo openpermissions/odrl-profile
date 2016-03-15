@@ -15,24 +15,6 @@ ol:defaultAssignee a owl:FunctionalProperty,
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
     rdfs:range ol:Party .
 
-ol:defaultAssigner a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    dc:description """
-                                 Implicit default assigner of a rule.
-                                 """@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:Party .
-
-ol:defaultTarget a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    dc:description """
-                                 Implicit default target of a rule.
-                                 """@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:Asset .
-
 ol:digitalPolicyAuthor a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
@@ -74,15 +56,15 @@ ol:Policy a [ a owl:Restriction ;
             owl:onProperty ol:policyDescription ],
         [ a owl:Restriction ;
             owl:allValuesFrom odrl:Duty ;
-            owl:onProperty ol:sharedDuties ],
+            owl:onProperty odrl:duty ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:Party ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:defaultAssignee ],
+            owl:onProperty odrl:assignee ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:Asset ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:defaultTarget ],
+            owl:onProperty odrl:target ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:expires ],
@@ -92,7 +74,7 @@ ol:Policy a [ a owl:Restriction ;
         [ a owl:Restriction ;
             owl:allValuesFrom ol:Party ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:defaultAssigner ],
+            owl:onProperty odrl:assigner ],
         owl:Class ;
     rdfs:label "Policy"^^xsd:string ;
     dc:description """
