@@ -97,11 +97,15 @@ are defined as a `skos` taxonomy in single centrally-governed hub-specific names
 It is the responsiblity of the hub owner to ensure the consistency of the taxonomy.
 
 
-Shared Duty
------------
+Shared Duty, default targets, assignee and assigner.
+----------------------------------------------------
 
-Open Licensing allow to defined sharedDuty at the level of the policy.
-Some of duties such as those related one off payments can only be expressed at the level of the Policy.
+Open Licensing allow to defined odrl:uty at the level of the policy.
+Some of duties such as those related one off payments shall preferably be expressed at the level of the Policy.
+The duties expressed at the level of the policy apply to all the permission.
+
+Target, assignee, assigner are also recommended at the level of the policy.
+They are considered as default target, assignee, and assigner for all Rules.
 
 Offer Expiry data
 -----------------
@@ -130,8 +134,7 @@ Additional profiles can be added on top of OpenLicensing to license assets withi
 
 Currently the following OpenLicensing profile exist:
 
-   * CREATIVE - Creative copyrights.
-   * SW - A demo profile for software licensing.
+   * OLEX - Support of creative content licensing.
 
 
 Best practices when building a Profile and managing a hub
