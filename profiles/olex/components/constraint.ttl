@@ -73,6 +73,27 @@ olex:visitorsPerMonth a olex:Unit,
     skos:name "visitorsPerMonth"@en ;
     skos:narrowerThan olex:all_units .
 
+olex:attributeText a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain olex:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+olex:height a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain olex:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+olex:post a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
+    rdfs:range olex:MatchSet ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
 olex:present a odrl:Action,
         skos:Concept ;
     skos:inScheme olex:actions ;
@@ -88,31 +109,17 @@ olex:use a odrl:Action,
     skos:name "use"@en ;
     skos:narrowerThan olex:top_action .
 
-odrl:height a owl:DatatypeProperty,
+olex:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:Constraint ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
-odrl:post a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain olex:Constraint ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
-    rdfs:range olex:MatchSet ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-odrl:views a owl:DatatypeProperty,
+olex:width a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain olex:Constraint ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
-    rdfs:range xsd:integer ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-odrl:width a owl:DatatypeProperty,
-        owl:FunctionalProperty ;
-    rdfs:domain olex:Constraint ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
@@ -134,26 +141,29 @@ olex:all_units a olex:Unit,
     skos:inScheme olex:Units ;
     skos:name "all_units"@en .
 
+olex:actions a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept olex:top_action .
+
 olex:Constraint a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty odrl:height ],
+            owl:onProperty olex:views ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty olex:height ],
         [ a owl:Restriction ;
             owl:allValuesFrom olex:MatchSet ;
             owl:maxCardinality 1 ;
-            owl:onProperty odrl:post ],
+            owl:onProperty olex:post ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty odrl:width ],
+            owl:onProperty olex:width ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty odrl:views ],
+            owl:onProperty olex:attributeText ],
         owl:Class ;
     rdfs:label "Constraint"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf odrl:Constraint .
-
-olex:actions a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept olex:top_action .
 
 olex:Purpose a owl:Class ;
     rdfs:label "Purpose"^^xsd:string ;
