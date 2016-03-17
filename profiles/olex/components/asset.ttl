@@ -55,10 +55,10 @@ ol:contributor a owl:ObjectProperty ;
 
 olex:Asset a [ a owl:Restriction ;
             owl:allValuesFrom odrl:Party ;
-            owl:onProperty ol:author ],
+            owl:onProperty ol:contributor ],
         [ a owl:Restriction ;
             owl:allValuesFrom odrl:Party ;
-            owl:onProperty ol:contributor ],
+            owl:onProperty ol:author ],
         owl:Class ;
     rdfs:label "Asset"^^xsd:string ;
     dc:description """
