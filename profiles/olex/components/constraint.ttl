@@ -172,35 +172,53 @@ olex:all_purpose a olex:Purpose,
 
 olex:personal_device a olex:Host,
         skos:Concept ;
+    dc:description """
+            The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)
+            """@en ;
     skos:inScheme olex:Hosts ;
     skos:name "personal_device"@en ;
     skos:narrowerThan olex:all_host .
 
 olex:personal_social_media_website a olex:Host,
-    skos:Concept ;
-skos:inScheme olex:Hosts ;
-skos:name "personal_social_media_site"@en ;
-skos:narrowerThan olex:all_host .
-    
+        skos:Concept ;
+    dc:description """
+            The Asset can be used on personal social media accounts.
+            """@en ;
+    skos:inScheme olex:Hosts ;
+    skos:name "personal_social_media_site"@en ;
+    skos:narrowerThan olex:all_host .
+
 olex:academic_website a olex:Host,
     skos:Concept ;
+    dc:description """
+            The Asset can be used on an academic website.
+            """@en ;
 skos:inScheme olex:Hosts ;
 skos:name "academic_website"@en ;
 skos:narrowerThan olex:all_host .
 
 olex:non_commercial_website a olex:Host,
         skos:Concept ;
+    dc:description """
+            The Asset can be used on a personal website that does not generate income or carry advertising.
+            """@en ;
     skos:inScheme olex:Hosts ;
     skos:name "non_commercial_website"@en ;
     skos:narrowerThan olex:all_host .
 
 olex:commercial_website a olex:Host,
         skos:Concept ;
+    dc:description """
+            The Asset can be used on a website that generates income or carries advertising.
+            """@en ;
     skos:inScheme olex:Hosts ;
     skos:name "commercial_website"@en ;
     skos:narrowerThan olex:all_host .
 
 olex:Host a owl:Class ;
+    dc:description """
+            The Host describes the type of site or device the asset can be used on.
+            """@en ;
     rdfs:label "Host"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
 
