@@ -1,0 +1,81 @@
+@prefix allchubeel: <http://digicat.io/ns2/> .
+@prefix chubeel: <https://www.copyrighthub.org/s0/chub1/entity/chub/uuid/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix hk: <https://www.copyrighthub.org/s0/hub1/entity/chub/uuid/> .
+@prefix hub1: <https://www.copyrighthub.org/s0/hub1/> .
+@prefix id: <http://openlicensing.org/ns/id/> .
+@prefix iso4217a: <http://cvx.iptc.org/iso4217a/> .
+@prefix monk: <http://digicat.io/ns/monk/0.3/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
+@prefix ol: <http://openlicensing.org/ns/ol/1.1/> .
+@prefix olex: <http://openlicensing.org/ns/olex/1.0/> .
+@prefix olexfull: <http://openlicensing.org/ns/olexfull/1.0/> .
+@prefix openlicensing: <http://openlicensing.org/ns/ol/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg: <http://schema.org/> .
+@prefix skos: <http://www.w3c.org/2008/skos/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+id:d6d1c39b0ce04c55a6cb3c370f0adf6d a ol:Policy,
+        odrl:Asset,
+        odrl:Offer,
+        odrl:Policy ;
+    ol:preferredPolicyIdentifier "CC_BY"^^xsd:string ;
+    dct:created "2016-03-23T15:33:00"^^xsd:dateTime ;
+    dct:modified "2016-03-23T15:33:00"^^xsd:dateTime ;
+    rdfs:comment """
+        Creative Commons License Offer
+        -BY: Attribution
+"""^^xsd:string ;
+    rdfs:seeAlso "https://creativecommons.org/licenses/by/4.0/"^^xsd:string ;
+    odrl:conflict odrl:invalid ;
+    odrl:duty id:aac4a18a655549b09ebfce5ed73749fa,
+        id:ab238bac2d66484887e82e2fcd8aa206 ;
+    odrl:inheritAllowed false ;
+    odrl:permission id:ad6a79d18dd04af792149124b018c84b,
+        id:aee3b51fd4cd44ee8e5b688fb22bd7a4,
+        id:cd22d9a35d7949cca26c27e664838255,
+        id:e878198cae78476f936aedb96ec2d9d4,
+        id:eb060d284ae54291844ad650efa14ad9 ;
+    odrl:profile "https://www.w3.org/community/odrl/work/cc/"^^xsd:string ;
+    odrl:type "offer"^^xsd:string ;
+    odrl:uid "c24fc3a792454ca6b06d9b8a898e609b"^^xsd:string ;
+    odrl:undefined odrl:invalid .
+
+id:aac4a18a655549b09ebfce5ed73749fa a odrl:Duty,
+        odrl:Rule ;
+    odrl:action odrlcc:attachPolicy .
+
+id:ab238bac2d66484887e82e2fcd8aa206 a odrl:Duty,
+        odrl:Rule ;
+    odrl:action odrl:attribute .
+
+id:ad6a79d18dd04af792149124b018c84b a odrl:Permission,
+        odrl:Rule ;
+    odrl:action odrl:distribute .
+
+id:aee3b51fd4cd44ee8e5b688fb22bd7a4 a odrl:Permission,
+        odrl:Rule ;
+    odrl:action odrl:derive .
+
+id:cd22d9a35d7949cca26c27e664838255 a odrl:Permission,
+        odrl:Rule ;
+    odrl:action odrl:modify .
+
+id:e878198cae78476f936aedb96ec2d9d4 a odrl:Permission,
+        odrl:Rule ;
+    odrl:action odrlcc:commercialuse .
+
+id:eb060d284ae54291844ad650efa14ad9 a odrl:Permission,
+        odrl:Rule ;
+    odrl:action odrl:reproduce .
+
