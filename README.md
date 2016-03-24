@@ -76,7 +76,7 @@ http://openlicensing.org/ns/ol/<Release>.<Major>/
 ```
 
 Compiling files from components
-===============================
+-------------------------------
 
 To keep the ontology manageable, the OpenLicensing ontology and its profiles have been split in different components present
 in the components folder. The resulting ontology is formed by concatenating all the files together and serialising it in different
