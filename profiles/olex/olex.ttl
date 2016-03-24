@@ -166,15 +166,6 @@ olex:pixel a olex:Unit,
     skos:name "pixel"@en ;
     skos:narrowerThan olex:all_units .
 
-olex:postOnSocialNetwork a odrl:Action,
-        skos:Concept ;
-    dc:description """
-                    The Assigner permits/prohibits the Assignee(s) to present the content on a social network.
-                    """@en ;
-    skos:inScheme olex:actions ;
-    skos:name "postOnSocialNetwork"@en ;
-    skos:narrowerThan olex:present .
-
 olex:research_purpose a olex:Purpose,
         skos:Concept ;
     skos:inScheme olex:Purposes ;
@@ -205,7 +196,7 @@ olex:post a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain olex:Constraint ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    rdfs:range olex:MatchSet ;
+    rdfs:range olex:Host ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 olex:present a odrl:Action,
@@ -265,7 +256,7 @@ olex:Constraint a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:height ],
         [ a owl:Restriction ;
-            owl:allValuesFrom olex:MatchSet ;
+            owl:allValuesFrom olex:Host ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:post ],
         [ a owl:Restriction ;
@@ -292,4 +283,64 @@ olex:all_purpose a olex:Purpose,
         skos:Concept ;
     skos:inScheme olex:Purposes ;
     skos:name "all_purpose"@en .
+
+olex:personal_device a olex:Host,
+        skos:Concept ;
+    dc:description """
+            The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)
+            """@en ;
+    skos:inScheme olex:Hosts ;
+    skos:name "personal_device"@en ;
+    skos:narrowerThan olex:all_host .
+
+olex:personal_social_media_website a olex:Host,
+        skos:Concept ;
+    dc:description """
+            The Asset can be used on personal social media accounts.
+            """@en ;
+    skos:inScheme olex:Hosts ;
+    skos:name "personal_social_media_site"@en ;
+    skos:narrowerThan olex:all_host .
+
+olex:academic_website a olex:Host,
+    skos:Concept ;
+    dc:description """
+            The Asset can be used on an academic website.
+            """@en ;
+skos:inScheme olex:Hosts ;
+skos:name "academic_website"@en ;
+skos:narrowerThan olex:all_host .
+
+olex:non_commercial_website a olex:Host,
+        skos:Concept ;
+    dc:description """
+            The Asset can be used on a personal website that does not generate income or carry advertising.
+            """@en ;
+    skos:inScheme olex:Hosts ;
+    skos:name "non_commercial_website"@en ;
+    skos:narrowerThan olex:all_host .
+
+olex:commercial_website a olex:Host,
+        skos:Concept ;
+    dc:description """
+            The Asset can be used on a website that generates income or carries advertising.
+            """@en ;
+    skos:inScheme olex:Hosts ;
+    skos:name "commercial_website"@en ;
+    skos:narrowerThan olex:all_host .
+
+olex:Host a owl:Class ;
+    dc:description """
+            The Host describes the type of site or device the asset can be used on.
+            """@en ;
+    rdfs:label "Host"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
+
+olex:Hosts a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept olex:all_host .
+
+olex:all_host a olex:Host,
+    skos:Concept ;
+    skos:inScheme olex:Hosts ;
+    skos:name "all_host"@en .
 
