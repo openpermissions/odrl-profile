@@ -220,7 +220,7 @@ olex:Host a owl:Class ;
             The Host describes the type of site or device the asset can be used on.
             """@en ;
     rdfs:label "Host"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
 
 olex:Hosts a skos:ConceptScheme ;
     skos:ConceptScheme_hasTopConcept olex:all_host .
