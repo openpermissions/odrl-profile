@@ -75,6 +75,19 @@ Incompatible changes would mean that the same term could be interpreted differen
 http://openlicensing.org/ns/ol/<Release>.<Major>/ 
 ```
 
+Compiling files from components
+-------------------------------
+
+To keep the ontology manageable, the OpenLicensing ontology and its profiles have been split in different components present
+in the components folder. The resulting ontology is formed by concatenating all the files together and serialising it in different
+ways. 
+
+The helper script `build_onto.sh` recompiles OpenLicensing. To recompile another ontology the path to the ontology needs to be
+set as an environment variable. For instance to recompile the OLEX profile, run `ONTOLOGY_PATH=profiles/olex ./build_onto.sh` .
+
+Note that `rdflib` is required to transform the ontologies from `turtle` format to the `rdfxml` format. Before running this script, ensure to have installed  the required dependencies ( `pip install -r requirements.txt`  )
+
+
 OpenLicensing ODRL Profile
 ==========================
 
