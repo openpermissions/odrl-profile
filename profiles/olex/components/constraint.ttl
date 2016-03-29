@@ -1,8 +1,17 @@
-
-olex:Region a owl:Class ;
-    rdfs:label "Region"^^xsd:string ;
+olex:Purpose a owl:Class ;
+    rdfs:label "Purpose"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    rdfs:subClassOf gn:Feature .
+    owl:deprecated true .
+
+olex:Purposes a skos:ConceptScheme ;
+    owl:deprecated true ;
+    skos:ConceptScheme_hasTopConcept olex:all_purpose .
+
+olex:all_purpose a olex:Purpose,
+        skos:Concept ;
+    skos:inScheme olex:Purposes ;
+    skos:name "all_purpose"@en .
+
 
 olex:academic_purpose a olex:Purpose,
         skos:Concept ;
@@ -46,26 +55,36 @@ olex:non_commercial_purpose a olex:Purpose,
     skos:name "non_commercial_purpose"@en ;
     skos:narrowerThan olex:all_purpose .
 
-olex:pixel a olex:Unit,
-        skos:Concept ;
-    skos:inScheme olex:Units ;
-    skos:name "pixel"@en ;
-    skos:narrowerThan olex:all_units .
-
-olex:postOnSocialNetwork a odrl:Action,
-        skos:Concept ;
-    dc:description """
-                    The Assigner permits/prohibits the Assignee(s) to present the content on a social network.
-                    """@en ;
-    skos:inScheme olex:actions ;
-    skos:name "postOnSocialNetwork"@en ;
-    skos:narrowerThan olex:present .
-
 olex:research_purpose a olex:Purpose,
         skos:Concept ;
     skos:inScheme olex:Purposes ;
     skos:name "research_purpose"@en ;
     skos:narrowerThan olex:all_purpose .
+
+
+olex:Region a owl:Class ;
+    rdfs:label "Region"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
+    rdfs:subClassOf gn:Feature .
+
+olex:Unit a owl:Class ;
+    rdfs:label "Unit"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
+
+olex:Units a skos:ConceptScheme ;
+    owl:deprecated true ;
+    skos:ConceptScheme_hasTopConcept olex:all_units .
+
+olex:all_units a olex:Unit,
+        skos:Concept ;
+    skos:inScheme olex:Units ;
+    skos:name "all_units"@en .
+
+olex:pixel a olex:Unit,
+        skos:Concept ;
+    skos:inScheme olex:Units ;
+    skos:name "pixel"@en ;
+    skos:narrowerThan olex:all_units .
 
 olex:visitorsPerMonth a olex:Unit,
         skos:Concept ;
@@ -87,27 +106,6 @@ olex:height a owl:DatatypeProperty,
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
-olex:post a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain olex:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    rdfs:range olex:MatchSet ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
-olex:present a odrl:Action,
-        skos:Concept ;
-    skos:inScheme olex:actions ;
-    skos:name "present"@en ;
-    skos:narrowerThan olex:use .
-
-olex:use a odrl:Action,
-        skos:Concept ;
-    dc:description """
-            The Assigner permits/prohibits the Assignee to use the Asset as agreed.
-            """@en ;
-    skos:inScheme olex:actions ;
-    skos:name "use"@en ;
-    skos:narrowerThan olex:top_action .
 
 olex:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
@@ -123,26 +121,48 @@ olex:width a owl:DatatypeProperty,
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
+olex:actions a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept olex:top_action .
+
+
 olex:top_action a odrl:Action,
         skos:Concept ;
     skos:inScheme olex:actions ;
     skos:name "top_action"@en .
 
-olex:Unit a owl:Class ;
-    rdfs:label "Unit"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
 
-olex:Units a skos:ConceptScheme ;
-    owl:deprecated true ;
-    skos:ConceptScheme_hasTopConcept olex:all_units .
-
-olex:all_units a olex:Unit,
+olex:use a odrl:Action,
         skos:Concept ;
-    skos:inScheme olex:Units ;
-    skos:name "all_units"@en .
+    dc:description """
+            The Assigner permits/prohibits the Assignee to use the Asset as agreed.
+            """@en ;
+    skos:inScheme olex:actions ;
+    skos:name "use"@en ;
+    skos:narrowerThan olex:top_action .
 
-olex:actions a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept olex:top_action .
+olex:post a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
+    rdfs:range olex:MatchSet ;
+    rdfs:subPropertyOf odrl:rightOperand .
+
+olex:present a odrl:Action,
+        skos:Concept ;
+    skos:inScheme olex:actions ;
+    skos:name "present"@en ;
+    skos:narrowerThan olex:use .
+
+olex:postOnSocialNetwork a odrl:Action,
+        skos:Concept ;
+    dc:description """
+                    The Assigner permits/prohibits the Assignee(s) to present the content on a social network.
+                    """@en ;
+    skos:inScheme olex:actions ;
+    skos:name "postOnSocialNetwork"@en ;
+    skos:narrowerThan olex:present .
+
+
 
 olex:Constraint a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -164,18 +184,3 @@ olex:Constraint a [ a owl:Restriction ;
     rdfs:label "Constraint"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf odrl:Constraint .
-
-olex:Purpose a owl:Class ;
-    rdfs:label "Purpose"^^xsd:string ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    owl:deprecated true .
-
-olex:Purposes a skos:ConceptScheme ;
-    owl:deprecated true ;
-    skos:ConceptScheme_hasTopConcept olex:all_purpose .
-
-olex:all_purpose a olex:Purpose,
-        skos:Concept ;
-    skos:inScheme olex:Purposes ;
-    skos:name "all_purpose"@en .
-
