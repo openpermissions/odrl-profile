@@ -1,10 +1,4 @@
 
-olex:MatchSet a owl:Class ;
-    rdfs:label "MatchSet"^^xsd:string ;
-    dc:description "A collection described by describing informally what a typical asset element of this set should look like. "@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    rdfs:subClassOf olex:AssetSet .
-
 ol:hasContributedTo a owl:ObjectProperty ;
     rdfs:domain odrl:Party ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;

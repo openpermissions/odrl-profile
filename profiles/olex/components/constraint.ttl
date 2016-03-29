@@ -8,7 +8,7 @@ olex:Purposes a skos:ConceptScheme ;
     skos:ConceptScheme_hasTopConcept olex:all_purpose .
 
 olex:all_purpose a olex:Purpose,
-        skos:Concept ;
+        skos:Concept ;p
     skos:inScheme olex:Purposes ;
     skos:name "all_purpose"@en .
 
@@ -106,6 +106,12 @@ olex:height a owl:DatatypeProperty,
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
+olex:post a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain olex:Constraint ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
+    rdfs:range olex:Host ;
+    rdfs:subPropertyOf odrl:rightOperand .
 
 olex:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
@@ -140,13 +146,6 @@ olex:use a odrl:Action,
     skos:name "use"@en ;
     skos:narrowerThan olex:top_action .
 
-olex:post a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:domain olex:Constraint ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
-    rdfs:range olex:MatchSet ;
-    rdfs:subPropertyOf odrl:rightOperand .
-
 olex:present a odrl:Action,
         skos:Concept ;
     skos:inScheme olex:actions ;
@@ -171,7 +170,7 @@ olex:Constraint a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:height ],
         [ a owl:Restriction ;
-            owl:allValuesFrom olex:MatchSet ;
+            owl:allValuesFrom olex:Host ;
             owl:maxCardinality 1 ;
             owl:onProperty olex:post ],
         [ a owl:Restriction ;
@@ -184,3 +183,78 @@ olex:Constraint a [ a owl:Restriction ;
     rdfs:label "Constraint"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
     rdfs:subClassOf odrl:Constraint .
+
+olex:Purpose a owl:Class ;
+    rdfs:label "Purpose"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> ;
+    owl:deprecated true .
+
+olex:Purposes a skos:ConceptScheme ;
+    owl:deprecated true ;
+    skos:ConceptScheme_hasTopConcept olex:all_purpose .
+
+olex:all_purpose a olex:Purpose,
+        skos:Concept ;
+    skos:inScheme olex:Purposes ;
+    skos:name "all_purpose"@en .
+
+olex:personal_device a olex:Host,
+        skos:Concept ;
+    dc:description """
+            The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)
+            """@en ;
+    skos:inScheme olex:Hosts ;
+    skos:name "personal_device"@en ;
+    skos:narrowerThan olex:all_host .
+
+olex:personal_social_media_website a olex:Host,
+        skos:Concept ;
+    dc:description """
+            The Asset can be used on personal social media accounts.
+            """@en ;
+    skos:inScheme olex:Hosts ;
+    skos:name "personal_social_media_site"@en ;
+    skos:narrowerThan olex:all_host .
+
+olex:academic_website a olex:Host,
+    skos:Concept ;
+    dc:description """
+            The Asset can be used on an academic website.
+            """@en ;
+skos:inScheme olex:Hosts ;
+skos:name "academic_website"@en ;
+skos:narrowerThan olex:all_host .
+
+olex:non_commercial_website a olex:Host,
+        skos:Concept ;
+    dc:description """
+            The Asset can be used on a personal website that does not generate income or carry advertising.
+            """@en ;
+    skos:inScheme olex:Hosts ;
+    skos:name "non_commercial_website"@en ;
+    skos:narrowerThan olex:all_host .
+
+olex:commercial_website a olex:Host,
+        skos:Concept ;
+    dc:description """
+            The Asset can be used on a website that generates income or carries advertising.
+            """@en ;
+    skos:inScheme olex:Hosts ;
+    skos:name "commercial_website"@en ;
+    skos:narrowerThan olex:all_host .
+
+olex:Host a owl:Class ;
+    dc:description """
+            The Host describes the type of site or device the asset can be used on.
+            """@en ;
+    rdfs:label "Host"^^xsd:string ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
+
+olex:Hosts a skos:ConceptScheme ;
+    skos:ConceptScheme_hasTopConcept olex:all_host .
+
+olex:all_host a olex:Host,
+    skos:Concept ;
+    skos:inScheme olex:Hosts ;
+    skos:name "all_host"@en .
+
