@@ -20,10 +20,10 @@
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
 
-<http://openlicensing.org/ns/ol/1.1/> a owl:Ontology ;
+<http://openlicensing.org/ns/olex/1.0/> a owl:Ontology ;
     dc:creator "Digital Catapult Software Engineering Team"^^xsd:string;
     dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
     dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;
     dct:rights "(C) Digital Catapult Limited 2016"^^xsd:string ;
-    owl:versionIRI <http://openlicensing.org/ns/ol/1.1/> ;
+    owl:versionIRI <http://openlicensing.org/ns/olex/1.0/> ;
     owl:versionInfo "1.1.0"^^xsd:string .

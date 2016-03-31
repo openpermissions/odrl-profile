@@ -7,379 +7,186 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3c.org/2008/skos/"
 >
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/academic_website">
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
-    <skos:name xml:lang="en">academic_website</skos:name>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_host"/>
-    <dc:description xml:lang="en">
-            The Asset can be used on an academic website.
-            </dc:description>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/medical_purpose">
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Purpose"/>
-    <skos:name xml:lang="en">medical_purpose</skos:name>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_purpose"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Purposes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/personal_device">
-    <skos:name xml:lang="en">personal_device</skos:name>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_host"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
-    <dc:description xml:lang="en">
-            The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)
-            </dc:description>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/academic_purpose">
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_purpose"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Purpose"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Purposes"/>
-    <skos:name xml:lang="en">academic_purpose</skos:name>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Asset">
-    <rdf:type rdf:nodeID="ub1bL95C14"/>
-    <rdfs:subClassOf rdf:resource="http://openlicensing.org/ns/ol/1.1/Asset"/>
-    <rdf:type rdf:nodeID="ub1bL98C9"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-    <dc:description xml:lang="en">
-This is a currently non normative exploratory definition of advanced asset definitions.
-</dc:description>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asset</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/humanitarian_purpose">
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Purpose"/>
-    <skos:name xml:lang="en">humanitarian_purpose</skos:name>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_purpose"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Purposes"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL75C17">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/elementType"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL254C9">
-    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/height"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="ub1bL114C9">
+    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/host"/>
+    <owl:allValuesFrom rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/ol/1.1/contributor">
-    <dc:description xml:lang="en">
-        They are assumed necessarily as odrl_Party as they have 
-        normally to give their rights at some point if they are contributors.
-        </dc:description>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/ol/1.1/"/>
-    <rdfs:range rdf:resource="http://www.w3.org/ns/odrl/2/Party"/>
-    <owl:inverseOf rdf:resource="http://openlicensing.org/ns/ol/1.1/hasContributedTo"/>
-    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Asset"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/creator"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL95C14">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/odrl/2/Party"/>
-    <owl:onProperty rdf:resource="http://openlicensing.org/ns/ol/1.1/contributor"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/AssetSet">
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AssetSet</rdfs:label>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/views">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-    <rdfs:subClassOf rdf:resource="http://openlicensing.org/ns/olex/1.0/Asset"/>
-    <rdf:type rdf:nodeID="ub1bL75C17"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/commercial_purpose">
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_purpose"/>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Purpose"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Purposes"/>
-    <skos:name xml:lang="en">commercial_purpose</skos:name>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/personal_social_media_website">
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_host"/>
-    <skos:name xml:lang="en">personal_social_media_site</skos:name>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/odrl/2/rightOperand"/>
     <dc:description xml:lang="en">
-            The Asset can be used on personal social media accounts.
-            </dc:description>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/ol/1.1/hasContributedTo">
-    <rdfs:range rdf:resource="http://openlicensing.org/ns/olex/1.0/Asset"/>
-    <owl:inverseOf rdf:resource="http://openlicensing.org/ns/ol/1.1/contributor"/>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/ol/1.1/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://www.w3.org/ns/odrl/2/Party"/>
+                    Specifies the maximum number of views of the asset that may result in.
+                    </dc:description>
+    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Constraint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/pixel">
     <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Unit"/>
+    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
     <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Units"/>
-    <skos:name xml:lang="en">pixel</skos:name>
     <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_units"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
+    <skos:name xml:lang="en">pixel</skos:name>
   </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/ol/1.1/isTheAuthorOf">
-    <rdfs:domain rdf:resource="http://www.w3.org/ns/odrl/2/Party"/>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/ol/1.1/"/>
-    <owl:inverseOf rdf:resource="http://openlicensing.org/ns/ol/1.1/author"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="http://openlicensing.org/ns/olex/1.0/Asset"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/elementType">
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/AssetSet"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/use">
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/actions"/>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/top_action"/>
-    <skos:name xml:lang="en">use</skos:name>
-    <dc:description xml:lang="en">
-            The Assigner permits/prohibits the Assignee to use the Asset as agreed.
-            </dc:description>
-    <rdf:type rdf:resource="http://www.w3.org/ns/odrl/2/Action"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/all_units">
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Units"/>
-    <skos:name xml:lang="en">all_units</skos:name>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Unit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/all_host">
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:name xml:lang="en">all_host</skos:name>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/MatchSet">
-    <dc:description xml:lang="en">A collection described by describing informally what a typical asset element of this set should look like. </dc:description>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Constraint">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MatchSet</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://openlicensing.org/ns/olex/1.0/AssetSet"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/research_purpose">
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:name xml:lang="en">research_purpose</skos:name>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_purpose"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Purposes"/>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Purpose"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/views">
-    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Constraint"/>
     <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/odrl/2/rightOperand"/>
+    <rdf:type rdf:nodeID="ub1bL108C19"/>
+    <rdf:type rdf:nodeID="ub1bL121C9"/>
+    <rdf:type rdf:nodeID="ub1bL111C9"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Constraint</rdfs:label>
+    <rdf:type rdf:nodeID="ub1bL114C9"/>
+    <rdf:type rdf:nodeID="ub1bL118C9"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/odrl/2/Constraint"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/actions">
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/ConceptScheme"/>
-    <skos:ConceptScheme_hasTopConcept rdf:resource="http://openlicensing.org/ns/olex/1.0/top_action"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/ol/1.1/author">
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/ol/1.1/"/>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Host">
+    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
     <dc:description xml:lang="en">
-        Authors are distinguished of contributors.
-        </dc:description>
-    <rdfs:range rdf:resource="http://www.w3.org/ns/odrl/2/Party"/>
-    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Asset"/>
-    <rdfs:subPropertyOf rdf:resource="http://openlicensing.org/ns/ol/1.1/contributor"/>
-    <owl:inverseOf rdf:resource="http://openlicensing.org/ns/ol/1.1/isTheAuthorOf"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Purposes">
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/ConceptScheme"/>
-    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
-    <skos:ConceptScheme_hasTopConcept rdf:resource="http://openlicensing.org/ns/olex/1.0/all_purpose"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/commercial_website">
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
-    <skos:name xml:lang="en">commercial_website</skos:name>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <dc:description xml:lang="en">
-            The Asset can be used on a website that generates income or carries advertising.
+            The Host describes the type of site or device the asset can be used on.
             </dc:description>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_host"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Host</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/attributeText">
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/odrl/2/rightOperand"/>
+    <dc:description xml:lang="en">
+                    Required textual representation of copyrights attribution.
+                    </dc:description>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Constraint"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL264C9">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/attributeText"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Units">
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/ConceptScheme"/>
-    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
-    <skos:ConceptScheme_hasTopConcept rdf:resource="http://openlicensing.org/ns/olex/1.0/all_units"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/ol/1.1/">
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1.0</owl:versionInfo>
-    <owl:versionIRI rdf:resource="http://openlicensing.org/ns/ol/1.1/"/>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-02-22T10:56:00+00:00</dct:modified>
-    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile).</dc:description>
-    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Digital Catapult Software Engineering Team</dc:creator>
-    <dct:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(C) Digital Catapult Limited 2016</dct:rights>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/top_action">
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/actions"/>
-    <skos:name xml:lang="en">top_action</skos:name>
-    <rdf:type rdf:resource="http://www.w3.org/ns/odrl/2/Action"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/visitorsPerMonth">
-    <skos:name xml:lang="en">visitorsPerMonth</skos:name>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Unit"/>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_units"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Units"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/non_commercial_purpose">
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Purposes"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:name xml:lang="en">non_commercial_purpose</skos:name>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Purpose"/>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_purpose"/>
+    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/width">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Constraint"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/odrl/2/rightOperand"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/present">
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/actions"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/use"/>
-    <skos:name xml:lang="en">present</skos:name>
-    <rdf:type rdf:resource="http://www.w3.org/ns/odrl/2/Action"/>
+    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Constraint"/>
+    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/non_commercial_website">
+    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
+    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
+    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_host"/>
     <dc:description xml:lang="en">
             The Asset can be used on a personal website that does not generate income or carry advertising.
             </dc:description>
     <skos:name xml:lang="en">non_commercial_website</skos:name>
     <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/personal_device">
     <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
+    <skos:name xml:lang="en">personal_device</skos:name>
+    <dc:description xml:lang="en">
+            The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)
+            </dc:description>
+    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
+    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
     <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_host"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL98C9">
-    <owl:onProperty rdf:resource="http://openlicensing.org/ns/ol/1.1/author"/>
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/odrl/2/Party"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL251C19">
-    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/views"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Constraint">
-    <rdf:type rdf:nodeID="ub1bL254C9"/>
-    <rdf:type rdf:nodeID="ub1bL264C9"/>
-    <rdf:type rdf:nodeID="ub1bL251C19"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/odrl/2/Constraint"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-    <rdf:type rdf:nodeID="ub1bL261C9"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Constraint</rdfs:label>
-    <rdf:type rdf:nodeID="ub1bL257C9"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Region">
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Region</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.geonames.org/ontology#Feature"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/height">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/odrl/2/rightOperand"/>
-    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Constraint"/>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Purpose">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Purpose</rdfs:label>
-    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Host">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Host</rdfs:label>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/commercial_website">
     <dc:description xml:lang="en">
-            The Host describes the type of site or device the asset can be used on.
+            The Asset can be used on a website that generates income or carries advertising.
             </dc:description>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
+    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_host"/>
+    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
+    <skos:name xml:lang="en">commercial_website</skos:name>
+    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
+    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/post">
-    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Constraint"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/odrl/2/rightOperand"/>
-    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
-    <rdfs:range rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/all_units">
+    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Units"/>
+    <skos:name xml:lang="en">all_units</skos:name>
+    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Unit"/>
+    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/all_host">
+    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
+    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
+    <skos:name xml:lang="en">all_host</skos:name>
+    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL111C9">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/height"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Hosts">
     <rdf:type rdf:resource="http://www.w3c.org/2008/skos/ConceptScheme"/>
     <skos:ConceptScheme_hasTopConcept rdf:resource="http://openlicensing.org/ns/olex/1.0/all_host"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/advertising_purpose">
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_purpose"/>
-    <skos:name xml:lang="en">advertising_purpose</skos:name>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/personal_social_media_website">
+    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
+    <dc:description xml:lang="en">
+            The Asset can be used on personal social media accounts.
+            </dc:description>
     <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Purpose"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Purposes"/>
+    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_host"/>
+    <skos:name xml:lang="en">personal_social_media_site</skos:name>
+    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Hosts"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL257C9">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="ub1bL118C9">
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/post"/>
-    <owl:allValuesFrom rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/indexing_purpose">
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Purposes"/>
-    <skos:name xml:lang="en">indexing_purpose</skos:name>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_purpose"/>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Purpose"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/all_purpose">
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Purpose"/>
-    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Purposes"/>
-    <skos:name xml:lang="en">all_purpose</skos:name>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL261C9">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/width"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/host">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
+    <dc:description xml:lang="en">
+                    Specifies on which type of host the asset may be presented or posted.
+                    </dc:description>
+    <rdfs:range rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/odrl/2/rightOperand"/>
+    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Constraint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/height">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/odrl/2/rightOperand"/>
+    <rdfs:domain rdf:resource="http://openlicensing.org/ns/olex/1.0/Constraint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/">
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile).</dc:description>
+    <owl:versionIRI rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-02-22T10:56:00+00:00</dct:modified>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Digital Catapult Software Engineering Team</dc:creator>
+    <dct:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(C) Digital Catapult Limited 2016</dct:rights>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1.0</owl:versionInfo>
   </rdf:Description>
   <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Unit">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unit</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="http://openlicensing.org/ns/olex/1.0/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/Units">
+    <skos:ConceptScheme_hasTopConcept rdf:resource="http://openlicensing.org/ns/olex/1.0/all_units"/>
+    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/ConceptScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL108C19">
+    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/views"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/visitorsPerMonth">
+    <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
+    <skos:name xml:lang="en">visitorsPerMonth</skos:name>
+    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Unit"/>
+    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/all_units"/>
+    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/Units"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL121C9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/attributeText"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
   </rdf:Description>
 </rdf:RDF>
