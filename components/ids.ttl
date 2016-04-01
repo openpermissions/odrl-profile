@@ -46,12 +46,12 @@ Identifier for an asset.
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 
 ol:id_types a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:top_id_type .
+    skos:hasTopConcept ol:topIdType .
 
-ol:top_id_type a ol:IdType,
+ol:topIdType a ol:IdType,
         skos:Concept ;
     skos:inScheme ol:id_types ;
-    skos:name "top_id_type"@en .
+    skos:name "topIdType"@en .
 
 ol:IdType a owl:Class ;
     rdfs:label "IdType"^^xsd:string ;

@@ -127,12 +127,12 @@ Identifier for an asset.
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 
 ol:id_types a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:top_id_type .
+    skos:hasTopConcept ol:topIdType .
 
-ol:top_id_type a ol:IdType,
+ol:topIdType a ol:IdType,
         skos:Concept ;
     skos:inScheme ol:id_types ;
-    skos:name "top_id_type"@en .
+    skos:name "topIdType"@en .
 
 ol:IdType a owl:Class ;
     rdfs:label "IdType"^^xsd:string ;
@@ -291,47 +291,47 @@ Policy is the central entity that holds an ODRL policy together. In its encoded 
 # set.ttl
 # -----------------------------------------------------------------------
 
-ol:chosen_sequentially a ol:AssetSetSamplePolicy,
+ol:chosenSequentially a ol:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen according to a predefined order"@en ;
     skos:inScheme ol:AssetSetSamplePolicies ;
-    skos:name "chosen_sequentially"@en ;
-    skos:narrowerThan ol:any_sample_policy .
+    skos:name "chosenSequentially"@en ;
+    skos:narrowerThan ol:anySamplePolicy .
 
-ol:pointing_from a ol:AssetSetEdgeDirection,
+ol:pointingFrom a ol:AssetSetEdgeDirection,
         skos:Concept ;
     dc:description "Point from the element to the target_object"@en ;
     skos:inScheme ol:AssetSetEdgeDirections ;
-    skos:name "pointing_from"@en ;
-    skos:narrowerThan ol:any_edge_direction .
+    skos:name "pointingFrom"@en ;
+    skos:narrowerThan ol:anyEdgeDirection .
 
-ol:pointing_to a ol:AssetSetEdgeDirection,
+ol:pointingTo a ol:AssetSetEdgeDirection,
         skos:Concept ;
     dc:description "Point from the target_object to the element"@en ;
     skos:inScheme ol:AssetSetEdgeDirections ;
-    skos:name "pointing_to"@en ;
-    skos:narrowerThan ol:any_edge_direction .
+    skos:name "pointingTo"@en ;
+    skos:narrowerThan ol:anyEdgeDirection .
 
-ol:randomly_chosen a ol:AssetSetSamplePolicy,
+ol:randomlyChosen a ol:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen in an arbitrary manner not controller by assignee or assigner"@en ;
     skos:inScheme ol:AssetSetSamplePolicies ;
-    skos:name "randomly_chosen"@en ;
-    skos:narrowerThan ol:any_sample_policy .
+    skos:name "randomlyChosen"@en ;
+    skos:narrowerThan ol:anySamplePolicy .
 
-ol:selected_by_assignee a ol:AssetSetSamplePolicy,
+ol:selectedByAssignee a ol:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen by the assignee party"@en ;
     skos:inScheme ol:AssetSetSamplePolicies ;
-    skos:name "selected_by_assignee"@en ;
-    skos:narrowerThan ol:any_sample_policy .
+    skos:name "selectedByAssignee"@en ;
+    skos:narrowerThan ol:anySamplePolicy .
 
-ol:selected_by_assigner a ol:AssetSetSamplePolicy,
+ol:selectedByAssigner a ol:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen by the assigner party"@en ;
     skos:inScheme ol:AssetSetSamplePolicies ;
-    skos:name "selected_by_assigner"@en ;
-    skos:narrowerThan ol:any_sample_policy .
+    skos:name "selectedByAssigner"@en ;
+    skos:narrowerThan ol:anySamplePolicy .
 
 ol:count a owl:DatatypeProperty,
         owl:FunctionalProperty ;
@@ -346,7 +346,7 @@ ol:edgeDirection a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
 Indicates in which direction the predicate is used to connect elements to the set target_object.
-Default is ol:pointing_to.
+Default is ol:pointingTo.
 """@en ;
     rdfs:domain ol:AssetSet ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
@@ -404,12 +404,12 @@ Default is the AssetSet instance itself.
     rdfs:range owl:Thing .
 
 ol:AssetSetEdgeDirections a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:any_edge_direction .
+    skos:hasTopConcept ol:anyEdgeDirection .
 
-ol:any_edge_direction a ol:AssetSetEdgeDirection,
+ol:anyEdgeDirection a ol:AssetSetEdgeDirection,
         skos:Concept ;
     skos:inScheme ol:AssetSetEdgeDirections ;
-    skos:name "any_edge_direction"@en .
+    skos:name "anyEdgeDirection"@en .
 
 ol:AssetSelector a [ a owl:Restriction ;
             owl:cardinality 1 ;
@@ -443,12 +443,12 @@ are "pointing to" the elements or "pointing from" the elements
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 
 ol:AssetSetSamplePolicies a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept ol:any_sample_policy .
+    skos:hasTopConcept ol:anySamplePolicy .
 
-ol:any_sample_policy a ol:AssetSetSamplePolicy,
+ol:anySamplePolicy a ol:AssetSetSamplePolicy,
         skos:Concept ;
     skos:inScheme ol:AssetSetSamplePolicies ;
-    skos:name "any_sample_policy"@en .
+    skos:name "anySamplePolicy"@en .
 
 ol:AssetSet a [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;

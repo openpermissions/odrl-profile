@@ -2,25 +2,25 @@ olex:Unit a owl:Class ;
     rdfs:label "Unit"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
 
-olex:Units a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept olex:all_units .
+olex:UnitScheme a skos:ConceptScheme ;
+    skos:hasTopConcept olex:topUnit .
 
-olex:all_units a olex:Unit,
+olex:topUnit a olex:Unit,
         skos:Concept ;
-    skos:inScheme olex:Units ;
-    skos:name "all_units"@en .
+    skos:inScheme olex:UnitScheme ;
+    skos:name "topUnit"@en .
 
 olex:pixel a olex:Unit,
         skos:Concept ;
-    skos:inScheme olex:Units ;
+    skos:inScheme olex:UnitScheme ;
     skos:name "pixel"@en ;
-    skos:narrowerThan olex:all_units .
+    skos:narrowerThan olex:topUnit .
 
 olex:visitorsPerMonth a olex:Unit,
         skos:Concept ;
-    skos:inScheme olex:Units ;
+    skos:inScheme olex:UnitScheme ;
     skos:name "visitorsPerMonth"@en ;
-    skos:narrowerThan olex:all_units .
+    skos:narrowerThan olex:topUnit .
 
 olex:attributeText a owl:DatatypeProperty,
         owl:FunctionalProperty ;
@@ -96,48 +96,48 @@ olex:Host a owl:Class ;
     rdfs:label "Host"^^xsd:string ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/olex/1.0/> .
 
-olex:Hosts a skos:ConceptScheme ;
-    skos:ConceptScheme_hasTopConcept olex:all_host .
+olex:HostScheme a skos:ConceptScheme ;
+    skos:hasTopConcept olex:anyHost .
 
-olex:all_host a olex:Host,
+olex:anyHost a olex:Host,
     skos:Concept ;
-    skos:inScheme olex:Hosts ;
-    skos:name "all_host"@en .
+    skos:inScheme olex:HostScheme ;
+    skos:name "anyHost"@en .
 
 
-olex:personal_device a olex:Host,
+olex:personalDevice a olex:Host,
         skos:Concept ;
     dc:description """
             The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)
             """@en ;
-    skos:inScheme olex:Hosts ;
-    skos:name "personal_device"@en ;
-    skos:narrowerThan olex:all_host .
+    skos:inScheme olex:HostScheme ;
+    skos:name "personal device"@en ;
+    skos:narrowerThan olex:anyHost .
 
-olex:personal_social_media_website a olex:Host,
+olex:personalSocialMediaWebsite a olex:Host,
         skos:Concept ;
     dc:description """
             The Asset can be used on personal social media accounts.
             """@en ;
-    skos:inScheme olex:Hosts ;
-    skos:name "personal_social_media_site"@en ;
-    skos:narrowerThan olex:all_host .
+    skos:inScheme olex:HostScheme ;
+    skos:name "personal social media site"@en ;
+    skos:narrowerThan olex:anyHost .
 
-olex:non_commercial_website a olex:Host,
+olex:nonCommercialWebsite a olex:Host,
         skos:Concept ;
     dc:description """
             The Asset can be used on a personal website that does not generate income or carry advertising.
             """@en ;
-    skos:inScheme olex:Hosts ;
-    skos:name "non_commercial_website"@en ;
-    skos:narrowerThan olex:all_host .
+    skos:inScheme olex:HostScheme ;
+    skos:name "non commercial website"@en ;
+    skos:narrowerThan olex:anyHost .
 
-olex:commercial_website a olex:Host,
+olex:commercialWebsite a olex:Host,
         skos:Concept ;
     dc:description """
             The Asset can be used on a website that generates income or carries advertising.
             """@en ;
-    skos:inScheme olex:Hosts ;
-    skos:name "commercial_website"@en ;
-    skos:narrowerThan olex:all_host .
+    skos:inScheme olex:HostScheme ;
+    skos:name "commercial website"@en ;
+    skos:narrowerThan olex:anyHost .
 
