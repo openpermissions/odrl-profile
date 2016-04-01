@@ -29,7 +29,7 @@ id:a3a93d8956634a5fb756a5d64a10d39f a ol:Policy,
         odrl:Asset,
         odrl:Offer,
         odrl:Policy ;
-    ol:preferredPolicyIdentifier "CC_BY_NC_ND"^^xsd:string ;
+    dct:title "CC_BY_NC_ND"^^xsd:string ;
     dct:created "2016-03-23T15:33:00"^^xsd:dateTime ;
     dct:modified "2016-03-23T15:33:00"^^xsd:dateTime ;
     rdfs:comment """
