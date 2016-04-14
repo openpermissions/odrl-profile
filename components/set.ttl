@@ -1,16 +1,16 @@
-ol:chosenSequentially a ol:AssetSetSamplePolicy,
+op:chosenSequentially a op:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen according to a predefined order"@en ;
-    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:inScheme op:AssetSetSamplePolicies ;
     skos:name "chosenSequentially"@en ;
-    skos:narrowerThan ol:anySamplePolicy .
+    skos:narrowerThan op:anySamplePolicy .
 
-ol:pointingFrom a ol:AssetSetEdgeDirection,
+op:pointingFrom a op:AssetSetEdgeDirection,
         skos:Concept ;
     dc:description "Point from the element to the target_object"@en ;
-    skos:inScheme ol:AssetSetEdgeDirections ;
+    skos:inScheme op:AssetSetEdgeDirections ;
     skos:name "pointingFrom"@en ;
-    skos:narrowerThan ol:anyEdgeDirection .
+    skos:narrowerThan op:anyEdgeDirection .
 
 ol:pointingTo a ol:AssetSetEdgeDirection,
         skos:Concept ;
@@ -46,7 +46,7 @@ ol:count a owl:DatatypeProperty,
 Default value is 1.
 """@en ;
     rdfs:domain ol:AssetSelector ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:integer .
 
 ol:edgeDirection a owl:FunctionalProperty,
@@ -56,7 +56,7 @@ Indicates in which direction the predicate is used to connect elements to the se
 Default is ol:pointingTo.
 """@en ;
     rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range ol:AssetSetEdgeDirection .
 
 ol:fromSet a owl:FunctionalProperty,
@@ -65,12 +65,12 @@ ol:fromSet a owl:FunctionalProperty,
 The set asset can be picked from.
 """@en ;
     rdfs:domain ol:AssetSelector ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range ol:AssetSet .
 
 ol:hasElement a owl:ObjectProperty ;
     rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range owl:Thing .
 
 ol:predicate a owl:FunctionalProperty,
@@ -79,7 +79,7 @@ ol:predicate a owl:FunctionalProperty,
 Indicates which predicate is used to Indicate that element belong to a set.
 """@en ;
     rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range owl:ObjectProperty .
 
 ol:samplePolicy a owl:FunctionalProperty,
@@ -88,7 +88,7 @@ ol:samplePolicy a owl:FunctionalProperty,
 The way asset are selected. Default is selected_by_assignee.
 """@en ;
     rdfs:domain ol:AssetSelector ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range ol:AssetSetSamplePolicy .
 
 ol:selectRequired a owl:DatatypeProperty,
@@ -97,7 +97,7 @@ ol:selectRequired a owl:DatatypeProperty,
 True if it is required to select an element on agreement of the policy.
 """@en ;
     rdfs:domain ol:AssetSelector ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:boolean .
 
 ol:targetObject a owl:FunctionalProperty,
@@ -107,7 +107,7 @@ Indicates the entity that the elements must connect to through the predicate in 
 Default is the AssetSet instance itself.
 """@en ;
     rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range owl:Thing .
 
 ol:AssetSetEdgeDirections a skos:ConceptScheme ;

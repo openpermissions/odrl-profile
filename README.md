@@ -1,13 +1,13 @@
 The OpenLicensing Ontology
 ==========================
 
-- URI : http://openlicensing.org/ns/ol/1.1/
-- Download : [rdf]( http://openlicensing.org/ontologies/ol-1.1.rdf), [xml]( http://openlicensing.org/ontologies/ol-1.1.xml)
+- URI : http://openpermissions.org/ns/op/1.1/
+- Download : [rdf]( http://openpermissions.org/ontologies/ol-1.1.rdf), [xml]( http://openpermissions.org/ontologies/ol-1.1.xml)
 - Version : 1.1
 - Release date: Febuary 2016, the 22nd
 - Authors : Digital Catapult
 
-This is an ODRL 2.1 profile used in conjunction with the Open Licensing Platform.
+This is an ODRL 2.1 profile used in conjunction with the Open Permissions Platform.
 
 - OpenLicensing supports only a limited the scope of licenses supported by ODRL.  
   This subset correspond is also what we think is currently likely to be well supported by software.
@@ -72,7 +72,7 @@ Only the part that are related to breaking changes will be present in the URL.
 Incompatible changes would mean that the same term could be interpreted differently and this need to be identified.
 
 ```
-http://openlicensing.org/ns/ol/<Release>.<Major>/ 
+http://openpermissions.org/ns/op/<Release>.<Major>/ 
 ```
 
 Compiling files from components
@@ -113,7 +113,7 @@ It is the responsiblity of the hub owner to ensure the consistency of the taxono
 Shared Duty, default targets, assignee and assigner.
 ----------------------------------------------------
 
-Open Licensing allow to defined odrl:uty at the level of the policy.
+Open Permissions allow to defined odrl:uty at the level of the policy.
 Some of duties such as those related one off payments shall preferably be expressed at the level of the Policy.
 The duties expressed at the level of the policy apply to all the permission.
 
@@ -123,7 +123,7 @@ They are considered as default target, assignee, and assigner for all Rules.
 Offer Expiry data
 -----------------
 
-Open Licensing provides a special term to indicate when a license is going to be expired.
+Open Permissions provides a special term to indicate when a license is going to be expired.
 
 
 Limitation of ODRL expressivity by the OpenLicensing Platform
@@ -134,7 +134,7 @@ Limitation of ODRL expressivity by the OpenLicensing Platform
   * Policies with `undefined` term different from `invalid` are not recommended;
   * Policies with no `Permission` are not supported;
   * Policies using ODRL 2.1 experimental features are not supported;
-  * `nextPolicy` constraint are currently not enforced and we recommend currently using the Open Licensing Platform only with policies that 
+  * `nextPolicy` constraint are currently not enforced and we recommend currently using the Open Permissions Platform only with policies that 
     that do not rely on this constraint;
   * Policies with types : `Set`, `Ticket` are not supported;
   * Policies with different set of duties for each permissions are supported however the set of duties that can be expressed at the permission level 

@@ -1,16 +1,16 @@
-ol:HubkeyS0 a ol:IdType,
+op:HubkeyS0 a op:IdType,
         skos:Concept ;
     dc:description "Id who has the form of a Hubkey.  This refers to schema 0 of the Hubkey."@en ;
-    skos:inScheme ol:id_types ;
+    skos:inScheme op:id_types ;
     skos:name "HubkeyS0"@en ;
-    skos:narrowerThan ol:top_id_type .
+    skos:narrowerThan op:top_id_type .
 
-ol:Hubkey a ol:IdType,
+op:Hubkey a op:IdType,
         skos:Concept ;
     dc:description "Id who has the form of a Hubkey.  This refers to the latest schema of a Hubkey."@en ;
-    skos:inScheme ol:id_types ;
+    skos:inScheme op:id_types ;
     skos:name "Hubkey"@en ;
-    skos:narrowerThan ol:top_id_type .
+    skos:narrowerThan op:top_id_type .
 
 ol:IRI a ol:IdType,
         skos:Concept ;
@@ -22,13 +22,13 @@ ol:IRI a ol:IdType,
 ol:id_type a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range ol:IdType .
 
 ol:value a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
 ol:Id a [ a owl:Restriction ;
@@ -43,7 +43,7 @@ ol:Id a [ a owl:Restriction ;
     dc:description """
 Identifier for an asset.
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> .
 
 ol:id_types a skos:ConceptScheme ;
     skos:hasTopConcept ol:topIdType .
@@ -58,5 +58,5 @@ ol:IdType a owl:Class ;
     dc:description """
 Represents a class of identifiers
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> .
 

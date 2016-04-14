@@ -1,8 +1,8 @@
-# todo: why is this not in the openlicensing folder with the other sub components?
+# todo: why is this not in the openpermissions folder with the other sub components?
 
-ol:Party a [ a owl:Restriction ;
+op:Party a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:name ],
+            owl:onProperty op:name ],
         owl:Class ;
     rdfs:label "Party"^^xsd:string ;
     dc:description """
@@ -11,14 +11,14 @@ ol:Party a [ a owl:Restriction ;
       2. a person known by an organisation (not necessarily providing its real name)
 
     """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
-    rdfs:subClassOf ol:Asset,
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.0/> ;
+    rdfs:subClassOf op:Asset,
         odrl:Party .
 
-ol:name a owl:DatatypeProperty,
+op:name a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.0/> ;
+    rdfs:domain op:Party ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.0/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:name .
 

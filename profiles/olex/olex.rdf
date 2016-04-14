@@ -10,26 +10,26 @@
   <rdf:Description rdf:nodeID="ub1bL114C9">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://openlicensing.org/ns/olex/1.0/host"/>
-    <owl:allValuesFrom rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
+    <owl:onProperty rdf:resource="http://openpermissions.org/ns/opex/1.0/host"/>
+    <owl:allValuesFrom rdf:resource="http://openpermissions.org/ns/opex/1.0/Host"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/nonCommercialWebsite">
-    <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/HostScheme"/>
+  <rdf:Description rdf:about="http://openpermissions.org/ns/opex/1.0/nonCommercialWebsite">
+    <skos:inScheme rdf:resource="http://openpermissions.org/ns/opex/1.0/HostScheme"/>
     <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/anyHost"/>
+    <skos:narrowerThan rdf:resource="http://openpermissions.org/ns/opex/1.0/anyHost"/>
     <dc:description xml:lang="en">
             The Asset can be used on a personal website that does not generate income or carry advertising.
             </dc:description>
     <skos:name xml:lang="en">non commercial website</skos:name>
-    <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
+    <rdf:type rdf:resource="http://openpermissions.org/ns/opex/1.0/Host"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://openlicensing.org/ns/olex/1.0/personalSocialMediaWebsite">
+  <rdf:Description rdf:about="http://openpermissions.org/ns/opex/1.0/personalSocialMediaWebsite">
     <rdf:type rdf:resource="http://www.w3c.org/2008/skos/Concept"/>
     <dc:description xml:lang="en">
             The Asset can be used on personal social media accounts.
             </dc:description>
     <skos:name xml:lang="en">personal social media site</skos:name>
-    <skos:narrowerThan rdf:resource="http://openlicensing.org/ns/olex/1.0/anyHost"/>
+    <skos:narrowerThan rdf:resource="http://openpermissions.org/ns/opex/1.0/anyHost"/>
     <rdf:type rdf:resource="http://openlicensing.org/ns/olex/1.0/Host"/>
     <skos:inScheme rdf:resource="http://openlicensing.org/ns/olex/1.0/HostScheme"/>
   </rdf:Description>

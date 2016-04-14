@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3c.org/2008/skos/> .
 
-@prefix id: <http://openlicensing.org/ns/id/> .
+@prefix id: <http://openpermissions.org/ns/id/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
@@ -19,24 +19,24 @@
 @prefix gn: <http://www.geonames.org/ontology#> .
 
 @prefix iso4217a: <http://cvx.iptc.org/iso4217a/> .
-@prefix ol: <http://openlicensing.org/ns/ol/1.1/> .
+@prefix op: <http://openpermissions.org/ns/op/1.1/> .
 
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
 
-<http://openlicensing.org/ns/ol/1.1/> a owl:Ontology ;
+<http://openpermissions.org/ns/op/1.1/> a owl:Ontology ;
     dc:creator "Digital Catapult Software Engineering Team"^^xsd:string;
     dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
     dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;
     dct:rights "(C) Digital Catapult Limited 2016"^^xsd:string ;
-    owl:versionIRI <http://openlicensing.org/ns/ol/1.1/> ;
+    owl:versionIRI <http://openpermissions.org/ns/op/1.1/> ;
     owl:versionInfo "1.1.0"^^xsd:string .
 
 # -----------------------------------------------------------------------
 # asset.ttl
 # -----------------------------------------------------------------------
 
-ol:alsoIdentifiedBy a owl:ObjectProperty ;
+op:alsoIdentifiedBy a owl:ObjectProperty ;
     dc:description """
     An Asset may have different identifiers assigned to it by different parties.
     The identities are not necessarily equivalent even though they have been assigned to the same Asset.
@@ -44,23 +44,23 @@ ol:alsoIdentifiedBy a owl:ObjectProperty ;
     Identities that alsoIdentifiedBy refer to MUST be for the whole Asset and not for part of the Asset.
     	For example if the Asset is a book, the alsoIdentifiedBy ids will be for the book and NOT for pictures in the book.
 """@en ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:Id .
+    rdfs:domain op:Asset ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
+    rdfs:range op:Id .
 
-ol:title a owl:DatatypeProperty,
+op:title a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 Title of the asset for the purpose of presentation to a Licensee.
 """@en ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Asset ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:title .
 
-ol:Asset a [ a owl:Restriction ;
+op:Asset a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:title ],
+            owl:onProperty op:title ],
         [ a owl:Restriction ;
             owl:allValuesFrom ol:Id ;
             owl:onProperty ol:alsoIdentifiedBy ],
@@ -72,7 +72,7 @@ An asset in ODRL is any object referred by a policy.
 Here the asset generally represents the intellectual work.
 Only metadata about the Asset that is required for the licensing of the Asset should be defined here.
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:subClassOf odrl:Asset .
 
 # -----------------------------------------------------------------------
@@ -103,13 +103,13 @@ ol:IRI a ol:IdType,
 ol:id_type a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range ol:IdType .
 
 ol:value a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openlicensing.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
 ol:Id a [ a owl:Restriction ;

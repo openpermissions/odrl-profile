@@ -1,45 +1,45 @@
 
-ol:policyText a owl:DatatypeProperty ;
+op:policyText a owl:DatatypeProperty ;
     dc:description """The policy 'small print'"""@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Policy ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
 # todo : would policyAuthor be better?
-ol:defaultAssignee a owl:FunctionalProperty,
+op:defaultAssignee a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
                                  Implicit default assignee of a rule.
                                  """@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:Party .
+    rdfs:domain op:Policy ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
+    rdfs:range op:Party .
 
-ol:digitalPolicyAuthor a owl:DatatypeProperty,
+op:digitalPolicyAuthor a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 A field to allow the author of the digital policy - if available this person may be
 eventually be contacted to obtain information about the policy.
 """@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Policy ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
-ol:expires a owl:DatatypeProperty,
+op:expires a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 Optional expiry date of the policy.
 The policy is not considered valid after this date.
 """@en ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:dateTime .
 
 ol:policyDescription a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """A short description of the policy - usable to give a user rapidly information about the policy."""@en ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:description .
 
@@ -48,7 +48,7 @@ ol:sharedDuties a owl:ObjectProperty ;
                                  Duties that are shared by all Permissions in this policy.
                                  """@en ;
     rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range odrl:Duty .
 
 ol:Policy a [ a owl:Restriction ;
@@ -82,6 +82,6 @@ An ODRL policy representing an agreement or a potential agreement.
 
 Policy is the central entity that holds an ODRL policy together. In its encoded form, e.g. in an XML document, it makes the policy addressable from the outside word via its uid attribute. Policy can refer to Permissions and Prohibitions.
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:subClassOf odrl:Policy .
 

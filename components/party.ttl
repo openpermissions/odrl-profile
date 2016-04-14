@@ -1,33 +1,33 @@
-ol:name a owl:DatatypeProperty,
+op:name a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Party ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:name .
 
-ol:provider a owl:DatatypeProperty,
+op:provider a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 origanisation_id of the organisation representing the party.
 if no value is provider the party is the organisation itself
 """@en ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Party ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
-ol:reference a owl:DatatypeProperty,
+op:reference a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 An reference id used by the provider to actually identify the party
 """@en ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Party ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:source .
 
-ol:Party a [ a owl:Restriction ;
+op:Party a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:reference ],
+            owl:onProperty op:reference ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ol:provider ],
@@ -42,7 +42,7 @@ A party represent:
   2. a person known by an organisation (not necessarily providing its real name)
 
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:subClassOf ol:Asset,
         odrl:Party .
 

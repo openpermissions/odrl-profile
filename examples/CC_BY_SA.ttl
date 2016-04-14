@@ -3,14 +3,14 @@
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix gn: <http://www.geonames.org/ontology#> .
 @prefix hk: <https://www.copyrighthub.org/s0/hub1/entity/chub/uuid/> .
-@prefix id: <http://openlicensing.org/ns/id/> .
+@prefix id: <http://openpermissions.org/ns/id/> .
 @prefix iso4217a: <http://cvx.iptc.org/iso4217a/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
-@prefix ol: <http://openlicensing.org/ns/ol/1.1/> .
-@prefix olex: <http://openlicensing.org/ns/olex/1.0/> .
-@prefix olexfull: <http://openlicensing.org/ns/olexfull/1.0/> .
-@prefix openlicensing: <http://openlicensing.org/ns/ol/1.1/> .
+@prefix op: <http://openpermissions.org/ns/op/1.1/> .
+@prefix opex: <http://openpermissions.org/ns/opex/1.0/> .
+@prefix olexfull: <http://openpermissions.org/ns/olexfull/1.0/> .
+@prefix openpermissions: <http://openpermissions.org/ns/op/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -18,7 +18,7 @@
 @prefix skos: <http://www.w3c.org/2008/skos/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-id:c0d1a39e6111442da738c4357061a334 a ol:Policy,
+id:c0d1a39e6111442da738c4357061a334 a op:Policy,
         odrl:Asset,
         odrl:Offer,
         odrl:Policy ;
