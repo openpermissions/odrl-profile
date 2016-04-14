@@ -30,10 +30,10 @@ op:Party a [ a owl:Restriction ;
             owl:onProperty op:reference ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:provider ],
+            owl:onProperty op:provider ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:name ],
+            owl:onProperty op:name ],
         owl:Class ;
     rdfs:label "Party"^^xsd:string ;
     dc:description """
@@ -43,6 +43,6 @@ A party represent:
 
 """@en ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
-    rdfs:subClassOf ol:Asset,
+    rdfs:subClassOf op:Asset,
         odrl:Party .
 

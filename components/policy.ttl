@@ -31,48 +31,48 @@ op:expires a owl:DatatypeProperty,
 Optional expiry date of the policy.
 The policy is not considered valid after this date.
 """@en ;
-    rdfs:domain ol:Policy ;
+    rdfs:domain op:Policy ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:dateTime .
 
-ol:policyDescription a owl:DatatypeProperty,
+op:policyDescription a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """A short description of the policy - usable to give a user rapidly information about the policy."""@en ;
-    rdfs:domain ol:Policy ;
+    rdfs:domain op:Policy ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:description .
 
-ol:sharedDuties a owl:ObjectProperty ;
+op:sharedDuties a owl:ObjectProperty ;
     dc:description """
                                  Duties that are shared by all Permissions in this policy.
                                  """@en ;
-    rdfs:domain ol:Policy ;
+    rdfs:domain op:Policy ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range odrl:Duty .
 
-ol:Policy a [ a owl:Restriction ;
+op:Policy a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:policyDescription ],
+            owl:onProperty op:policyDescription ],
         [ a owl:Restriction ;
             owl:allValuesFrom odrl:Duty ;
             owl:onProperty odrl:duty ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:Party ;
+            owl:allValuesFrom op:Party ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:assignee ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:Asset ;
+            owl:allValuesFrom op:Asset ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:target ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:expires ],
+            owl:onProperty op:expires ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:digitalPolicyAuthor ],
+            owl:onProperty op:digitalPolicyAuthor ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:Party ;
+            owl:allValuesFrom op:Party ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:assigner ],
         owl:Class ;

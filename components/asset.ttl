@@ -25,7 +25,7 @@ op:Asset a [ a owl:Restriction ;
             owl:onProperty op:title ],
         [ a owl:Restriction ;
             owl:allValuesFrom op:Id ;
-            owl:onProperty ol:alsoIdentifiedBy ],
+            owl:onProperty op:alsoIdentifiedBy ],
         owl:Class ;
     rdfs:label "Asset"^^xsd:string ;
     dc:description """

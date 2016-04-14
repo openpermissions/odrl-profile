@@ -12,132 +12,132 @@ opex:topUnit a opex:Unit,
 
 opex:pixel a opex:Unit,
         skos:Concept ;
-    skos:inScheme olex:UnitScheme ;
+    skos:inScheme opex:UnitScheme ;
     skos:name "pixel"@en ;
-    skos:narrowerThan olex:topUnit .
+    skos:narrowerThan opex:topUnit .
 
-olex:visitorsPerMonth a olex:Unit,
+opex:visitorsPerMonth a opex:Unit,
         skos:Concept ;
-    skos:inScheme olex:UnitScheme ;
+    skos:inScheme opex:UnitScheme ;
     skos:name "visitorsPerMonth"@en ;
-    skos:narrowerThan olex:topUnit .
+    skos:narrowerThan opex:topUnit .
 
-olex:attributeText a owl:DatatypeProperty,
+opex:attributeText a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
                     Required textual representation of copyrights attribution.
                     """@en ;
-    rdfs:domain olex:Constraint ;
+    rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf odrl:rightOperand .
 
-olex:height a owl:DatatypeProperty,
+opex:height a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    rdfs:domain olex:Constraint ;
+    rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:decimal ;
     rdfs:subPropertyOf odrl:rightOperand .
 
-olex:width a owl:DatatypeProperty,
+opex:width a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    rdfs:domain olex:Constraint ;
+    rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:decimal ;
     rdfs:subPropertyOf odrl:rightOperand .
 
-olex:host a owl:FunctionalProperty,
+opex:host a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
                     Specifies on which type of host the asset may be presented or posted.
                     """@en ;
-    rdfs:domain olex:Constraint ;
+    rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
-    rdfs:range olex:Host ;
+    rdfs:range opex:Host ;
     rdfs:subPropertyOf odrl:rightOperand .
 
-olex:views a owl:DatatypeProperty,
+opex:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
                     Specifies the maximum number of views of the asset that may result in.
                     """@en ;
-    rdfs:domain olex:Constraint ;
+    rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
 
-olex:Constraint a [ a owl:Restriction ;
+opex:Constraint a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:views ],
+            owl:onProperty opex:views ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:height ],
+            owl:onProperty opex:height ],
         [ a owl:Restriction ;
-            owl:allValuesFrom olex:Host ;
+            owl:allValuesFrom opex:Host ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:host ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty olex:width ],
+            owl:onProperty opex:host ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty olex:attributeText ],
+            owl:onProperty opex:width ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty opex:attributeText ],
         owl:Class ;
     rdfs:label "Constraint"^^xsd:string ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:subClassOf odrl:Constraint .
 
     
-olex:Host a owl:Class ;
+opex:Host a owl:Class ;
     dc:description """
             The Host describes the type of site or device the asset can be used on.
             """@en ;
     rdfs:label "Host"^^xsd:string ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> .
 
-olex:HostScheme a skos:ConceptScheme ;
-    skos:hasTopConcept olex:anyHost .
+opex:HostScheme a skos:ConceptScheme ;
+    skos:hasTopConcept opex:anyHost .
 
-olex:anyHost a olex:Host,
+opex:anyHost a opex:Host,
     skos:Concept ;
-    skos:inScheme olex:HostScheme ;
+    skos:inScheme opex:HostScheme ;
     skos:name "anyHost"@en .
 
 
-olex:personalDevice a olex:Host,
+opex:personalDevice a opex:Host,
         skos:Concept ;
     dc:description """
             The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)
             """@en ;
-    skos:inScheme olex:HostScheme ;
+    skos:inScheme opex:HostScheme ;
     skos:name "personal device"@en ;
-    skos:narrowerThan olex:anyHost .
+    skos:narrowerThan opex:anyHost .
 
-olex:personalSocialMediaWebsite a olex:Host,
+opex:personalSocialMediaWebsite a opex:Host,
         skos:Concept ;
     dc:description """
             The Asset can be used on personal social media accounts.
             """@en ;
-    skos:inScheme olex:HostScheme ;
+    skos:inScheme opex:HostScheme ;
     skos:name "personal social media site"@en ;
-    skos:narrowerThan olex:anyHost .
+    skos:narrowerThan opex:anyHost .
 
-olex:nonCommercialWebsite a olex:Host,
+opex:nonCommercialWebsite a opex:Host,
         skos:Concept ;
     dc:description """
             The Asset can be used on a personal website that does not generate income or carry advertising.
             """@en ;
-    skos:inScheme olex:HostScheme ;
+    skos:inScheme opex:HostScheme ;
     skos:name "non commercial website"@en ;
-    skos:narrowerThan olex:anyHost .
+    skos:narrowerThan opex:anyHost .
 
-olex:commercialWebsite a olex:Host,
+opex:commercialWebsite a opex:Host,
         skos:Concept ;
     dc:description """
             The Asset can be used on a website that generates income or carries advertising.
             """@en ;
-    skos:inScheme olex:HostScheme ;
+    skos:inScheme opex:HostScheme ;
     skos:name "commercial website"@en ;
-    skos:narrowerThan olex:anyHost .
+    skos:narrowerThan opex:anyHost .
 

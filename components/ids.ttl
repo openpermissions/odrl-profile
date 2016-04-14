@@ -12,32 +12,32 @@ op:Hubkey a op:IdType,
     skos:name "Hubkey"@en ;
     skos:narrowerThan op:top_id_type .
 
-ol:IRI a ol:IdType,
+op:IRI a op:IdType,
         skos:Concept ;
     dc:description "Id which has the form of an IRI"@en ;
-    skos:inScheme ol:id_types ;
+    skos:inScheme op:id_types ;
     skos:name "IRI"@en ;
-    skos:narrowerThan ol:top_id_type .
+    skos:narrowerThan op:top_id_type .
 
-ol:id_type a owl:FunctionalProperty,
+op:id_type a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    rdfs:domain ol:Id ;
+    rdfs:domain op:Id ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
-    rdfs:range ol:IdType .
+    rdfs:range op:IdType .
 
-ol:value a owl:DatatypeProperty,
+op:value a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    rdfs:domain ol:Id ;
+    rdfs:domain op:Id ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
-ol:Id a [ a owl:Restriction ;
+op:Id a [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty ol:value ],
+            owl:onProperty op:value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:IdType ;
+            owl:allValuesFrom op:IdType ;
             owl:cardinality 1 ;
-            owl:onProperty ol:id_type ],
+            owl:onProperty op:id_type ],
         owl:Class ;
     rdfs:label "Id"^^xsd:string ;
     dc:description """
@@ -45,15 +45,15 @@ Identifier for an asset.
 """@en ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> .
 
-ol:id_types a skos:ConceptScheme ;
-    skos:hasTopConcept ol:topIdType .
+op:id_types a skos:ConceptScheme ;
+    skos:hasTopConcept op:topIdType .
 
-ol:topIdType a ol:IdType,
+op:topIdType a op:IdType,
         skos:Concept ;
-    skos:inScheme ol:id_types ;
+    skos:inScheme op:id_types ;
     skos:name "topIdType"@en .
 
-ol:IdType a owl:Class ;
+op:IdType a owl:Class ;
     rdfs:label "IdType"^^xsd:string ;
     dc:description """
 Represents a class of identifiers
