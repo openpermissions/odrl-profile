@@ -83,7 +83,7 @@ in the components folder. The resulting ontology is formed by concatenating all 
 ways. 
 
 The helper script `build_onto.sh` recompiles OpenPermissions. To recompile another ontology the path to the ontology needs to be
-set as an environment variable. For instance to recompile the OLEX profile, run `ONTOLOGY_PATH=profiles/olex ./build_onto.sh` .
+set as an environment variable. For instance to recompile the OLEX profile, run `./build_onto.sh profiles/olex` .
 
 Note that `rdflib` is required to transform the ontologies from `turtle` format to the `rdfxml` format. Before running this script, ensure to have installed  the required dependencies ( `pip install -r requirements.txt`  )
 
