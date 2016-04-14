@@ -1,17 +1,17 @@
-The OpenLicensing Ontology
-==========================
+The OpenPermissions Ontology
+============================
 
 - URI : http://openpermissions.org/ns/op/1.1/
 - Download : [rdf]( http://openpermissions.org/ontologies/ol-1.1.rdf), [xml]( http://openpermissions.org/ontologies/ol-1.1.xml)
 - Version : 1.1
 - Release date: Febuary 2016, the 22nd
-- Authors : Digital Catapult
+- Authors : Open Permissions Platform Coalition
 
 This is an ODRL 2.1 profile used in conjunction with the Open Permissions Platform.
 
-- OpenLicensing supports only a limited the scope of licenses supported by ODRL.  
+- OpenPermissions supports only a limited the scope of licenses supported by ODRL.  
   This subset correspond is also what we think is currently likely to be well supported by software.
-- OpenLicensing contain additional recommendations that help building consistent ontologies.
+- OpenPermissions contain additional recommendations that help building consistent ontologies.
 
 Dependencies
 ============
@@ -31,7 +31,7 @@ Required as ODRL implementation
 
 **ODRL 2.1**
 
-OpenLicensing ontology is built ontop of ODRL2.1, and can be considered as an ODRL2.1 profile
+OpenPermissions ontology is built ontop of ODRL2.1, and can be considered as an ODRL2.1 profile
 
 - <http://www.w3.org/ns/odrl/2/>
 
@@ -78,18 +78,18 @@ http://openpermissions.org/ns/op/<Release>.<Major>/
 Compiling files from components
 -------------------------------
 
-To keep the ontology manageable, the OpenLicensing ontology and its profiles have been split in different components present
+To keep the ontology manageable, the OpenPermissions ontology and its profiles have been split in different components present
 in the components folder. The resulting ontology is formed by concatenating all the files together and serialising it in different
 ways. 
 
-The helper script `build_onto.sh` recompiles OpenLicensing. To recompile another ontology the path to the ontology needs to be
+The helper script `build_onto.sh` recompiles OpenPermissions. To recompile another ontology the path to the ontology needs to be
 set as an environment variable. For instance to recompile the OLEX profile, run `ONTOLOGY_PATH=profiles/olex ./build_onto.sh` .
 
 Note that `rdflib` is required to transform the ontologies from `turtle` format to the `rdfxml` format. Before running this script, ensure to have installed  the required dependencies ( `pip install -r requirements.txt`  )
 
 
-OpenLicensing ODRL Profile
-==========================
+OpenPermissions ODRL Profile
+============================
 
 Definition of "Sets" and "Samples"
 ----------------------------------
@@ -98,14 +98,14 @@ In ODRL, there is no standard to discuss about sets of assets or license to set 
 no simple way  to saythat an offer is linked to a set of asset nor to clarify how many can 
 be picked from the asset.
 
-OpenLicensing is introducing primitives to discuss about sets of assets and picking elements 
+OpenPermissions is introducing primitives to discuss about sets of assets and picking elements 
 from sets.
 
 
 Definition of "IdTypes"
 -----------------------
 
-OpenLicensing platform assumes generally that `IdType` instances have semantic IRI and 
+OpenPermissions platform assumes generally that `IdType` instances have semantic IRI and 
 are defined as a `skos` taxonomy in single centrally-governed hub-specific namespace.
 It is the responsiblity of the hub owner to ensure the consistency of the taxonomy.
 
@@ -126,8 +126,8 @@ Offer Expiry data
 Open Permissions provides a special term to indicate when a license is going to be expired.
 
 
-Limitation of ODRL expressivity by the OpenLicensing Platform
--------------------------------------------------------------
+Limitation of ODRL expressivity by the OpenPermissions Platform
+---------------------------------------------------------------
 
   * Policies with inheritance are not supported;
   * Policies with `conflict` term different from `prohibit` are not supported;
@@ -143,11 +143,11 @@ Limitation of ODRL expressivity by the OpenLicensing Platform
 
 Profiles                            
 ========
-Additional profiles can be added on top of OpenLicensing to license assets within specific domains.
+Additional profiles can be added on top of OpenPermissions to license assets within specific domains.
 
-Currently the following OpenLicensing profile exist:
+Currently the following OpenPermissions profile exist:
 
-   * OLEX - Support of creative content licensing.
+   * OPEX - Support of creative content licensing.
 
 
 Best practices when building a Profile and managing a hub

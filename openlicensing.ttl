@@ -26,7 +26,7 @@
 
 <http://openpermissions.org/ns/op/1.1/> a owl:Ontology ;
     dc:creator "Digital Catapult Software Engineering Team"^^xsd:string;
-    dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
+    dc:description "OpenPermissions Extension (ODRL2.1/ OpenPermissions Profile)."^^xsd:string ;
     dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;
     dct:rights "(C) Digital Catapult Limited 2016"^^xsd:string ;
     owl:versionIRI <http://openpermissions.org/ns/op/1.1/> ;
