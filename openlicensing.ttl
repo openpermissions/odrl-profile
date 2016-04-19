@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3c.org/2008/skos/> .
 
-@prefix id: <http://openlicensing.org/ns/id/> .
+@prefix id: <http://openpermissions.org/ns/id/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
@@ -19,24 +19,24 @@
 @prefix gn: <http://www.geonames.org/ontology#> .
 
 @prefix iso4217a: <http://cvx.iptc.org/iso4217a/> .
-@prefix ol: <http://openlicensing.org/ns/ol/1.1/> .
+@prefix op: <http://openpermissions.org/ns/op/1.1/> .
 
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix odrlcc: <https://www.w3.org/community/odrl/work/cc/> .
 
-<http://openlicensing.org/ns/ol/1.1/> a owl:Ontology ;
+<http://openpermissions.org/ns/op/1.1/> a owl:Ontology ;
     dc:creator "Digital Catapult Software Engineering Team"^^xsd:string;
-    dc:description "OpenLicensing Extension (ODRL2.1/ OpenLicensing Profile)."^^xsd:string ;
+    dc:description "OpenPermissions Extension (ODRL2.1/ OpenPermissions Profile)."^^xsd:string ;
     dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;
     dct:rights "(C) Digital Catapult Limited 2016"^^xsd:string ;
-    owl:versionIRI <http://openlicensing.org/ns/ol/1.1/> ;
+    owl:versionIRI <http://openpermissions.org/ns/op/1.1/> ;
     owl:versionInfo "1.1.0"^^xsd:string .
 
 # -----------------------------------------------------------------------
 # asset.ttl
 # -----------------------------------------------------------------------
 
-ol:alsoIdentifiedBy a owl:ObjectProperty ;
+op:alsoIdentifiedBy a owl:ObjectProperty ;
     dc:description """
     An Asset may have different identifiers assigned to it by different parties.
     The identities are not necessarily equivalent even though they have been assigned to the same Asset.
@@ -44,26 +44,26 @@ ol:alsoIdentifiedBy a owl:ObjectProperty ;
     Identities that alsoIdentifiedBy refer to MUST be for the whole Asset and not for part of the Asset.
     	For example if the Asset is a book, the alsoIdentifiedBy ids will be for the book and NOT for pictures in the book.
 """@en ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:Id .
+    rdfs:domain op:Asset ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
+    rdfs:range op:Id .
 
-ol:title a owl:DatatypeProperty,
+op:title a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 Title of the asset for the purpose of presentation to a Licensee.
 """@en ;
-    rdfs:domain ol:Asset ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Asset ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:title .
 
-ol:Asset a [ a owl:Restriction ;
+op:Asset a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:title ],
+            owl:onProperty op:title ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:Id ;
-            owl:onProperty ol:alsoIdentifiedBy ],
+            owl:allValuesFrom op:Id ;
+            owl:onProperty op:alsoIdentifiedBy ],
         owl:Class ;
     rdfs:label "Asset"^^xsd:string ;
     dc:description """
@@ -72,116 +72,116 @@ An asset in ODRL is any object referred by a policy.
 Here the asset generally represents the intellectual work.
 Only metadata about the Asset that is required for the licensing of the Asset should be defined here.
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:subClassOf odrl:Asset .
 
 # -----------------------------------------------------------------------
 # ids.ttl
 # -----------------------------------------------------------------------
 
-ol:HubkeyS0 a ol:IdType,
+op:HubkeyS0 a op:IdType,
         skos:Concept ;
     dc:description "Id who has the form of a Hubkey.  This refers to schema 0 of the Hubkey."@en ;
-    skos:inScheme ol:id_types ;
+    skos:inScheme op:id_types ;
     skos:name "HubkeyS0"@en ;
-    skos:narrowerThan ol:top_id_type .
+    skos:narrowerThan op:top_id_type .
 
-ol:Hubkey a ol:IdType,
+op:Hubkey a op:IdType,
         skos:Concept ;
     dc:description "Id who has the form of a Hubkey.  This refers to the latest schema of a Hubkey."@en ;
-    skos:inScheme ol:id_types ;
+    skos:inScheme op:id_types ;
     skos:name "Hubkey"@en ;
-    skos:narrowerThan ol:top_id_type .
+    skos:narrowerThan op:top_id_type .
 
-ol:IRI a ol:IdType,
+op:IRI a op:IdType,
         skos:Concept ;
     dc:description "Id which has the form of an IRI"@en ;
-    skos:inScheme ol:id_types ;
+    skos:inScheme op:id_types ;
     skos:name "IRI"@en ;
-    skos:narrowerThan ol:top_id_type .
+    skos:narrowerThan op:top_id_type .
 
-ol:id_type a owl:FunctionalProperty,
+op:id_type a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:IdType .
+    rdfs:domain op:Id ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
+    rdfs:range op:IdType .
 
-ol:value a owl:DatatypeProperty,
+op:value a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    rdfs:domain ol:Id ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Id ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
-ol:Id a [ a owl:Restriction ;
+op:Id a [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty ol:value ],
+            owl:onProperty op:value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:IdType ;
+            owl:allValuesFrom op:IdType ;
             owl:cardinality 1 ;
-            owl:onProperty ol:id_type ],
+            owl:onProperty op:id_type ],
         owl:Class ;
     rdfs:label "Id"^^xsd:string ;
     dc:description """
 Identifier for an asset.
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> .
 
-ol:id_types a skos:ConceptScheme ;
-    skos:hasTopConcept ol:topIdType .
+op:id_types a skos:ConceptScheme ;
+    skos:hasTopConcept op:topIdType .
 
-ol:topIdType a ol:IdType,
+op:topIdType a op:IdType,
         skos:Concept ;
-    skos:inScheme ol:id_types ;
+    skos:inScheme op:id_types ;
     skos:name "topIdType"@en .
 
-ol:IdType a owl:Class ;
+op:IdType a owl:Class ;
     rdfs:label "IdType"^^xsd:string ;
     dc:description """
 Represents a class of identifiers
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> .
 
 
 # -----------------------------------------------------------------------
 # party.ttl
 # -----------------------------------------------------------------------
 
-ol:name a owl:DatatypeProperty,
+op:name a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Party ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:name .
 
-ol:provider a owl:DatatypeProperty,
+op:provider a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 origanisation_id of the organisation representing the party.
 if no value is provider the party is the organisation itself
 """@en ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Party ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
-ol:reference a owl:DatatypeProperty,
+op:reference a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 An reference id used by the provider to actually identify the party
 """@en ;
-    rdfs:domain ol:Party ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Party ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:source .
 
-ol:Party a [ a owl:Restriction ;
+op:Party a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:reference ],
+            owl:onProperty op:reference ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:provider ],
+            owl:onProperty op:provider ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:name ],
+            owl:onProperty op:name ],
         owl:Class ;
     rdfs:label "Party"^^xsd:string ;
     dc:description """
@@ -190,8 +190,8 @@ A party represent:
   2. a person known by an organisation (not necessarily providing its real name)
 
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:subClassOf ol:Asset,
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
+    rdfs:subClassOf op:Asset,
         odrl:Party .
 
 
@@ -200,80 +200,80 @@ A party represent:
 # -----------------------------------------------------------------------
 
 
-ol:policyText a owl:DatatypeProperty ;
+op:policyText a owl:DatatypeProperty ;
     dc:description """The policy 'small print'"""@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Policy ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
 # todo : would policyAuthor be better?
-ol:defaultAssignee a owl:FunctionalProperty,
+op:defaultAssignee a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
                                  Implicit default assignee of a rule.
                                  """@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:Party .
+    rdfs:domain op:Policy ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
+    rdfs:range op:Party .
 
-ol:digitalPolicyAuthor a owl:DatatypeProperty,
+op:digitalPolicyAuthor a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 A field to allow the author of the digital policy - if available this person may be
 eventually be contacted to obtain information about the policy.
 """@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Policy ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
-ol:expires a owl:DatatypeProperty,
+op:expires a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 Optional expiry date of the policy.
 The policy is not considered valid after this date.
 """@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Policy ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:dateTime .
 
-ol:policyDescription a owl:DatatypeProperty,
+op:policyDescription a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """A short description of the policy - usable to give a user rapidly information about the policy."""@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Policy ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:description .
 
-ol:sharedDuties a owl:ObjectProperty ;
+op:sharedDuties a owl:ObjectProperty ;
     dc:description """
                                  Duties that are shared by all Permissions in this policy.
                                  """@en ;
-    rdfs:domain ol:Policy ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:Policy ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range odrl:Duty .
 
-ol:Policy a [ a owl:Restriction ;
+op:Policy a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:policyDescription ],
+            owl:onProperty op:policyDescription ],
         [ a owl:Restriction ;
             owl:allValuesFrom odrl:Duty ;
             owl:onProperty odrl:duty ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:Party ;
+            owl:allValuesFrom op:Party ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:assignee ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:Asset ;
+            owl:allValuesFrom op:Asset ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:target ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:expires ],
+            owl:onProperty op:expires ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:digitalPolicyAuthor ],
+            owl:onProperty op:digitalPolicyAuthor ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:Party ;
+            owl:allValuesFrom op:Party ;
             owl:maxCardinality 1 ;
             owl:onProperty odrl:assigner ],
         owl:Class ;
@@ -283,7 +283,7 @@ An ODRL policy representing an agreement or a potential agreement.
 
 Policy is the central entity that holds an ODRL policy together. In its encoded form, e.g. in an XML document, it makes the policy addressable from the outside word via its uid attribute. Policy can refer to Permissions and Prohibitions.
 """@en ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:subClassOf odrl:Policy .
 
 
@@ -291,140 +291,140 @@ Policy is the central entity that holds an ODRL policy together. In its encoded 
 # set.ttl
 # -----------------------------------------------------------------------
 
-ol:chosenSequentially a ol:AssetSetSamplePolicy,
+op:chosenSequentially a op:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen according to a predefined order"@en ;
-    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:inScheme op:AssetSetSamplePolicies ;
     skos:name "chosenSequentially"@en ;
-    skos:narrowerThan ol:anySamplePolicy .
+    skos:narrowerThan op:anySamplePolicy .
 
-ol:pointingFrom a ol:AssetSetEdgeDirection,
+op:pointingFrom a op:AssetSetEdgeDirection,
         skos:Concept ;
     dc:description "Point from the element to the target_object"@en ;
-    skos:inScheme ol:AssetSetEdgeDirections ;
+    skos:inScheme op:AssetSetEdgeDirections ;
     skos:name "pointingFrom"@en ;
-    skos:narrowerThan ol:anyEdgeDirection .
+    skos:narrowerThan op:anyEdgeDirection .
 
-ol:pointingTo a ol:AssetSetEdgeDirection,
+op:pointingTo a op:AssetSetEdgeDirection,
         skos:Concept ;
     dc:description "Point from the target_object to the element"@en ;
-    skos:inScheme ol:AssetSetEdgeDirections ;
+    skos:inScheme op:AssetSetEdgeDirections ;
     skos:name "pointingTo"@en ;
-    skos:narrowerThan ol:anyEdgeDirection .
+    skos:narrowerThan op:anyEdgeDirection .
 
-ol:randomlyChosen a ol:AssetSetSamplePolicy,
+op:randomlyChosen a op:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen in an arbitrary manner not controller by assignee or assigner"@en ;
-    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:inScheme op:AssetSetSamplePolicies ;
     skos:name "randomlyChosen"@en ;
-    skos:narrowerThan ol:anySamplePolicy .
+    skos:narrowerThan op:anySamplePolicy .
 
-ol:selectedByAssignee a ol:AssetSetSamplePolicy,
+op:selectedByAssignee a op:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen by the assignee party"@en ;
-    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:inScheme op:AssetSetSamplePolicies ;
     skos:name "selectedByAssignee"@en ;
-    skos:narrowerThan ol:anySamplePolicy .
+    skos:narrowerThan op:anySamplePolicy .
 
-ol:selectedByAssigner a ol:AssetSetSamplePolicy,
+op:selectedByAssigner a op:AssetSetSamplePolicy,
         skos:Concept ;
     dc:description "chosen by the assigner party"@en ;
-    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:inScheme op:AssetSetSamplePolicies ;
     skos:name "selectedByAssigner"@en ;
-    skos:narrowerThan ol:anySamplePolicy .
+    skos:narrowerThan op:anySamplePolicy .
 
-ol:count a owl:DatatypeProperty,
+op:count a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 Default value is 1.
 """@en ;
-    rdfs:domain ol:AssetSelector ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:AssetSelector ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:integer .
 
-ol:edgeDirection a owl:FunctionalProperty,
+op:edgeDirection a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
 Indicates in which direction the predicate is used to connect elements to the set target_object.
-Default is ol:pointingTo.
+Default is op:pointingTo.
 """@en ;
-    rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:AssetSetEdgeDirection .
+    rdfs:domain op:AssetSet ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
+    rdfs:range op:AssetSetEdgeDirection .
 
-ol:fromSet a owl:FunctionalProperty,
+op:fromSet a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
 The set asset can be picked from.
 """@en ;
-    rdfs:domain ol:AssetSelector ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:AssetSet .
+    rdfs:domain op:AssetSelector ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
+    rdfs:range op:AssetSet .
 
-ol:hasElement a owl:ObjectProperty ;
-    rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+op:hasElement a owl:ObjectProperty ;
+    rdfs:domain op:AssetSet ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range owl:Thing .
 
-ol:predicate a owl:FunctionalProperty,
+op:predicate a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
 Indicates which predicate is used to Indicate that element belong to a set.
 """@en ;
-    rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:AssetSet ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range owl:ObjectProperty .
 
-ol:samplePolicy a owl:FunctionalProperty,
+op:samplePolicy a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
 The way asset are selected. Default is selected_by_assignee.
 """@en ;
-    rdfs:domain ol:AssetSelector ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:range ol:AssetSetSamplePolicy .
+    rdfs:domain op:AssetSelector ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
+    rdfs:range op:AssetSetSamplePolicy .
 
-ol:selectRequired a owl:DatatypeProperty,
+op:selectRequired a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     dc:description """
 True if it is required to select an element on agreement of the policy.
 """@en ;
-    rdfs:domain ol:AssetSelector ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:AssetSelector ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:boolean .
 
-ol:targetObject a owl:FunctionalProperty,
+op:targetObject a owl:FunctionalProperty,
         owl:ObjectProperty ;
     dc:description """
 Indicates the entity that the elements must connect to through the predicate in order to be part of the set.
 Default is the AssetSet instance itself.
 """@en ;
-    rdfs:domain ol:AssetSet ;
-    rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
+    rdfs:domain op:AssetSet ;
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range owl:Thing .
 
-ol:AssetSetEdgeDirections a skos:ConceptScheme ;
-    skos:hasTopConcept ol:anyEdgeDirection .
+op:AssetSetEdgeDirections a skos:ConceptScheme ;
+    skos:hasTopConcept op:anyEdgeDirection .
 
-ol:anyEdgeDirection a ol:AssetSetEdgeDirection,
+op:anyEdgeDirection a op:AssetSetEdgeDirection,
         skos:Concept ;
-    skos:inScheme ol:AssetSetEdgeDirections ;
+    skos:inScheme op:AssetSetEdgeDirections ;
     skos:name "anyEdgeDirection"@en .
 
-ol:AssetSelector a [ a owl:Restriction ;
+op:AssetSelector a [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty ol:selectRequired ],
+            owl:onProperty op:selectRequired ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:AssetSetSamplePolicy ;
+            owl:allValuesFrom op:AssetSetSamplePolicy ;
             owl:cardinality 1 ;
-            owl:onProperty ol:samplePolicy ],
+            owl:onProperty op:samplePolicy ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty ol:count ],
+            owl:onProperty op:count ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:AssetSet ;
+            owl:allValuesFrom op:AssetSet ;
             owl:cardinality 1 ;
-            owl:onProperty ol:fromSet ],
+            owl:onProperty op:fromSet ],
         owl:Class ;
     rdfs:label "AssetSelector"^^xsd:string ;
     dc:description """
@@ -432,9 +432,9 @@ An asset that is actually sampled from a set. An AssetSetSample must indicate th
 ay contain a sample policy,  and may contain the number of assets that should be sampled.
 """@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:subClassOf ol:Asset .
+    rdfs:subClassOf op:Asset .
 
-ol:AssetSetEdgeDirection a owl:Class ;
+op:AssetSetEdgeDirection a owl:Class ;
     rdfs:label "AssetSetEdgeDirection"^^xsd:string ;
     dc:description """
 Indicates if the predicate used to connect the set to its elements,
@@ -442,29 +442,29 @@ are "pointing to" the elements or "pointing from" the elements
 """@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> .
 
-ol:AssetSetSamplePolicies a skos:ConceptScheme ;
-    skos:hasTopConcept ol:anySamplePolicy .
+op:AssetSetSamplePolicies a skos:ConceptScheme ;
+    skos:hasTopConcept op:anySamplePolicy .
 
-ol:anySamplePolicy a ol:AssetSetSamplePolicy,
+op:anySamplePolicy a op:AssetSetSamplePolicy,
         skos:Concept ;
-    skos:inScheme ol:AssetSetSamplePolicies ;
+    skos:inScheme op:AssetSetSamplePolicies ;
     skos:name "anySamplePolicy"@en .
 
-ol:AssetSet a [ a owl:Restriction ;
+op:AssetSet a [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:targetObject ],
+            owl:onProperty op:targetObject ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ol:AssetSetEdgeDirection ;
+            owl:allValuesFrom op:AssetSetEdgeDirection ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:edgeDirection ],
+            owl:onProperty op:edgeDirection ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
-            owl:onProperty ol:hasElement ],
+            owl:onProperty op:hasElement ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:ObjectProperty ;
             owl:maxCardinality 1 ;
-            owl:onProperty ol:predicate ],
+            owl:onProperty op:predicate ],
         owl:Class ;
     rdfs:label "AssetSet"^^xsd:string ;
     dc:description """
@@ -474,10 +474,10 @@ A set defined as the set of element pointing to a target object via a certain pr
 A set or collection of elements of type elementType
 """@en ;
     rdfs:isDefinedBy <http://openlicensing.org/ns/ol/1.1/> ;
-    rdfs:subClassOf ol:Asset,
-        ol:AssetSet .
+    rdfs:subClassOf op:Asset,
+        op:AssetSet .
 
-ol:AssetSetSamplePolicy a owl:Class ;
+op:AssetSetSamplePolicy a owl:Class ;
     rdfs:label "AssetSetSamplePolicy"^^xsd:string ;
     dc:description """
 Indicates the way sampling from a set is done. 

@@ -3,6 +3,10 @@
 # THIS NEEDS TO BE A RELATIVE PATH
 #ONTOLOGY_PATH=""
 
+if [ "$1" ] ; then
+  ONTOLOGY_PATH="$1"
+fi
+
 if [ "$ONTOLOGY_PATH" == "." ]; then
   ONTOLOGY_PATH=""
 fi 

@@ -14,7 +14,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
 PREFIX dct: <http://purl.org/dc/terms/> 
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/> 
-PREFIX ol: <http://openlicensing.org/ns/ol/1.1/> 
+PREFIX op: <http://openpermissions.org/ns/op/1.1/> 
 
 
 SELECT DISTINCT ?action_name ?parent_action ?term_status WHERE {
@@ -34,7 +34,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
 PREFIX dct: <http://purl.org/dc/terms/> 
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/> 
-PREFIX ol: <http://openlicensing.org/ns/ol/1.1/> 
+PREFIX op: <http://openpermissions.org/ns/op/1.1/> 
 
 
 
