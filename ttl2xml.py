@@ -3,5 +3,4 @@ import sys
 
 g=rdflib.Graph()
 g.parse(sys.argv[1],format="turtle")
-g.serialize(sys.argv[1][:-4]+".rdf",format="xml"
-                 )
+g.serialize(sys.argv[1][:-4]+".rdf",format="xml")

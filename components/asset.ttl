@@ -1,20 +1,16 @@
 op:alsoIdentifiedBy a owl:ObjectProperty ;
-    dc:description """
-    An Asset may have different identifiers assigned to it by different parties.
+    dc:description """An Asset may have different identifiers assigned to it.
     The identities are not necessarily equivalent even though they have been assigned to the same Asset.
     Each identity has a type, such as ISBN or EIDR and the type is semantically defined.
     Identities that alsoIdentifiedBy refer to MUST be for the whole Asset and not for part of the Asset.
-    	For example if the Asset is a book, the alsoIdentifiedBy ids will be for the book and NOT for pictures in the book.
-"""@en ;
+    For example if the Asset is a book, the alsoIdentifiedBy ids will be for the book and NOT for pictures in the book."""@en ;
     rdfs:domain op:Asset ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range op:Id .
 
 op:title a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """
-Title of the asset for the purpose of presentation to a Licensee.
-"""@en ;
+    dc:description """Title of the Asset for the purpose of presentation to a Licensee."""@en ;
     rdfs:domain op:Asset ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
@@ -28,11 +24,8 @@ op:Asset a [ a owl:Restriction ;
             owl:onProperty op:alsoIdentifiedBy ],
         owl:Class ;
     rdfs:label "Asset"^^xsd:string ;
-    dc:description """
-An asset in ODRL is any object referred by a policy.
-
-Here the asset generally represents the intellectual work.
-Only metadata about the Asset that is required for the licensing of the Asset should be defined here.
-"""@en ;
+    dc:description """An Asset in ODRL is any object referred by a policy.
+    Here the Asset generally represents the intellectual work.
+    Only metadata about the Asset that is required for the licensing of the Asset should be defined here."""@en ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:subClassOf odrl:Asset .

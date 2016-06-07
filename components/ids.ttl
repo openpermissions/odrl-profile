@@ -1,24 +1,3 @@
-op:HubkeyS0 a op:IdType,
-        skos:Concept ;
-    dc:description "Id who has the form of a Hubkey.  This refers to schema 0 of the Hubkey."@en ;
-    skos:inScheme op:id_types ;
-    skos:name "HubkeyS0"@en ;
-    skos:narrowerThan op:top_id_type .
-
-op:Hubkey a op:IdType,
-        skos:Concept ;
-    dc:description "Id who has the form of a Hubkey.  This refers to the latest schema of a Hubkey."@en ;
-    skos:inScheme op:id_types ;
-    skos:name "Hubkey"@en ;
-    skos:narrowerThan op:top_id_type .
-
-op:IRI a op:IdType,
-        skos:Concept ;
-    dc:description "Id which has the form of an IRI"@en ;
-    skos:inScheme op:id_types ;
-    skos:name "IRI"@en ;
-    skos:narrowerThan op:top_id_type .
-
 op:id_type a owl:FunctionalProperty,
         owl:ObjectProperty ;
     rdfs:domain op:Id ;
@@ -41,7 +20,7 @@ op:Id a [ a owl:Restriction ;
         owl:Class ;
     rdfs:label "Id"^^xsd:string ;
     dc:description """
-Identifier for an asset.
+Identifier for an Asset.
 """@en ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> .
 

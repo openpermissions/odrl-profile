@@ -17,13 +17,11 @@ if no value is provider the party is the organisation itself
 
 op:reference a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """
-An reference id used by the provider to actually identify the party
-"""@en ;
     rdfs:domain op:Party ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
-    rdfs:subPropertyOf dc:source .
+    rdfs:subPropertyOf dc:source ;
+    dc:description """An reference id used by the provider to actually identify the party"""@en .
 
 op:Party a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -38,9 +36,8 @@ op:Party a [ a owl:Restriction ;
     rdfs:label "Party"^^xsd:string ;
     dc:description """
 A party represent:
-  1. a legal person having duties and rights as part of agreements.
+  1. a legal person having duties and permissions as part of agreements.
   2. a person known by an organisation (not necessarily providing its real name)
-
 """@en ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:subClassOf op:Asset,

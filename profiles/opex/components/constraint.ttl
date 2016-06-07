@@ -24,9 +24,7 @@ opex:visitorsPerMonth a opex:Unit,
 
 opex:attributeText a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """
-                    Required textual representation of copyrights attribution.
-                    """@en ;
+    dc:description """Required textual representation of copyrights attribution."""@en ;
     rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:string ;
@@ -48,9 +46,7 @@ opex:width a owl:DatatypeProperty,
 
 opex:host a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """
-                    Specifies on which type of host the asset may be presented or posted.
-                    """@en ;
+    dc:description """Specifies on which type of host the asset may be presented or posted."""@en ;
     rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range opex:Host ;
@@ -58,14 +54,11 @@ opex:host a owl:FunctionalProperty,
 
 opex:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """
-                    Specifies the maximum number of views of the asset that may result in.
-                    """@en ;
+    dc:description """Specifies the maximum number of views of the asset that may result in."""@en ;
     rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
-
 
 opex:Constraint a [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -87,12 +80,9 @@ opex:Constraint a [ a owl:Restriction ;
     rdfs:label "Constraint"^^xsd:string ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:subClassOf odrl:Constraint .
-
     
 opex:Host a owl:Class ;
-    dc:description """
-            The Host describes the type of site or device the asset can be used on.
-            """@en ;
+    dc:description """The Host describes the type of site or device the asset can be used on."""@en ;
     rdfs:label "Host"^^xsd:string ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> .
 
@@ -104,39 +94,30 @@ opex:anyHost a opex:Host,
     skos:inScheme opex:HostScheme ;
     skos:name "anyHost"@en .
 
-
 opex:personalDevice a opex:Host,
         skos:Concept ;
-    dc:description """
-            The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)
-            """@en ;
+    dc:description """The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)"""@en ;
     skos:inScheme opex:HostScheme ;
     skos:name "personal device"@en ;
     skos:narrowerThan opex:anyHost .
 
 opex:personalSocialMediaWebsite a opex:Host,
         skos:Concept ;
-    dc:description """
-            The Asset can be used on personal social media accounts.
-            """@en ;
+    dc:description """The Asset can be used on personal social media accounts."""@en ;
     skos:inScheme opex:HostScheme ;
     skos:name "personal social media site"@en ;
     skos:narrowerThan opex:anyHost .
 
 opex:nonCommercialWebsite a opex:Host,
         skos:Concept ;
-    dc:description """
-            The Asset can be used on a personal website that does not generate income or carry advertising.
-            """@en ;
+    dc:description """The Asset can be used on a personal website that does not generate income or carry advertising."""@en ;
     skos:inScheme opex:HostScheme ;
     skos:name "non commercial website"@en ;
     skos:narrowerThan opex:anyHost .
 
 opex:commercialWebsite a opex:Host,
         skos:Concept ;
-    dc:description """
-            The Asset can be used on a website that generates income or carries advertising.
-            """@en ;
+    dc:description """The Asset can be used on a website that generates income or carries advertising."""@en ;
     skos:inScheme opex:HostScheme ;
     skos:name "commercial website"@en ;
     skos:narrowerThan opex:anyHost .

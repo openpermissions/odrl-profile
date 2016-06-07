@@ -1,5 +1,5 @@
-The OpenPermissions Ontology
-============================
+The OpenPermissions ODRL Profile
+================================
 
 - URI : http://openpermissions.org/ns/op/1.1/
 - Download : [rdf]( http://openpermissions.org/ontologies/ol-1.1.rdf), [xml]( http://openpermissions.org/ontologies/ol-1.1.xml)
@@ -9,9 +9,14 @@ The OpenPermissions Ontology
 
 This is an ODRL 2.1 profile used in conjunction with the Open Permissions Platform.
 
-- OpenPermissions supports only a limited the scope of licenses supported by ODRL.  
-  This subset correspond is also what we think is currently likely to be well supported by software.
-- OpenPermissions contain additional recommendations that help building consistent ontologies.
+- OpenPermissions supports only a limited subset of ODRL 2.1 which meets our requirements.
+- OpenPermissions contains additional recommendations that help building consistent ontologies.
+
+Future
+======
+
+The intention is that this will be a compliant [POE]() profile.
+Tweaks made to the use of ODRL 2.1 to support our work will hopefully be reflected in the outcome of the W3C working group.
 
 Dependencies
 ============
@@ -31,7 +36,7 @@ Required as ODRL implementation
 
 **ODRL 2.1**
 
-OpenPermissions ontology is built ontop of ODRL2.1, and can be considered as an ODRL2.1 profile
+OpenPermissions ontology is built on top of ODRL2.1, and can be considered as an ODRL2.1 profile
 
 - <http://www.w3.org/ns/odrl/2/>
 
@@ -47,7 +52,7 @@ Recommendations
 Versioning
 ==========
 
-The ontology uses a release version, followed by  traditional semantic versionning with following format : `Release.Major.Minor.patch`
+The ontology uses a release version, followed by  traditional semantic versioning with following format : `Release.Major.Minor.patch`
 
 - Major changes impacting the globally design/vision should lead to an increment of the release version number. 
 - Incompatible changes still based on the same vision of the ontolgy should lead to a change of major version number.
@@ -78,14 +83,15 @@ http://openpermissions.org/ns/op/<Release>.<Major>/
 Compiling files from components
 -------------------------------
 
-To keep the ontology manageable, the OpenPermissions ontology and its profiles have been split in different components present
+To keep the ontology manageable, the OpenPermissions ontology and its profiles have been split into different components, located
 in the components folder. The resulting ontology is formed by concatenating all the files together and serialising it in different
 ways. 
 
-The helper script `build_onto.sh` recompiles OpenPermissions. To recompile another ontology the path to the ontology needs to be
-set as an environment variable. For instance to recompile the OLEX profile, run `./build_onto.sh profiles/olex` .
+The helper script `build_onto.sh` compiles OpenPermissions. To recompile another ontology the path to the ontology needs to be
+set as an environment variable. For instance to recompile the OPEX profile, run `./build_onto.sh profiles/olex` .
 
-Note that `rdflib` is required to transform the ontologies from `turtle` format to the `rdfxml` format. Before running this script, ensure to have installed  the required dependencies ( `pip install -r requirements.txt`  )
+Note that `rdflib` is required to transform the ontologies from `turtle` format to the `rdfxml` format.
+Before running this script, ensure to have installed  the required dependencies ( `pip install -r requirements.txt`  )
 
 
 OpenPermissions ODRL Profile
@@ -95,27 +101,28 @@ Definition of "Sets" and "Samples"
 ----------------------------------
 
 In ODRL, there is no standard to discuss about sets of assets or license to set of assets,
-no simple way  to saythat an offer is linked to a set of asset nor to clarify how many can 
-be picked from the asset.
+no simple way to say that an Offer is linked to a set of Assets nor to clarify how many can
+be picked from the set of Asset.
 
-OpenPermissions is introducing primitives to discuss about sets of assets and picking elements 
+OpenPermissions is introducing primitives to discuss about sets of Assets and picking elements
 from sets.
 
 
 Definition of "IdTypes"
 -----------------------
 
+IdTypes refers to the type of an identifier, such as ISBN.
 OpenPermissions platform assumes generally that `IdType` instances have semantic IRI and 
 are defined as a `skos` taxonomy in single centrally-governed hub-specific namespace.
-It is the responsiblity of the hub owner to ensure the consistency of the taxonomy.
+It is the responsibility of the hub owner to ensure the consistency of the taxonomy.
 
 
 Shared Duty, default targets, assignee and assigner.
 ----------------------------------------------------
 
-Open Permissions allow to defined odrl:uty at the level of the policy.
-Some of duties such as those related one off payments shall preferably be expressed at the level of the Policy.
-The duties expressed at the level of the policy apply to all the permission.
+Open Permissions allows odrl:duty to be stated at the level of the policy.
+Some Duties such as those related to one off payments shall preferably be expressed at the level of the Policy.
+The duties expressed at the level of the policy apply to all the permissions.
 
 Target, assignee, assigner are also recommended at the level of the policy.
 They are considered as default target, assignee, and assigner for all Rules.
@@ -123,7 +130,7 @@ They are considered as default target, assignee, and assigner for all Rules.
 Offer Expiry data
 -----------------
 
-Open Permissions provides a special term to indicate when a license is going to be expired.
+Open Permissions provides a special term to indicate when an Offer is going to be expired.
 
 
 Limitation of ODRL expressivity by the OpenPermissions Platform
@@ -138,7 +145,7 @@ Limitation of ODRL expressivity by the OpenPermissions Platform
     that do not rely on this constraint;
   * Policies with types : `Set`, `Ticket` are not supported;
   * Policies with different set of duties for each permissions are supported however the set of duties that can be expressed at the permission level 
-    is restricted to;
+    is restricted to non-payment.
   * Profile should be set to the most specialised profile.
 
 Profiles                            
@@ -147,13 +154,13 @@ Additional profiles can be added on top of OpenPermissions to license assets wit
 
 Currently the following OpenPermissions profile exist:
 
-   * OPEX - Support of creative content licensing.
+   * OPEX - Support of creative content licensing.  This is a minimal specifications which was used for the development of the Copyright Hub.
 
 
-Best practices when building a Profile and managing a hub
+Best practices when building a Profile and managing a Hub
 =========================================================
 
-* make all the metadata predicate used by your asset a subproperty of the `odrl:rightOperand` property so that the constraint defined in the policy match with your asset definition;
+* make all the predicates used by your Asset a subproperty of the `odrl:rightOperand` property so that the constraint defined in the policy match with your asset definition;
 * on all numerical property whenever possible specify the unit in which the value has to be expressed as part of the ontology definition as it avoids all the other parties to have to deal with interoperability issues later on.
-* It is strongly recommended not to reuse Permission or Duties accross different Policies. 
+* It is strongly recommended not to reuse Permission or Duties across different Policies.
  
