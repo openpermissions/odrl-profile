@@ -10,16 +10,17 @@ op:value a owl:DatatypeProperty,
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string .
 
-op:Id a [ a owl:Restriction ;
+op:Id a owl:Class ;
+    rdfs:subClassOf
+        [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty op:value ],
         [ a owl:Restriction ;
             owl:allValuesFrom op:IdType ;
             owl:cardinality 1 ;
-            owl:onProperty op:id_type ],
-        owl:Class ;
+            owl:onProperty op:id_type ] ;
     rdfs:label "Id"^^xsd:string ;
-    dc:description """
+    rdfs:comment """
 Identifier for an Asset.
 """@en ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> .
@@ -30,11 +31,11 @@ op:id_types a skos:ConceptScheme ;
 op:topIdType a op:IdType,
         skos:Concept ;
     skos:inScheme op:id_types ;
-    skos:name "topIdType"@en .
+    rdfs:label "topIdType"@en .
 
 op:IdType a owl:Class ;
     rdfs:label "IdType"^^xsd:string ;
-    dc:description """
+    rdfs:comment """
 Represents a class of identifiers
 """@en ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> .

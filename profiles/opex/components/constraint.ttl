@@ -8,23 +8,24 @@ opex:UnitScheme a skos:ConceptScheme ;
 opex:topUnit a opex:Unit,
         skos:Concept ;
     skos:inScheme opex:UnitScheme ;
-    skos:name "topUnit"@en .
+    rdfs:label "topUnit"@en .
 
 opex:pixel a opex:Unit,
         skos:Concept ;
     skos:inScheme opex:UnitScheme ;
-    skos:name "pixel"@en ;
+    rdfs:label "pixel"@en ;
     skos:narrowerThan opex:topUnit .
 
 opex:visitorsPerMonth a opex:Unit,
         skos:Concept ;
     skos:inScheme opex:UnitScheme ;
-    skos:name "visitorsPerMonth"@en ;
+    rdfs:label "visitorsPerMonth"@en ;
     skos:narrowerThan opex:topUnit .
 
 opex:attributeText a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """Required textual representation of copyrights attribution."""@en ;
+    rdfs:label """Attribute Text"""@en ;
+    rdfs:comment """Required textual representation of copyrights attribution."""@en ;
     rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:string ;
@@ -32,6 +33,8 @@ opex:attributeText a owl:DatatypeProperty,
 
 opex:height a owl:DatatypeProperty,
         owl:FunctionalProperty ;
+    rdfs:comment """Specifies the vertical height of the asset."""@en ;
+    rdfs:label """height"""@en ;
     rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:decimal ;
@@ -39,6 +42,8 @@ opex:height a owl:DatatypeProperty,
 
 opex:width a owl:DatatypeProperty,
         owl:FunctionalProperty ;
+    rdfs:comment """Specifies the horizontal width of the asset."""@en ;
+    rdfs:label """width"""@en ;
     rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:decimal ;
@@ -46,7 +51,8 @@ opex:width a owl:DatatypeProperty,
 
 opex:host a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    dc:description """Specifies on which type of host the asset may be presented or posted."""@en ;
+    rdfs:label """host"""@en ;
+    rdfs:comment """Specifies on which type of host the asset may be presented or posted."""@en ;
     rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range opex:Host ;
@@ -54,13 +60,16 @@ opex:host a owl:FunctionalProperty,
 
 opex:views a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """Specifies the maximum number of views of the asset that may result in."""@en ;
+    rdfs:label """views"""@en ;
+    rdfs:comment """Specifies the maximum number of views of the asset that may result in."""@en ;
     rdfs:domain opex:Constraint ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf odrl:rightOperand .
 
-opex:Constraint a [ a owl:Restriction ;
+opex:Constraint a owl:Class ;
+    rdfs:subClassOf odrl:Constraint,
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty opex:views ],
         [ a owl:Restriction ;
@@ -75,14 +84,12 @@ opex:Constraint a [ a owl:Restriction ;
             owl:onProperty opex:width ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty opex:attributeText ],
-        owl:Class ;
+            owl:onProperty opex:attributeText ] ;
     rdfs:label "Constraint"^^xsd:string ;
-    rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> ;
-    rdfs:subClassOf odrl:Constraint .
-    
+    rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> .
+
 opex:Host a owl:Class ;
-    dc:description """The Host describes the type of site or device the asset can be used on."""@en ;
+    rdfs:comment """The Host describes the type of site or device the asset can be used on."""@en ;
     rdfs:label "Host"^^xsd:string ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/opex/1.0/> .
 
@@ -92,33 +99,33 @@ opex:HostScheme a skos:ConceptScheme ;
 opex:anyHost a opex:Host,
     skos:Concept ;
     skos:inScheme opex:HostScheme ;
-    skos:name "anyHost"@en .
+    rdfs:label "anyHost"@en .
 
 opex:personalDevice a opex:Host,
         skos:Concept ;
-    dc:description """The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)"""@en ;
+    rdfs:comment """The Asset can be used on personal devices (e.g: Mobile Phone, Desktop Background, Camera Roll)"""@en ;
     skos:inScheme opex:HostScheme ;
-    skos:name "personal device"@en ;
+    rdfs:label "personal device"@en ;
     skos:narrowerThan opex:anyHost .
 
 opex:personalSocialMediaWebsite a opex:Host,
         skos:Concept ;
-    dc:description """The Asset can be used on personal social media accounts."""@en ;
+    rdfs:comment """The Asset can be used on personal social media accounts."""@en ;
     skos:inScheme opex:HostScheme ;
-    skos:name "personal social media site"@en ;
+    rdfs:label "personal social media site"@en ;
     skos:narrowerThan opex:anyHost .
 
 opex:nonCommercialWebsite a opex:Host,
         skos:Concept ;
-    dc:description """The Asset can be used on a personal website that does not generate income or carry advertising."""@en ;
+    rdfs:comment """The Asset can be used on a personal website that does not generate income or carry advertising."""@en ;
     skos:inScheme opex:HostScheme ;
-    skos:name "non commercial website"@en ;
+    rdfs:label "non commercial website"@en ;
     skos:narrowerThan opex:anyHost .
 
 opex:commercialWebsite a opex:Host,
         skos:Concept ;
-    dc:description """The Asset can be used on a website that generates income or carries advertising."""@en ;
+    rdfs:comment """The Asset can be used on a website that generates income or carries advertising."""@en ;
     skos:inScheme opex:HostScheme ;
-    skos:name "commercial website"@en ;
+    rdfs:label "commercial website"@en ;
     skos:narrowerThan opex:anyHost .
 

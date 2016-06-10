@@ -22,7 +22,7 @@
 
 <http://openpermissions.org/ns/opex/1.0/> a owl:Ontology ;
     dc:creator "Digital Catapult Software Engineering Team"^^xsd:string;
-    dc:description "OpenPermissions Extension (ODRL2.1/ OpenPermissions Profile)."^^xsd:string ;
+    rdfs:comment "OpenPermissions Extension (ODRL2.1/ OpenPermissions Profile)."^^xsd:string ;
     dct:modified "2015-02-22T10:56:00Z"^^xsd:dateTime ;
     dct:rights "(C) Digital Catapult Limited 2016"^^xsd:string ;
     owl:versionIRI <http://openpermissions.org/ns/opex/1.0/> ;
