@@ -32,3 +32,4 @@ done
 
 create_ontology > $PWD/$ONTOLOGY_PATH/$(basename $PWD/$ONTOLOGY_PATH).ttl
 python ttl2xml.py  $PWD/$ONTOLOGY_PATH/$(basename $PWD/$ONTOLOGY_PATH).ttl
+python ttl2jsonld.py  $PWD/$ONTOLOGY_PATH/$(basename $PWD/$ONTOLOGY_PATH).ttl

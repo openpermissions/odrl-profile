@@ -1,5 +1,5 @@
 op:alsoIdentifiedBy a owl:ObjectProperty ;
-    dc:description """An Asset may have different identifiers assigned to it.
+    rdfs:comment """An Asset may have different identifiers assigned to it.
     The identities are not necessarily equivalent even though they have been assigned to the same Asset.
     Each identity has a type, such as ISBN or EIDR and the type is semantically defined.
     Identities that alsoIdentifiedBy refer to MUST be for the whole Asset and not for part of the Asset.
@@ -10,22 +10,22 @@ op:alsoIdentifiedBy a owl:ObjectProperty ;
 
 op:title a owl:DatatypeProperty,
         owl:FunctionalProperty ;
-    dc:description """Title of the Asset for the purpose of presentation to a Licensee."""@en ;
+    rdfs:comment """Title of the Asset for the purpose of presentation to a Licensee."""@en ;
     rdfs:domain op:Asset ;
     rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf dc:title .
 
-op:Asset a [ a owl:Restriction ;
+op:Asset a owl:Class ;
+    rdfs:subClassOf odrl:Asset ,
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty op:title ],
         [ a owl:Restriction ;
             owl:allValuesFrom op:Id ;
-            owl:onProperty op:alsoIdentifiedBy ],
-        owl:Class ;
+            owl:onProperty op:alsoIdentifiedBy ] ;
     rdfs:label "Asset"^^xsd:string ;
-    dc:description """An Asset in ODRL is any object referred by a policy.
+    rdfs:comment """An Asset in ODRL is any object referred by a policy.
     Here the Asset generally represents the intellectual work.
     Only metadata about the Asset that is required for the licensing of the Asset should be defined here."""@en ;
-    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> ;
-    rdfs:subClassOf odrl:Asset .
+    rdfs:isDefinedBy <http://openpermissions.org/ns/op/1.1/> .
